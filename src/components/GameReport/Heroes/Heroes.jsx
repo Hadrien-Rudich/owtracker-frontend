@@ -122,9 +122,9 @@ const Heroes = () => {
                         <img
                           className={`${
                             heroes.includes(hero.slug)
-                              ? "scale-105 bg-activeColor border-2 border-mainText z-10 relative"
-                              : "opacity-40"
-                          } h-10 border border-activeColor rounded-sm`}
+                              ? "scale-105 bg-activeColor z-10 relative"
+                              : "opacity-30"
+                          } h-10 border border-activeColor rounded-sm hover:opacity-100`}
                           src={`images/heroes/${hero.imageUrl}`}
                           alt=""
                         />
