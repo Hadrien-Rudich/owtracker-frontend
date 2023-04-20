@@ -28,10 +28,17 @@ const Result = () => {
             type="button"
             value={outcome.label}
             className={`${
-              gameResult === outcome.label
-              ? "text-mainText scale-110 bg-activeColor border-2 border-mainText"
-              : "border border-activeColor"
-          } w-1/2 hover:bg-activeColor hover:text-mainText rounded-sm`}
+              gameResult === outcome.label && gameResult === "win"
+              ? `text-mainText scale-110 bg-activeWin border-2 border-mainText`
+              : gameResult === outcome.label && gameResult === "loss"              
+              ?`text-mainText scale-110 bg-activeLoss border-2 border-mainText`
+              : gameResult === outcome.label && gameResult === "draw"
+              ? `text-mainText scale-110 bg-activeDraw border-2 border-mainText`
+              : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
+              ? `hover:bg-activeColor hover:text-mainText`
+              : null
+              
+          } w-1/2  rounded-sm`}
           >
             {outcome.label}
           </button>

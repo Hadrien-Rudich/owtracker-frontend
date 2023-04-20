@@ -20,11 +20,11 @@ const HistoryDetails = () => {
       {filteredHistory.map((history) => (
         <div
           key={history.id}
-          className="gameHistory_container w-1/2 flex flex-row items-center h-12 bg-secondaryColor text-mainText border border-activeColor"
+          className="gameHistory_container w-1/2 flex flex-row items-center h-12 bg-inactiveColor hover:bg-activeColor text-mainText border border-activeColor"
         >
           <div className="relative mapImage_container w-5/12">
             <img
-              className="h-10 w-full object-cover"
+              className="h-11 w-full object-cover"
               src={`images/maps/${history.mapImageUrl}`}
               alt=""
             />
@@ -46,7 +46,10 @@ const HistoryDetails = () => {
           </div>
           <div
             className={`${
-              history.result === "win" ? `bg-green-500` : `bg-red-500`
+              history.result === "win" ? `bg-activeWin` : 
+              history.result === "loss" ? `bg-activeLoss` :
+              
+              `bg-activeDraw`
             }     
             result_container flex flex-row justify-center w-1/12 `}
           >
