@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Maps from "./Maps/Maps";
 import Heroes from "./Heroes/Heroes";
 import Result from "./Result";
 import Reset from "./Reset";
@@ -9,6 +8,7 @@ import SubmitForm from "./SubmitForm";
 import Overview from "./Overview";
 
 import { authStore } from "../../store/authStore";
+import MapsTypes from "./Maps/MapsTypes";
 
 const Gamereport = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Gamereport = () => {
       <div className="mapandheroes_container">
         <Heroes />
 
-        <Maps />
+        <MapsTypes />
       </div>
       <div>
 

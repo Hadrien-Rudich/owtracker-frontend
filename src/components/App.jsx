@@ -11,6 +11,7 @@ import History from "./History/History";
 import Account from "./Account";
 import Profile from "./Profiles/Profiles";
 import Stats from "./Stats";
+import Maps from "./GameReport/Maps/Maps";
 
 export const LogContext = createContext();
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/stats" element={<Stats />} />
         <Route path="/profiles" element={<Profile />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/slick" element={<Maps />} />
       </Routes>
     </div>
   );

@@ -13,7 +13,7 @@ const gameReportStore = create((set) => ({
   clearHeroes: () => set(() => ({ heroes: [] })),
   mapsData: [],
   addMapsData: (maps) => set(() => ({ mapsData: maps })),
-  map: "",
+  map: null,
   addMap: (map) => set(() => ({ map: map })),
   mapType: null,
   addMapType: (mapType) => set(() => ({ mapType: mapType })),

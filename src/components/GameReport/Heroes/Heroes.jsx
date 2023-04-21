@@ -90,6 +90,7 @@ const Heroes = () => {
   }, [heroModalRef]);
 
   return (
+    
     <div className="heroescomponent_container flex justify-center">
       <div className="grid grid-cols-3 items-center h-44 w-1/2">
         {heroRoles.map((r) => (
@@ -140,6 +141,7 @@ const Heroes = () => {
   
       </div>
     </div>
+
   );
 };
 

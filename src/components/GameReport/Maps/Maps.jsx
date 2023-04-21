@@ -1,20 +1,59 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { fetchMapsData } from "../../../services/ApiService";
 import { gameReportStore } from "../../../store/gameReportStore";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Maps = () => {
+  const settings = {
+    // dots: true,
+    // centerMode: true,
+    // centerPadding: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const {
+    map,
+    addMap,
+    clearMap,
+    mapType,
+    mapsData,
+    addMapsData,
+    
+  } = gameReportStore();
 
   
-  const { map, addMap, clearMap, mapType, addMapType, clearMapType, mapsData, addMapsData, mapModal, toggleMapModal } = gameReportStore();
-  const [mapsByType, setMapsByType] = useState([]);
-  const [mapTypes, setMapTypes] = useState([
-    "Escort",
-    "Hybrid",
-    "Control",
-    "Push",
-  ]);
-
   useEffect(() => {
     async function getMapsData() {
       try {
@@ -24,24 +63,10 @@ const Maps = () => {
         console.error("Failed to fetch maps data", error);
       }
     }
-
+    
     getMapsData();
   }, []);
-
-  const handleMapTypeClick = async (e) => {
-
-    if (mapType === e.target.value) {
-      clearMapType()
-    }
-      else {
-    const mapTypeValue = e.target.value;
-    addMapType(mapTypeValue);
-    const filteredMapsByType = mapsData.filter(
-      (map) => map.type === mapTypeValue
-    );
-    setMapsByType(filteredMapsByType);}
-    toggleMapModal();
-  };
+  
   const handleMapClick = (e) => {
     toggleMap(e.currentTarget.value);
   };
@@ -55,74 +80,31 @@ const Maps = () => {
   };
 
 
-  const mapModalRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        mapModalRef.current &&
-        !mapModalRef.current.contains(event.target)
-      ) {
-        clearMapType()
-        toggleMapModal();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [mapModalRef]);
-
-
-
-
   return (
-    <div className="map_container  flex flex-col items-center gap-6"
-    ref={mapModalRef}>
-      <div className="maptype_container flex justify-center w-1/2  bg-inactiveColor text-inactiveText rounded-sm">
-        {mapTypes.map((mapT) => (
-          <button
-            type="button"
-            key={mapT}
-            onClick={handleMapTypeClick}
-            value={mapT.toLowerCase()}
-            className={`${
-              mapType === mapT.toLowerCase()
-                ? "text-mainText bg-activeColor opacity-100 scale-110"
-                : "opacity-50"
-            } w-1/4 hover:bg-activeColor hover:text-mainText hover:opacity-100 rounded-sm h-8`}
-          >
-                        {mapT}
-    
-          </button>
-        ))}
-      </div>
-
-      <div className="mapimage_container flex flex-wrap h-58 w-1/2 justify-center items-center content-start">
-  {mapType !== null && mapsByType.map((m) => (
-    <div className="" key={m.slug}>
-      <button
-        className="bg-inactiveColor hover:bg-activeColor relative"
-        value={m.slug}
-        onClick={handleMapClick}
-      >
-        <img
-          className={`${
-            map?.includes(m.slug)
-              ? " scale-105 bg-activeColor  relative z-10"
-              : " opacity-30"
-          }  w-44 h-28 hover:opacity-100 border border-activeColor`}
-          src={`images/maps/${m.imageUrl}`}
-          alt=""
-        />
-      </button>
-    </div>
-  ))}
-</div>
-    </div>
+      <Slider className="map_container w-1/2" {...settings}>
+        {mapType !== null &&
+          mapsData
+            .filter((map) => map.type === mapType)
+            .map((m) => (
+              <div className="mapimage_container w-1/3" key={m.slug}>
+                <button
+                  className="bg-inactiveColor hover:bg-activeColor relative"
+                  value={m.slug}
+                  onClick={handleMapClick}
+                >
+                  <img
+                    className={`${
+                      map?.includes(m.slug)
+                        ? " scale-105 bg-activeColor  relative z-10"
+                        : "opacity-40"
+                    }   hover:opacity-100`}
+                    src={`images/maps/${m.imageUrl}`}
+                    alt=""
+                  />
+                </button>
+              </div>
+            ))}
+      </Slider>
   );
 };
-
 export default Maps;
