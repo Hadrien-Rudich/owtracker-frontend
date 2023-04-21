@@ -81,7 +81,7 @@ const Maps = () => {
   return (
     <div className="map_container  flex flex-col items-center gap-6"
     ref={mapModalRef}>
-      <div className="maptype_container flex justify-center w-1/4  bg-inactiveColor text-inactiveText rounded-sm">
+      <div className="maptype_container flex justify-center w-1/2  bg-inactiveColor text-inactiveText rounded-sm">
         {mapTypes.map((mapT) => (
           <button
             type="button"
@@ -90,11 +90,12 @@ const Maps = () => {
             value={mapT.toLowerCase()}
             className={`${
               mapType === mapT.toLowerCase()
-                ? "text-mainText scale-105 bg-activeColor opacity-100"
-                : ""
-            } w-1/4 hover:bg-activeColor hover:text-mainText opacity-50 hover:opacity-100 hover:scale-105`}
+                ? "text-mainText bg-activeColor opacity-100 scale-110"
+                : "opacity-50"
+            } w-1/4 hover:bg-activeColor hover:text-mainText hover:opacity-100 rounded-sm h-8`}
           >
-            {mapT}
+                        {mapT}
+    
           </button>
         ))}
       </div>
@@ -112,7 +113,7 @@ const Maps = () => {
             map?.includes(m.slug)
               ? " scale-105 bg-activeColor  relative z-10"
               : " opacity-30"
-          }  w-44 h-28 hover:opacity-100 border border-activeColor  `}
+          }  w-44 h-28 hover:opacity-100 border border-activeColor`}
           src={`images/maps/${m.imageUrl}`}
           alt=""
         />

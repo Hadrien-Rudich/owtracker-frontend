@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { gameReportStore } from "../../store/gameReportStore";
 
 const Result = () => {
-  const { gameResult, addGameResult } = gameReportStore();
+  const { gameResult, addGameResult, clearGameResult } = gameReportStore();
 
   const [outcomes, setOutcomes] = useState([
     { label: "win", color: "green" },
@@ -15,13 +15,20 @@ const Result = () => {
   };
 
   const toggleGameResult = (selectedResult) => {
+    if (selectedResult !== gameResult ) {
+
       addGameResult(selectedResult);
-  };
+
+    } else {
+      clearGameResult()
+    }
+    };
 
   return (
     <div className="result_container flex justify-center">
-      <div className="resultoutcome_container flex justify-center w-1/4 bg-inactiveColor text-inactiveText rounded-sm">
+      <div className="resultoutcome_container flex justify-center w-1/2 bg-inactiveColor text-inactiveText rounded-sm ">
         {outcomes.map((outcome) => (
+          
           <button
             onClick={handleClick}
             key={outcome.label}
@@ -35,10 +42,10 @@ const Result = () => {
               : gameResult === outcome.label && gameResult === "draw"
               ? `text-mainText scale-110 bg-activeDraw opacity-100 z-50`
               : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
-              ? `hover:bg-activeColor hover:text-mainText`
+              ? `hover:bg-activeColor hover:text-mainText opacity-50`
               : null
               
-          } w-1/2  rounded-sm opacity-50 hover:opacity-100 `}
+          } w-1/2  h-8 rounded-sm hover:opacity-100`}
           >
             {outcome.label}
           </button>

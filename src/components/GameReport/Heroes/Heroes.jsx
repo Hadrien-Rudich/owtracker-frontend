@@ -90,12 +90,13 @@ const Heroes = () => {
   }, [heroModalRef]);
 
   return (
-    <div className="heroescomponent_container">
-      <div className="grid grid-cols-3  items-center h-44">
+    <div className="heroescomponent_container flex justify-center">
+      <div className="grid grid-cols-3 items-center h-44 w-1/2">
         {heroRoles.map((r) => (
           <div key={removeHero.label} className="role_container">
+            {role !== r.label && 
             <div className="roleicon_container flex justify-center">
-              <button onClick={() => handleRoleModalClick(r.label)}>
+              <button className="roleicon_image" onClick={() => handleRoleModalClick(r.label)}>
                 <img
                   className="h-8"
                   src={`images/roles/${r.icon}`}
@@ -103,11 +104,12 @@ const Heroes = () => {
                 />
               </button>
             </div>
+            }
 
-            <div className="roleheroes_container flex justify-center ">
-              {roleModal && role === r.label && (
+            <div className="roleheroes_container flex justify-center">
+              {role === r.label && (
                 <div
-                  className=" flex flex-wrap justify-center w-1/2 mt-4"
+                  className=" flex flex-wrap justify-center"
                   ref={heroModalRef}
                 >
                   {heroesData

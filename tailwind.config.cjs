@@ -7,11 +7,9 @@ module.exports = {
   theme: {
     colors: {
       mainColor: "#347FD3",
-      // mainColor: "#C4D9F2",
       secondaryColor: "#C8C8CF",
       thirdColor: "#F06414",
       inactiveColor: "#C4D9F2",
-      // inactiveColor: "#347FD3",
       activeColor: "#FFFFFF",
       activeGrayColor: "#ADB7C6",
       mainText: "#000000",
