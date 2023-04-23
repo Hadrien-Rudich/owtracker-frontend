@@ -36,8 +36,8 @@ const LogInForm = () => {
 
   return (
     <form action="submit">
-      <div className="login_container flex justify-center">
-        <div className=" inputandbutton_container flex flex-col items-center justify-evenly text-secondaryText bg-gray-200 border-solid border border-gray-300 w-60 h-60 ">
+      <div className="login_container flex justify-center py-12">
+        <div className=" inputandbutton_container flex flex-col items-center justify-evenly bg-inactiveColor text-mainText w-60 h-60 ">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">
               <p>Email</p>
@@ -56,14 +56,14 @@ const LogInForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="bg-blue-500 w-20 border-solid border border-white"
+              className=" text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110"
             >
               Cancel
             </button>
             <button
               onClick={handleLogIn}
               type="submit"
-              className="bg-purple-500 w-20 border-solid border border-white"
+              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110"
             >
               Log in
             </button>

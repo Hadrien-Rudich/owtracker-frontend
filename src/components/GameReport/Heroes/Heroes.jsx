@@ -91,7 +91,7 @@ const Heroes = () => {
 
   return (
     
-    <div className="heroescomponent_container flex justify-center">
+    <div className="heroescomponent_container flex justify-center bg-fourthColor">
       <div className="grid grid-cols-3 items-center h-44 w-1/2">
         {heroRoles.map((r) => (
           <div key={removeHero.label} className="role_container">

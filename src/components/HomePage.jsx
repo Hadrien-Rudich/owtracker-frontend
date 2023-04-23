@@ -19,15 +19,15 @@ const HomePage = () => {
     })
 
   return (
-    <div className='homepage_container flex justify-center  text-secondaryText'>
-    <div className='button_container flex flex-col items-center gap-4 bg-gray-200 border-solid border border-gray-300 w-60 h-40 justify-center '>
+    <div className='homepage_container flex justify-center  text-secondaryText py-12'>
+    <div className='button_container flex flex-col items-center gap-4 bg-inactiveColor w-60 h-40 justify-center '>
     <Link to="/login">
     <button 
-        className='bg-blue-500 w-24 border-solid border border-white'>Log In</button>
+        className='bg-fourthColor w-16 h-6 hover:scale-110'>Log In</button>
           </Link>
           <Link to="/register">
 
-        <button className='bg-purple-500 w-24 border-solid border border-white'>Register</button>
+        <button className='bg-thirdColor w-16 h-6 hover:scale-110'>Register</button>
         </Link>
        
        </div>

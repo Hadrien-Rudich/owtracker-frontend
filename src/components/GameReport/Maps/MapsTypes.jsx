@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gameReportStore } from "../../../store/gameReportStore";
 import Maps from "./Maps";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import carouselSettings2 from "../../../utils/carouselSettings2"; 
+
 
 const MapsTypes = () => {
   const { mapType, addMapType, clearMapType, toggleMapModal } =
@@ -42,10 +47,31 @@ const MapsTypes = () => {
 
   return (
     <div
-      className="map_container  flex flex-col items-center gap-6"
+      className="map_container flex flex-col items-center"
       ref={mapModalRef}
     >
-      <div className="maptype_container flex justify-center w-1/4  text-inactiveText rounded-sm">
+            <Slider className="map_container w-1/12" {...carouselSettings2}>
+        {mapTypes.map((mapT) => (
+          <button
+
+            type="button"
+            key={mapT.label}
+            onClick={handleMapTypeClick}
+            value={mapT.label.toLowerCase()}
+            className={`${
+              mapType === mapT.label.toLowerCase()
+
+                ? "scale-110 bg-thirdColor"
+                : ""
+            } w-1/4 hover:text-mainText rounded-sm h-8`}
+          >
+            <img className="h-10 filter hover:brightness-200"
+            src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
+          </button>
+        ))}
+
+
+      {/* <div className="maptype_container flex justify-center w-1/4  text-inactiveText rounded-sm">
         {mapTypes.map((mapT) => (
           <button
             type="button"
@@ -62,7 +88,8 @@ const MapsTypes = () => {
             src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
           </button>
         ))}
-      </div>
+      </div> */}
+      </Slider>
 
       <Maps />
     </div>
