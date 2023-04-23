@@ -22,8 +22,8 @@ const Header = () => {
   // };
 
   return (
-    <div className="header_container flex h-20 text-mainText bg-secondaryColor  pb-6 relative">
-      <div className="titleandimage_container  relative flex text-4xl italic text-purple-500 w-1/2">
+    <div className="header_container flex h-20 text-mainText bg-secondaryColor  pb-6 relative shadow-lg">
+      <div className="titleandimage_container  relative flex text-4xl italic text-purple-500 w-1/2 ">
       
           <img className=" absolute left-4 top-2 w-1/3" src="/images/Overwatch_2_text_logo.svg" alt="" />
         

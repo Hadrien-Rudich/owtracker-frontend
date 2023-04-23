@@ -13,6 +13,7 @@ import Profile from "./Profiles/Profiles";
 import Stats from "./Stats";
 import Maps from "./GameReport/Maps/Maps";
 
+
 export const LogContext = createContext();
 
 function App() {

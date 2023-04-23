@@ -50,8 +50,7 @@ const MapsTypes = () => {
       className="map_container flex flex-col items-center"
       ref={mapModalRef}
     >
-            <Slider className="map_container w-1/12" {...carouselSettings2}>
-        {mapTypes.map((mapT) => (
+        {/* {mapTypes.map((mapT) => (
           <button
 
             type="button"
@@ -68,11 +67,12 @@ const MapsTypes = () => {
             <img className="h-10 filter hover:brightness-200"
             src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
           </button>
-        ))}
+        ))} */}
 
 
-      {/* <div className="maptype_container flex justify-center w-1/4  text-inactiveText rounded-sm">
+      <div className="maptype_container w-1/2  flex justify-around  text-inactiveText rounded-sm">
         {mapTypes.map((mapT) => (
+          <div className="w-1/4">
           <button
             type="button"
             key={mapT.label}
@@ -80,17 +80,16 @@ const MapsTypes = () => {
             value={mapT.label.toLowerCase()}
             className={`${
               mapType === mapT.label.toLowerCase()
-                ? "scale-110 bg-thirdColor"
+                ? "scale-110 "
                 : ""
-            } w-1/4 hover:text-mainText rounded-sm h-8`}
+            } hover:text-mainText rounded-sm h-20 `}
           >
-            <img className="h-10 filter hover:brightness-200"
+            <img className=" h-10 filter hover:brightness-200"
             src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
           </button>
+          </div>
         ))}
-      </div> */}
-      </Slider>
-
+      </div>
       <Maps />
     </div>
   );

@@ -37,18 +37,24 @@ const LogInForm = () => {
   return (
     <form action="submit">
       <div className="login_container flex justify-center py-12">
-        <div className=" inputandbutton_container flex flex-col items-center justify-evenly bg-inactiveColor text-mainText w-60 h-60 ">
+        <div className=" inputandbutton_container flex flex-col items-center justify-evenly bg-inactiveColor text-mainText w-60 h-60 shadow-lg">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">
-              <p>Email</p>
-              <input value={email} onChange={handleEmailChange} type="email" />
+              <p className="">Email</p>
+              <input
+                className="inner-shadow shadow-md"
+                value={email}
+                onChange={handleEmailChange}
+                type="email"
+              />
             </label>
             <label type="password">
-              <p>Password</p>
+              <p className=" ">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
                 type="password"
+                className="inner-shadow shadow-md"
               />
             </label>
           </div>
@@ -56,16 +62,16 @@ const LogInForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className=" text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110"
+              className="w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md"
             >
-              Cancel
+              <p className="">Cancel</p>
             </button>
             <button
               onClick={handleLogIn}
               type="submit"
-              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110"
+              className=" w-16 h-6 text-secondaryText bg-thirdColor  hover:scale-110 shadow-md"
             >
-              Log in
+              <p className="">Log in</p>
             </button>
           </div>
         </div>

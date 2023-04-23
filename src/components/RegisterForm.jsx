@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {authStore} from "../store/authStore";
-
+import { authStore } from "../store/authStore";
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -22,10 +21,10 @@ const RegisterForm = () => {
   const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
   };
-  
+
   const handleCancel = () => {
-    navigate('/')
-      };
+    navigate("/");
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -34,35 +33,41 @@ const RegisterForm = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/game")
-      }[isLoggedIn ,navigate]
-    })
-
-  
+      navigate("/game");
+    }
+    [isLoggedIn, navigate];
+  });
 
   return (
     <form action="submit">
       <div className="login_container flex justify-center py-12">
-        <div className=" inputandbutton_container flex flex-col items-center justify-evenly  bg-inactiveColor text-mainText w-60 h-72 ">
+        <div className=" inputandbutton_container flex flex-col items-center justify-evenly  bg-inactiveColor text-mainText shadow-lg w-60 h-72 ">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">
-              <p>Email</p>
-              <input value={email} onChange={handleEmailChange} type="email" />
+              <p className="">Email</p>
+              <input
+                value={email}
+                onChange={handleEmailChange}
+                type="email"
+                className="inner-shadow shadow-md"
+              />
             </label>
             <label type="password">
-              <p>Password</p>
+              <p className="">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
                 type="password"
+                className="inner-shadow shadow-md"
               />
             </label>
             <label type="password">
-              <p>Confirm Password</p>
+              <p className="">Confirm Password</p>
               <input
                 onChange={handleConfirmPasswordChange}
                 value={confirmPassword}
                 type="password"
+                className="inner-shadow shadow-md"
               />
             </label>
           </div>
@@ -70,14 +75,14 @@ const RegisterForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110"
+              className="text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md"
             >
               Cancel
             </button>
             <button
               onClick={handleRegister}
               type="submit"
-              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110"
+              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md"
             >
               Register
             </button>

@@ -25,7 +25,7 @@ const Result = () => {
     };
 
   return (
-    <div className="result_container flex justify-center bg-thirdColor">
+    <div className="result_container flex justify-center">
       <div className="resultoutcome_container flex justify-center w-1/2 bg-inactiveColor text-inactiveText rounded-sm ">
         {outcomes.map((outcome) => (
           
