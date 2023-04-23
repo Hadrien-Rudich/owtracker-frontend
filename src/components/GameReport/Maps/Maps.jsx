@@ -59,7 +59,7 @@ const Maps = () => {
                   <img
                     className={`${
                       map?.includes(m.slug)
-                        ? " scale-105 bg-activeColor  relative z-10"
+                        ? " scale-105 bg-activeColor relative z-10 "
                         : "opacity-40"
                     }   hover:opacity-100`}
                     src={`images/maps/${m.imageUrl}`}

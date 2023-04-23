@@ -3,37 +3,32 @@ import { gameReportStore } from "../../../store/gameReportStore";
 import Maps from "./Maps";
 
 const MapsTypes = () => {
-  
-  
-  const {mapType, addMapType, clearMapType, toggleMapModal } = gameReportStore();
+  const { mapType, addMapType, clearMapType, toggleMapModal } =
+    gameReportStore();
+
   const [mapTypes, setMapTypes] = useState([
-    "Escort",
-    "Hybrid",
-    "Control",
-    "Push",
+    { label: "Escort", icon: "Escort_icon.svg" },
+    { label: "Hybrid", icon: "Hybrid_icon.svg" },
+    { label: "Control", icon: "Control_icon.svg" },
+    { label: "Push", icon: "Push_icon.svg" },
   ]);
 
   const handleMapTypeClick = async (e) => {
-
-    if (mapType === e.target.value) {
-      clearMapType()
-    }
-      else {
-    const mapTypeValue = e.target.value;
-    addMapType(mapTypeValue);
+    if (mapType === e.currentTarget.value) {
+      clearMapType();
+    } else {
+      const mapTypeValue = e.currentTarget.value;
+      addMapType(mapTypeValue);
     }
     toggleMapModal();
   };
-  
+
   const mapModalRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        mapModalRef.current &&
-        !mapModalRef.current.contains(event.target)
-      ) {
-        clearMapType()
+      if (mapModalRef.current && !mapModalRef.current.contains(event.target)) {
+        clearMapType();
         toggleMapModal();
       }
     };
@@ -46,31 +41,31 @@ const MapsTypes = () => {
   }, [mapModalRef]);
 
   return (
-    <div className="map_container  flex flex-col items-center gap-6"
-    ref={mapModalRef}>
-      <div className="maptype_container flex justify-center w-1/2  bg-inactiveColor text-inactiveText rounded-sm">
+    <div
+      className="map_container  flex flex-col items-center gap-6"
+      ref={mapModalRef}
+    >
+      <div className="maptype_container flex justify-center w-1/4  text-inactiveText rounded-sm">
         {mapTypes.map((mapT) => (
           <button
             type="button"
-            key={mapT}
+            key={mapT.label}
             onClick={handleMapTypeClick}
-            value={mapT.toLowerCase()}
+            value={mapT.label.toLowerCase()}
             className={`${
-              mapType === mapT.toLowerCase()
-                ? "text-mainText bg-activeColor opacity-100 scale-110"
-                : "opacity-50"
-            } w-1/4 hover:bg-activeColor hover:text-mainText hover:opacity-100 rounded-sm h-8`}
+              mapType === mapT.label.toLowerCase()
+                ? "scale-110 bg-thirdColor"
+                : ""
+            } w-1/4 hover:text-mainText rounded-sm h-8`}
           >
-                        {mapT}
-    
+            <img className="h-10 filter hover:brightness-200"
+            src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
           </button>
         ))}
       </div>
 
-
-  <Maps/>
-</div>
-
+      <Maps />
+    </div>
   );
 };
 

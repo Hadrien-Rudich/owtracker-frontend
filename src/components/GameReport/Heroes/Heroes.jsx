@@ -97,9 +97,10 @@ const Heroes = () => {
           <div key={removeHero.label} className="role_container">
             {role !== r.label && 
             <div className="roleicon_container flex justify-center">
-              <button className="roleicon_image" onClick={() => handleRoleModalClick(r.label)}>
+              <button className="roleicon_image hover:scale-125"
+               onClick={() => handleRoleModalClick(r.label)}>
                 <img
-                  className="h-8"
+                  className=" h-8 filter hover:brightness-200"
                   src={`images/roles/${r.icon}`}
                   alt="role icon"
                 />
@@ -125,7 +126,7 @@ const Heroes = () => {
                         <img
                           className={`${
                             heroes.includes(hero.slug)
-                              ? "scale-105 bg-activeColor z-10 relative"
+                              ? "scale-105 bg-activeColor z-10 relative border border-thirdColor"
                               : "opacity-30"
                           } h-10 border border-activeColor rounded-sm hover:opacity-100`}
                           src={`images/heroes/${hero.imageUrl}`}

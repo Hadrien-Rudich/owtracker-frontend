@@ -7,7 +7,7 @@ const GameReportRecap = () => {
   return (
     <div className="historyDetails_container flex flex-col items-center gap  text-secondaryText">
     {map !== null && heroes.length > 0 && gameResult !== null &&
-      <div className="gameHistory_container w-1/4 flex flex-row items-center h-12 bg-activeColor text-mainText border border-activeColor">
+      <div className="gameHistory_container w-1/2 flex flex-row items-center h-12 bg-inactiveColor text-mainText border border-activeColor">
         <div className="relative mapImage_container w-5/12">
           <img
             className="h-11 w-full object-cover"

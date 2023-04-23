@@ -27,7 +27,7 @@ const MonthTabs = () => {
 
   return (
   <div className="flex justify-center">
-    <div className="monthTab_container flex justify-center items-center gap-2 w-1/2  py-2 bg-gray-300 text-black">
+    <div className="monthTab_container flex justify-center items-center gap-2 w-1/2  py-2 bg-secondaryColor">
       {months.map((month) => (
         <button
           key={month.index}
@@ -35,9 +35,9 @@ const MonthTabs = () => {
           onClick={handleClick}
           className={`${
             Number(currentMonth) === Number(month.index)
-              ? `text-blue-700 
+              ? `text-thirdColor 
             `
-              : `text-black
+              : `text-mainColor
             `
           }
         text-sm

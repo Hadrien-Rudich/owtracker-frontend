@@ -5,7 +5,7 @@ const SubmitForm = () => {
     <div>
 <form action="submit">
 
-<button type="submit" className='bg-thirdColor text-secondaryText w-14 border-solid border border-gray-400' >SUBMIT</button>
+<button type="submit" className='bg-thirdColor text-secondaryText w-16 h-8 rounded-sm hover:scale-110' >SUBMIT</button>
 
 </form>
 
