@@ -8,14 +8,13 @@ import SubmitForm from "./SubmitForm";
 import Overview from "./Overview";
 
 import { authStore } from "../../store/authStore";
-import Mapo from "./Maps/Mapo";
-import MapsTypes from "./Maps/MapsTypes";
+import Maps from "./Maps/Maps";
 
 const Gamereport = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
-                                                                          
+
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/");
@@ -24,18 +23,12 @@ const Gamereport = () => {
   });
 
   return (
-    <div className="main_container my-4">
+    <div className="gamereport_container my-4">
       <Result />
-      <div className="mapandheroes_container">
-        <Heroes />
-        {/* <Mapo /> */}
+      <Heroes />
+      <Maps />
+        <Overview />
 
-        <MapsTypes />
-      </div>
-      <div>
-
-      <Overview/>
-      </div>
       <div className="flex flex-row justify-center gap-10">
         <Reset />
 
