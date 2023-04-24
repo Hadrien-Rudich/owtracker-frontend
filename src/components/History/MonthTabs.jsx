@@ -33,6 +33,7 @@ const MonthTabs = () => {
           key={month.index}
           value={month.index}
           onClick={handleClick}
+          type="button"
           className={`${
             Number(currentMonth) === Number(month.index)
               ? `text-thirdColor 

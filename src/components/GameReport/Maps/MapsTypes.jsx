@@ -25,20 +25,20 @@ const MapsTypes = () => {
   };
 
   return (
-      <div className="flex text-inactiveText rounded-sm">
+      <div className="flex justify-around items-center content-center text-inactiveText rounded-sm">
         {mapTypes.map((mapT) => (
-          <div className="w-1/4">
+          <div className="">
             <button
               type="button"
               key={mapT.label}
               onClick={handleMapTypeClick}
               value={mapT.label.toLowerCase()}
               className={`${
-                mapType === mapT.label.toLowerCase() ? "scale-110 " : ""
-              } hover:text-mainText rounded-sm h-20 `}
+                mapType === mapT.label.toLowerCase() ? "scale-110 bg-thirdColor" : ""
+              } hover:text-mainText rounded-sm flex justify-center items-center drop-shadow-lg`}
             >
               <img
-                className=" h-10 filter hover:brightness-200"
+                className=" h-10 filter hover:brightness-200 hover:scale-110"
                 src={`images/mapTypes/${mapT.icon}`}
                 alt="map type icon"
               />

@@ -26,28 +26,27 @@ const Result = () => {
 
   return (
     <div className="result_container flex justify-center">
-      <div className="resultoutcome_container flex justify-center w-1/2 bg-inactiveColor text-inactiveText rounded-sm ">
+      <div className="resultoutcome_container flex justify-center w-1/2 bg-inactiveColor text-inactiveText rounded-sm shadow-lg">
         {outcomes.map((outcome) => (
           
           <button
             onClick={handleClick}
             key={outcome.label}
             type="button"
-            value={outcome.label}
-            className={`${
+            value={outcome.label}            
+                        className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `text-mainText scale-110 bg-activeWin opacity-100 z-50`
+              ? `text-mainText scale-110 bg-activeWin opacity-100 z-50 shadow-lg`
               : gameResult === outcome.label && gameResult === "loss"              
-              ?`text-mainText scale-110 bg-activeLoss opacity-100 z-50`
+              ?`text-mainText scale-110 bg-activeLoss opacity-100 z-50 shadow-lg`
               : gameResult === outcome.label && gameResult === "draw"
-              ? `text-mainText scale-110 bg-activeDraw opacity-100 z-50`
+              ? `text-mainText scale-110 bg-activeDraw opacity-100 z-50 shadow-lg`
               : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
               ? `hover:bg-activeColor hover:text-mainText opacity-50`
               : null
               
           } w-1/2  h-8 rounded-sm hover:opacity-100`}
-          >
-            {outcome.label}
+          > {outcome.label}
           </button>
         ))}
       </div>

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { authStore } from "../store/authStore";
 
-const RegisterForm = () => {
+import { authStore } from "../../store/authStore";
+
+const LogInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const { isLoggedIn, logIn } = authStore();
 
@@ -14,19 +14,15 @@ const RegisterForm = () => {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-  };
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
   };
 
   const handleCancel = () => {
     navigate("/");
   };
 
-  const handleRegister = (e) => {
+  const handleLogIn = (e) => {
     e.preventDefault();
     logIn();
   };
@@ -41,33 +37,23 @@ const RegisterForm = () => {
   return (
     <form action="submit">
       <div className="login_container flex justify-center py-12">
-        <div className=" inputandbutton_container flex flex-col items-center justify-evenly  bg-inactiveColor text-mainText shadow-lg w-60 h-72 ">
+        <div className=" inputandbutton_container flex flex-col items-center justify-evenly bg-inactiveColor text-mainText w-60 h-60 shadow-lg rounded-sm">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">
               <p className="">Email</p>
               <input
+                className="inner-shadow shadow-md"
                 value={email}
                 onChange={handleEmailChange}
-                type="email"
                 required
-                className="inner-shadow shadow-md"
+                type="email"
               />
             </label>
             <label type="password">
-              <p className="">Password</p>
+              <p className=" ">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
-                type="password"
-                required
-                className="inner-shadow shadow-md"
-              />
-            </label>
-            <label type="password">
-              <p className="">Confirm Password</p>
-              <input
-                onChange={handleConfirmPasswordChange}
-                value={confirmPassword}
                 type="password"
                 required
                 className="inner-shadow shadow-md"
@@ -78,16 +64,16 @@ const RegisterForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
+              className="w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm"
             >
-              Cancel
+              <p className="">Cancel</p>
             </button>
             <button
-              onClick={handleRegister}
+              onClick={handleLogIn}
               type="submit"
-              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
+              className="w-16 h-6 text-secondaryText bg-thirdColor  hover:scale-110 shadow-md rounded-sm"
             >
-              Register
+              <p className="">Log in</p>
             </button>
           </div>
         </div>
@@ -96,4 +82,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default LogInForm;

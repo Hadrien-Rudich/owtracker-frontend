@@ -23,7 +23,7 @@ const Gamereport = () => {
   });
 
   return (
-    <div className="gamereport_container my-4">
+    <div className="gamereport_container my-12">
       <Result />
       <Heroes />
       <Maps />

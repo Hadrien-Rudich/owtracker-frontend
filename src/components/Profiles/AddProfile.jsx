@@ -25,7 +25,8 @@ const AddProfile = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-3 py-4 bg-gray-300  border-gray-400 w-60">
-      <button onClick={handleClick}>
+      <button onClick={handleClick}
+      type="button">
         {!inputField && (
           <div className="flex items-center gap-2 px-2 bg-green-400">
             <ImPlus className="scale-75"/>
@@ -47,7 +48,8 @@ const AddProfile = () => {
             </label>
 <div className="button_container flex gap-2">
 
-            <button className="bg-green-400 h-6 w-10">Add</button>
+            <button className="bg-green-400 h-6 w-10"
+            type="button">Add</button>
             <button className="scale-75">
               <ImCross />
             </button>

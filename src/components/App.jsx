@@ -4,9 +4,9 @@ import { Routes, Route } from "react-router-dom";
 
 import Gamereport from "./GameReport/GameReport";
 import Header from "./Header";
-import LogInForm from "./LogInForm";
-import RegisterForm from "./RegisterForm";
-import HomePage from "./HomePage";
+import LogInForm from "./Homepage/LogInForm";
+import RegisterForm from "./Homepage/RegisterForm";
+import HomePage from "./Homepage/HomePage";
 import History from "./History/History";
 import Account from "./Account";
 import Profile from "./Profiles/Profiles";

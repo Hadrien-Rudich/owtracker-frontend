@@ -61,6 +61,7 @@ const Profile = () => {
             className=" bg-thirdColor flex items-center justify-center bg-purple-400 px-2"
           >
             <button
+
               value={profile.label}
               className={`${
                 currentProfile === profile.label
@@ -68,6 +69,7 @@ const Profile = () => {
                   : `text-black`
               } w-32 h-12`}
               onClick={handleClick}
+              type="button"
             >
               {profile.label}
             </button>
@@ -75,6 +77,7 @@ const Profile = () => {
               value={profile.label}
               method="delete"
               onClick={() => handleDeleteClick(profile.label)}
+              type="button"
             >
               <ImCross />
             </button>

@@ -91,16 +91,17 @@ const Heroes = () => {
 
   return (
     
-    <div className="heroescomponent_container flex justify-center">
-      <div className="grid grid-cols-3 items-center h-44 w-1/2">
+    <div className="heroescomponent_container flex justify-center ">
+      <div className="grid grid-cols-3 items-center h-48 w-1/2">
         {heroRoles.map((r) => (
           <div key={removeHero.label} className="role_container">
             {role !== r.label && 
             <div className="roleicon_container flex justify-center">
-              <button className="roleicon_image hover:scale-125"
+              <button className="roleicon_image hover:scale-125 drop-shadow-lg"
+              type="button"
                onClick={() => handleRoleModalClick(r.label)}>
                 <img
-                  className=" h-8 filter hover:brightness-200"
+                  className=" h-10 filter hover:brightness-200"
                   src={`images/roles/${r.icon}`}
                   alt="role icon"
                 />
@@ -111,24 +112,25 @@ const Heroes = () => {
             <div className="roleheroes_container flex justify-center">
               {role === r.label && (
                 <div
-                  className=" flex flex-wrap justify-center"
+                  className="flex flex-wrap justify-center"
                   ref={heroModalRef}
                 >
                   {heroesData
                     .filter((hero) => hero.role == r.label)
                     .map((hero) => (
                       <button
-                        className="bg-inactiveColor hover:bg-activeColor relative"
+                        className="bg-inactiveColor hover:bg-activeColor relative shadow-lg"
                         key={hero.slug}
                         value={hero.slug}
                         onClick={handleHeroClick}
+                        type="button"
                       >
                         <img
                           className={`${
                             heroes.includes(hero.slug)
                               ? "scale-105 bg-activeColor z-10 relative border border-thirdColor"
                               : "opacity-30"
-                          } h-10 border border-activeColor rounded-sm hover:opacity-100`}
+                          } h-10 border border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
                           src={`images/heroes/${hero.imageUrl}`}
                           alt=""
                         />
