@@ -23,11 +23,11 @@ const HomePage = () => {
     <div className='button_container flex flex-col items-center gap-4 bg-inactiveColor w-60 h-40 justify-center shadow-lg '>
     <Link to="/login">
     <button 
-        className='bg-fourthColor w-16 h-6 hover:scale-110 shadow-md'>Log In</button>
+        className='bg-fourthColor w-16 h-6 hover:scale-110 shadow-md rounded-sm'>Log In</button>
           </Link>
           <Link to="/register">
 
-        <button className='bg-thirdColor w-16 h-6 hover:scale-110 shadow-md'>Register</button>
+        <button className='bg-thirdColor w-16 h-6 hover:scale-110 shadow-md rounded-sm'>Register</button>
         </Link>
        
        </div>

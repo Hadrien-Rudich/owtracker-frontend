@@ -49,6 +49,7 @@ const RegisterForm = () => {
                 value={email}
                 onChange={handleEmailChange}
                 type="email"
+                required
                 className="inner-shadow shadow-md"
               />
             </label>
@@ -58,6 +59,7 @@ const RegisterForm = () => {
                 onChange={handlePasswordChange}
                 value={password}
                 type="password"
+                required
                 className="inner-shadow shadow-md"
               />
             </label>
@@ -67,6 +69,7 @@ const RegisterForm = () => {
                 onChange={handleConfirmPasswordChange}
                 value={confirmPassword}
                 type="password"
+                required
                 className="inner-shadow shadow-md"
               />
             </label>
@@ -75,14 +78,14 @@ const RegisterForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md"
+              className="text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
             >
               Cancel
             </button>
             <button
               onClick={handleRegister}
               type="submit"
-              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md"
+              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
             >
               Register
             </button>

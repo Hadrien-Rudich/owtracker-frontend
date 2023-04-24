@@ -8,6 +8,7 @@ import SubmitForm from "./SubmitForm";
 import Overview from "./Overview";
 
 import { authStore } from "../../store/authStore";
+import Mapo from "./Maps/Mapo";
 import MapsTypes from "./Maps/MapsTypes";
 
 const Gamereport = () => {
@@ -27,6 +28,7 @@ const Gamereport = () => {
       <Result />
       <div className="mapandheroes_container">
         <Heroes />
+        {/* <Mapo /> */}
 
         <MapsTypes />
       </div>

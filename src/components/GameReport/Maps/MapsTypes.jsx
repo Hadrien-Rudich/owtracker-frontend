@@ -4,8 +4,7 @@ import Maps from "./Maps";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import carouselSettings2 from "../../../utils/carouselSettings2"; 
-
+import carouselSettings2 from "../../../utils/carouselSettings2";
 
 const MapsTypes = () => {
   const { mapType, addMapType, clearMapType, toggleMapModal } =
@@ -46,47 +45,25 @@ const MapsTypes = () => {
   }, [mapModalRef]);
 
   return (
-    <div
-      className="map_container flex flex-col items-center"
-      ref={mapModalRef}
-    >
-        {/* {mapTypes.map((mapT) => (
-          <button
-
-            type="button"
-            key={mapT.label}
-            onClick={handleMapTypeClick}
-            value={mapT.label.toLowerCase()}
-            className={`${
-              mapType === mapT.label.toLowerCase()
-
-                ? "scale-110 bg-thirdColor"
-                : ""
-            } w-1/4 hover:text-mainText rounded-sm h-8`}
-          >
-            <img className="h-10 filter hover:brightness-200"
-            src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
-          </button>
-        ))} */}
-
-
+    <div className="map_container flex flex-col items-center" ref={mapModalRef}>
       <div className="maptype_container w-1/2  flex justify-around  text-inactiveText rounded-sm">
         {mapTypes.map((mapT) => (
           <div className="w-1/4">
-          <button
-            type="button"
-            key={mapT.label}
-            onClick={handleMapTypeClick}
-            value={mapT.label.toLowerCase()}
-            className={`${
-              mapType === mapT.label.toLowerCase()
-                ? "scale-110 "
-                : ""
-            } hover:text-mainText rounded-sm h-20 `}
-          >
-            <img className=" h-10 filter hover:brightness-200"
-            src={`images/mapTypes/${mapT.icon}`} alt="map type icon" />
-          </button>
+            <button
+              type="button"
+              key={mapT.label}
+              onClick={handleMapTypeClick}
+              value={mapT.label.toLowerCase()}
+              className={`${
+                mapType === mapT.label.toLowerCase() ? "scale-110 " : ""
+              } hover:text-mainText rounded-sm h-20 `}
+            >
+              <img
+                className=" h-10 filter hover:brightness-200"
+                src={`images/mapTypes/${mapT.icon}`}
+                alt="map type icon"
+              />
+            </button>
           </div>
         ))}
       </div>

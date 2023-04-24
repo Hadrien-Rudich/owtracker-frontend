@@ -45,6 +45,7 @@ const LogInForm = () => {
                 className="inner-shadow shadow-md"
                 value={email}
                 onChange={handleEmailChange}
+                required
                 type="email"
               />
             </label>
@@ -54,6 +55,7 @@ const LogInForm = () => {
                 onChange={handlePasswordChange}
                 value={password}
                 type="password"
+                required
                 className="inner-shadow shadow-md"
               />
             </label>
@@ -62,14 +64,14 @@ const LogInForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md"
+              className="w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm"
             >
               <p className="">Cancel</p>
             </button>
             <button
               onClick={handleLogIn}
               type="submit"
-              className=" w-16 h-6 text-secondaryText bg-thirdColor  hover:scale-110 shadow-md"
+              className="w-16 h-6 text-secondaryText bg-thirdColor  hover:scale-110 shadow-md rounded-sm"
             >
               <p className="">Log in</p>
             </button>

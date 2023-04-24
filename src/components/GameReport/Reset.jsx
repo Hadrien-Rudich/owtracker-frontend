@@ -20,7 +20,7 @@ const Reset = () => {
 
   return (
     <div className=''>
-      <button type="button" onClick={handleClick} className='bg-secondaryColor text-mainText w-16 h-8 rounded-sm hover:scale-110'>
+      <button type="button" onClick={handleClick} className='w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm'>
 Reset
       </button>
     </div>

@@ -20,11 +20,21 @@ module.exports = {
 
     extend: {
       button: {
+        
+          backgroundColor: "#347FD3",
+color: "#EDF3FA",
+borderRadius: "0.5rem",
+padding: "0.5rem 1rem",
+border: "none",
+cursor: "pointer",
+transition: "all 0.3s ease-in-out",
+        
+      buttonTwo: {
         base: "w-16 h-6 hover:scale-110 shadow-md",
-        cancel: "text-mainText bg-secondaryColor",
         validate: "text-secondaryText bg-thirdColor",
+        cancel: "text-mainText bg-thirdColor",
       },
     },
+    plugins: [],
   },
-  plugins: [],
-};
+}};
