@@ -24,6 +24,7 @@ const gameReportStore = create((set) => ({
   clearGameResult: () => set(() => ({ gameResult: null })),
   role: null,
   addRole: (role) => set(() => ({ role: role })),
+  clearRole: () => set(() => ({ role: null })),
   roleModal: false,
   toggleRoleModal: () => set((state) => ({ roleModal: !state.roleModal })),
   mapModal: false,

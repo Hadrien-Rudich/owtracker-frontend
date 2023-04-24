@@ -27,7 +27,7 @@ const Gamereport = () => {
       <Result />
       <Heroes />
       <Maps />
-        <Overview />
+      <Overview />
 
       <div className="flex flex-row justify-center gap-10">
         <Reset />

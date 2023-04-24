@@ -3,7 +3,7 @@ import { gameReportStore } from "../../store/gameReportStore";
 
 const Reset = () => {
 
-  const { clearMapType, clearMap, clearHeroes, clearGameResult  } = gameReportStore();
+  const { clearMapType, clearMap, clearHeroes, clearGameResult, clearRole  } = gameReportStore();
 
 
   const handleClick = () => {
@@ -15,6 +15,7 @@ const Reset = () => {
     clearMap()
     clearHeroes()
     clearGameResult()
+    clearRole()
     
   };
 

@@ -10,7 +10,7 @@ import HomePage from "./Homepage/HomePage";
 import History from "./History/History";
 import Account from "./Account";
 import Profile from "./Profiles/Profiles";
-import Stats from "./Stats";
+import Stats from "./Stats/Stats";
 import Maps from "./GameReport/Maps/MapsCarousel";
 
 

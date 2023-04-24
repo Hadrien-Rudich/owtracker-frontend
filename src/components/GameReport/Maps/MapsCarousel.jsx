@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { fetchMapsData } from "../../../services/ApiService";
+import React from "react";
 import { gameReportStore } from "../../../store/gameReportStore";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,21 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import carouselSettings from "../../../utils/carouselSettings";
 
 const MapsCarousel = () => {
-  const { map, addMap, clearMap, mapType, mapsData, addMapsData } =
-    gameReportStore();
-
-  useEffect(() => {
-    async function getMapsData() {
-      try {
-        const data = await fetchMapsData();
-        addMapsData(data);
-      } catch (error) {
-        console.error("Failed to fetch maps data", error);
-      }
-    }
-
-    getMapsData();
-  }, []);
+  const { map, addMap, clearMap, mapType, mapsData } = gameReportStore();
 
   const handleMapClick = (e) => {
     toggleMap(e.currentTarget.value);
@@ -34,7 +19,6 @@ const MapsCarousel = () => {
       clearMap();
     }
   };
-
 
   return (
     <div className="carousel_container">
