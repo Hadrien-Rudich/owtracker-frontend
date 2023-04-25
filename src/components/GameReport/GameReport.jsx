@@ -5,7 +5,7 @@ import Heroes from "./Heroes/Heroes";
 import Result from "./Result";
 import Reset from "./Reset";
 import SubmitForm from "./SubmitForm";
-import Overview from "./Overview";
+import GameReportRecap from "../GameReport/Overview/GameReportRecap";
 
 import { authStore } from "../../store/authStore";
 import Maps from "./Maps/Maps";
@@ -27,7 +27,7 @@ const Gamereport = () => {
       <Result />
       <Heroes />
       <Maps />
-      <Overview />
+      <GameReportRecap />
 
       <div className="flex flex-row justify-center gap-10">
         <Reset />

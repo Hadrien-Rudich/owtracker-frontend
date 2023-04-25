@@ -40,7 +40,7 @@ const RegisterForm = () => {
 
   return (
     <form action="submit">
-      <div className="login_container flex justify-center py-12">
+      <div className="login_container flex justify-center my-12">
         <div className=" inputandbutton_container flex flex-col items-center justify-evenly  bg-inactiveColor text-mainText shadow-lg w-60 h-72 rounded-sm">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">

@@ -5,20 +5,23 @@ import { profileStore } from "../../store/profileStore";
 import AddProfile from "./AddProfile";
 import { ImCross } from "react-icons/im";
 
-
-import { fetchProfilesData, deleteProfileFromDb } from "../../services/ApiService";
+import {
+  fetchProfilesData,
+  deleteProfileFromDb,
+} from "../../services/ApiService";
 
 const Profile = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
   const {
-    addProfileData,
-    profileData,
-    currentProfile,
-    setCurrentProfile,
+    addProfilesData,
+    profilesData,
+    profile,
+    setProfile,
     newProfile,
     deleteProfile,
+    clearProfile
   } = profileStore();
 
   useEffect(() => {
@@ -32,17 +35,24 @@ const Profile = () => {
     async function getProfilesData() {
       try {
         const data = await fetchProfilesData();
-        addProfileData(data);
+        addProfilesData(data);
       } catch (error) {
         console.error("Failed to fetch history data", error);
       }
     }
 
     getProfilesData();
-  }, [addProfileData, newProfile]);
+  }, [addProfilesData, newProfile]);
 
   const handleClick = (e) => {
-    setCurrentProfile(e.target.value);
+    if (profile === e.target.value) {
+      clearProfile()
+    } else {
+
+      const selectedProfile = e.target.value
+      setProfile(selectedProfile)
+    }
+    
   };
 
   const handleDeleteClick = (value) => {
@@ -51,36 +61,38 @@ const Profile = () => {
   };
 
   return (
-    <div className=" flex flex-col items-center py-6">
-      <div className="bg-secondaryColor flex flex-col items-center gap-3 py-4 bg-gray-300  border-gray-400 w-60">
+    <div className=" flex flex-col items-center my-12">
+      <div className="bg-inactiveColor flex flex-col items-center gap-3 py-4 w-60 rounded shadow-lg">
         <AddProfile />
 
-        {profileData.map((profile) => (
+        {profilesData.map((p) => (
           <div
-            key={profile.id}
-            className=" bg-thirdColor flex items-center justify-center bg-purple-400 px-2"
+            key={p.id}
+            className={`${
+              p.label === profile
+                ? "scale-110 bg-activeColor"
+                : "bg-activeGrayColor hover:scale-110"
+            } profile_container flex items-center justify-center content-center hover:bg-activeColor rounded-sm shadow-sm `}
           >
             <button
-
-              value={profile.label}
-              className={`${
-                currentProfile === profile.label
-                  ? `text-blue-700`
-                  : `text-black`
-              } w-32 h-12`}
+              value={p.label.toLowerCase()}
               onClick={handleClick}
               type="button"
+              className="w-32 h-6 text-xs"
             >
-              {profile.label}
+              {p.label}
             </button>
-            <button
-              value={profile.label}
-              method="delete"
-              onClick={() => handleDeleteClick(profile.label)}
-              type="button"
-            >
-              <ImCross />
-            </button>
+            {p.label.toLowerCase() === profile.toLowerCase() && (
+                <button
+                  value={p.label}
+                  method="delete"
+                  onClick={() => handleDeleteClick(p.label)}
+                  type="button"
+                  className="pr-1"
+                >
+                  <ImCross className="scale-50 text-mainText" />
+                </button>
+              )}
           </div>
         ))}
       </div>

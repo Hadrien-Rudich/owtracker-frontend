@@ -1,18 +1,16 @@
 import { create } from "zustand";
 
 const profileStore = create((set) => ({
-  profileData: [],
-  addProfileData: (profiles) => set(() => ({ profileData: profiles })),
-  removeProfileData: () => {
+  profilesData: [],
+  addProfilesData: (profiles) => set(() => ({ profilesData: profiles })),
+  profile: "",
+  setProfile: (profile) =>
     set(() => ({
-      profileData: [],
-    }));
-  },
-  currentProfile: "",
-  setCurrentProfile: (profile) =>
-    set(() => ({
-      currentProfile: profile,
+      profile: profile,
     })),
+    clearProfile: () =>
+    set(() => ({
+      profile: ""  })),
   newProfile: "",
   setNewProfile: (profile) =>
     set(() => ({
@@ -20,12 +18,16 @@ const profileStore = create((set) => ({
     })),
   addNewProfile: (profile) =>
     set((state) => ({
-      profileData: [...state.profileData, { label: profile }],
+      profilesData: [...state.profilesData, { label: profile }],
     })),
-    
+  clearNewProfile: () =>
+    set(() => ({
+      newProfile: "",
+    })),
+
   deleteProfile: (profile) => {
     set((state) => ({
-      profileData: state.profileData.filter((p) => p.label !== profile),
+      profilesData: state.profilesData.filter((p) => p.label !== profile),
     }));
   },
 }));
