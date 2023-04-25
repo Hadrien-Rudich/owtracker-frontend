@@ -40,7 +40,7 @@ const LogInForm = () => {
         <div className=" inputandbutton_container flex flex-col items-center justify-evenly bg-inactiveColor text-mainText w-60 h-60 shadow-lg rounded-sm">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">
-              <p className="">Email</p>
+              <p className="text-xs">Email</p>
               <input
                 className="inner-shadow shadow-md"
                 value={email}
@@ -50,7 +50,7 @@ const LogInForm = () => {
               />
             </label>
             <label type="password">
-              <p className=" ">Password</p>
+              <p className="text-xs">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
@@ -64,14 +64,14 @@ const LogInForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm"
+              className="w-16 h-6 text-sm text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm"
             >
               <p className="">Cancel</p>
             </button>
             <button
               onClick={handleLogIn}
               type="submit"
-              className="w-16 h-6 text-secondaryText bg-thirdColor  hover:scale-110 shadow-md rounded-sm"
+              className="w-16 h-6 text-sm text-secondaryText bg-thirdColor  hover:scale-110 shadow-md rounded-sm"
             >
               <p className="">Log in</p>
             </button>

@@ -1,29 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { gameReportStore } from "../../../store/gameReportStore";
 import HeroesMenu from "./HeroesMenu";
 
 const HeroesRoles = () => {
-  const { role, addRole, toggleRoleModal } = gameReportStore();
-  const [heroRoles, setHeroRoles] = useState([
-    {
-      label: "tank",
-      icon: "Tank_icon.svg",
-    },
-    {
-      label: "damage",
-      icon: "Damage_icon.svg",
-    },
-    {
-      label: "support",
-      icon: "Support_icon.svg",
-    },
-  ]);
+  const { role, addRole, toggleRoleModal, rolesData, clearRole } =
+    gameReportStore();
 
-  const handleRoleModalClick = (selectedRole) => {
-    if (selectedRole === role) {
-      addRole(null);
+  const handleRoleClick = (event) => {
+    if (event.currentTarget.value === role) {
+      clearRole();
     } else {
+      const selectedRole = event.currentTarget.value
       addRole(selectedRole);
     }
     toggleRoleModal();
@@ -52,18 +40,19 @@ const HeroesRoles = () => {
   return (
     <div className="heroescomponent_container flex justify-center ">
       <div className="grid grid-cols-3 items-center h-48 w-1/2">
-        {heroRoles.map((r) => (
+        {rolesData.map((r) => (
           <div key={r.label} className="role_container">
             {role !== r.label && (
               <div className="roleicon_container flex justify-center">
                 <button
+                value={r.label}
                   className="roleicon_image hover:scale-125 drop-shadow-lg"
                   type="button"
-                  onClick={() => handleRoleModalClick(r.label)}
+                  onClick={handleRoleClick}
                 >
                   <img
                     className=" h-10 filter hover:brightness-200"
-                    src={`images/roles/${r.icon}`}
+                    src={`images/roles/${r.imageUrl}`}
                     alt="role icon"
                   />
                 </button>

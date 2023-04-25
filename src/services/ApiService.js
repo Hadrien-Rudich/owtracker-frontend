@@ -15,18 +15,31 @@ export const fetchHeroesData = async () => {
   return await fetchData(endpoint);
 };
 
+export const fetchRolesData = async () => {
+  const endpoint = "http://localhost:3001/roles";
+  return await fetchData(endpoint);
+};
+
 export const fetchMapsData = async () => {
   const endpoint = "http://localhost:3001/maps";
   return await fetchData(endpoint);
 };
+
+export const fetchTypesData = async () => {
+  const endpoint = "http://localhost:3001/types";
+  return await fetchData(endpoint);
+};
+
 export const fetchHistoryData = async () => {
   const endpoint = "http://localhost:3001/history";
   return await fetchData(endpoint);
 };
+
 export const fetchUserData = async () => {
   const endpoint = "http://localhost:3001/user/1";
   return await fetchData(endpoint);
 };
+
 export const fetchProfilesData = async () => {
   const endpoint = "http://localhost:3001/profiles";
   return await fetchData(endpoint);
@@ -48,7 +61,7 @@ export const addUserProfileToDb = async (profile) => {
     console.error("Failed to fetch profiles data", error);
     return;
   }
-}
+};
 
 export const deleteProfileFromDb = async (profile) => {
   try {
@@ -66,4 +79,4 @@ export const deleteProfileFromDb = async (profile) => {
     console.error("Failed to fetch profiles data", error);
     return;
   }
-}
+};

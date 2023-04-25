@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { fetchMapsData } from "../../../services/ApiService";
-import MapsTypes from "./MapsTypes";
+import { fetchMapsData, fetchTypesData } from "../../../services/ApiService";
+import MapTypes from "./MapTypes";
 import MapsCarousel from "./MapsCarousel";
 import { gameReportStore } from "../../../store/gameReportStore";
 
 const Maps = () => {
-  const { clearMapType, toggleMapModal, addMapsData } = gameReportStore();
+  const { clearMapType, toggleMapModal, addMapsData, addTypesData } =
+    gameReportStore();
 
   useEffect(() => {
     async function getMapsData() {
@@ -18,6 +19,19 @@ const Maps = () => {
     }
 
     getMapsData();
+  }, []);
+
+  useEffect(() => {
+    async function getTypesData() {
+      try {
+        const data = await fetchTypesData();
+        addTypesData(data);
+      } catch (error) {
+        console.error("Failed to fetch maps data", error);
+      }
+    }
+
+    getTypesData();
   }, []);
 
   const mapModalRef = useRef(null);
@@ -39,17 +53,14 @@ const Maps = () => {
 
   return (
     <div className="maps_container flex justify-center h-48">
-    <div
-      ref={mapModalRef}
-      className="w-1/2"
-    >
-      <div className="maptype_container h-16">
-        <MapsTypes />
+      <div ref={mapModalRef} className="w-1/2">
+        <div className="maptype_container h-16">
+          <MapTypes />
+        </div>
+        <div className="maps_container h-32">
+          <MapsCarousel />
+        </div>
       </div>
-      <div className="maps_container h-32">
-        <MapsCarousel />
-      </div>
-    </div>
     </div>
   );
 };

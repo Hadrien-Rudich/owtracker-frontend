@@ -52,7 +52,7 @@ const HeroesMenu = () => {
       <div ref={heroModalRef}  className="roleheroes_container flex justify-center">
         <div className="flex flex-wrap justify-center">
           {heroesData
-            .filter((hero) => hero.role === role)
+            .filter((hero) => hero.role === role.toLowerCase())
             .map((hero) => (
               <button
                 className="bg-inactiveColor hover:bg-activeColor relative shadow-lg"

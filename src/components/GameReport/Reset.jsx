@@ -21,7 +21,7 @@ const Reset = () => {
 
   return (
     <div className=''>
-      <button type="reset" onClick={handleClick} className='w-16 h-6 text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm'>
+      <button type="reset" onClick={handleClick} className='w-16 h-6 text-sm text-mainText  bg-secondaryColor  hover:scale-110 shadow-md rounded-sm'>
 Reset
       </button>
     </div>

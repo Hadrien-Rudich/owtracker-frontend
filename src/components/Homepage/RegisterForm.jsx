@@ -44,7 +44,7 @@ const RegisterForm = () => {
         <div className=" inputandbutton_container flex flex-col items-center justify-evenly  bg-inactiveColor text-mainText shadow-lg w-60 h-72 rounded-sm">
           <div className="input_container flex flex-col gap-4 text-black">
             <label type="email">
-              <p className="">Email</p>
+              <p className="text-xs">Email</p>
               <input
                 value={email}
                 onChange={handleEmailChange}
@@ -54,7 +54,7 @@ const RegisterForm = () => {
               />
             </label>
             <label type="password">
-              <p className="">Password</p>
+              <p className="text-xs">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
@@ -64,7 +64,7 @@ const RegisterForm = () => {
               />
             </label>
             <label type="password">
-              <p className="">Confirm Password</p>
+              <p className="text-xs">Confirm Password</p>
               <input
                 onChange={handleConfirmPasswordChange}
                 value={confirmPassword}
@@ -78,14 +78,14 @@ const RegisterForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="text-mainText  bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
+              className="text-sm text-mainText bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
             >
               Cancel
             </button>
             <button
               onClick={handleRegister}
               type="submit"
-              className="text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
+              className="text-sm text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
             >
               Register
             </button>
