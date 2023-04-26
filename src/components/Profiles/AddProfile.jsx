@@ -1,50 +1,72 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { profileStore } from "../../store/profileStore";
 import { addUserProfileToDb } from "../../services/ApiService";
 import { ImPlus, ImCross } from "react-icons/im";
 
 const AddProfile = () => {
-  const { newProfile, setNewProfile, addNewProfile, clearNewProfile } = profileStore();
+  const { newProfile, setNewProfile, addNewProfile, clearNewProfile } =
+    profileStore();
   const [inputField, setInputField] = useState(false);
-  const [isInputEmpty, setIsInputEmpty] = useState(true);
 
   const handleOnChange = (e) => {
     setNewProfile(e.target.value);
-    setIsInputEmpty(!e.target.value);
   };
 
   const handleClick = () => {
-    setInputField(!inputField);
+    setInputField(true);
+  };
+  const handleCrossClick = () => {
+    clearNewProfile();
+    setInputField(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isInputEmpty) {
-      alert("Please enter a profile name");
+    if (newProfile === "") {
       return;
+    } else {
+      addNewProfile(newProfile);
+      addUserProfileToDb(newProfile);
+      setInputField(false);
+      clearNewProfile();
     }
-    addNewProfile(newProfile);
-    addUserProfileToDb(newProfile);
-    setInputField(false);
-    clearNewProfile();
-    setIsInputEmpty(true);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    } else if (e.key === "Escape") {
+      clearNewProfile();
+      setInputField(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [inputField]);
+
   return (
-    <div className="flex flex-col items-center justify-center pb-4 w-60">
+    <div className="addprofile_container pb-4 flex justify-center">
       <button onClick={handleClick} type="button" className="">
         {!inputField && (
-          <div className="flex items-center justify-center gap-2 w-6 h-6 text-secondaryText bg-thirdColor hover:scale-110 shadow-md rounded-sm">
+          <div className="addbutton_container flex items-center justify-center w-6 h-6 text-secondaryText bg-thirdColor hover:scale-110 shadow-md rounded-sm ">
             <ImPlus className="scale-75" />
           </div>
         )}
       </button>
       {inputField && (
-        <form onSubmit={handleSubmit} method="post">
-          <div className="form_container flex">
-            <label type="text">
+        <form onSubmit={handleSubmit}>
+          <div className="form_container h-6 flex gap-2">
+            <button
+              className="scale-75 hover:scale-90"
+              onClick={handleCrossClick}
+            >
+              <ImCross />
+            </button>
+            <label>
               <input
-                className="w-28 rounded-sm"
+                className="w-24"
                 name="profile"
                 autoFocus
                 required
@@ -53,17 +75,10 @@ const AddProfile = () => {
                 type="text"
               />
             </label>
-            <div className="button_container flex gap-2">
-              <button
-                className="h-6 w-10 text-secondaryText bg-thirdColor hover:scale-110 rounded-sm shadow-sm"
-                type="submit"
-              >
-                Add
-              </button>
-              <button className="scale-75" onClick={() => setInputField(false)}>
-                <ImCross />
-              </button>
-            </div>
+
+            <button type="submit" className="scale-75 hover:scale-90">
+              <ImPlus />
+            </button>
           </div>
         </form>
       )}

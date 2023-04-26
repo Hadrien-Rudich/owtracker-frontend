@@ -10,7 +10,7 @@ import {
   deleteProfileFromDb,
 } from "../../services/ApiService";
 
-const Profile = () => {
+const ProfilesList = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
@@ -21,7 +21,7 @@ const Profile = () => {
     setProfile,
     newProfile,
     deleteProfile,
-    clearProfile
+    clearProfile,
   } = profileStore();
 
   useEffect(() => {
@@ -46,13 +46,11 @@ const Profile = () => {
 
   const handleClick = (e) => {
     if (profile === e.target.value) {
-      clearProfile()
+      clearProfile();
     } else {
-
-      const selectedProfile = e.target.value
-      setProfile(selectedProfile)
+      const selectedProfile = e.target.value;
+      setProfile(selectedProfile);
     }
-    
   };
 
   const handleDeleteClick = (value) => {
@@ -61,28 +59,25 @@ const Profile = () => {
   };
 
   return (
-    <div className=" flex flex-col items-center my-12">
-      <div className="bg-inactiveColor flex flex-col items-center gap-3 py-4 w-60 rounded shadow-lg">
-        <AddProfile />
-
-        {profilesData.map((p) => (
-          <div
-            key={p.id}
-            className={`${
-              p.label === profile
-                ? "scale-110 bg-activeColor"
-                : "bg-activeGrayColor hover:scale-110"
-            } profile_container flex items-center justify-center content-center hover:bg-activeColor rounded-sm shadow-sm `}
-          >
-            <button
-              value={p.label.toLowerCase()}
-              onClick={handleClick}
-              type="button"
-              className="w-32 h-6 text-xs"
+        <div className="flex flex-col gap-2 rounded-sm shadow-sm">
+              {profilesData.map((p) => (
+            <div
+              key={p.id}
+              className={`${
+                p.label.toLowerCase() === profile.toLowerCase()
+                  ? "scale-110 bg-activeColor"
+                  : "bg-activeGrayColor hover:scale-110"
+              } profile_container rounded-sm hover:bg-activeColor`}
             >
-              {p.label}
-            </button>
-            {p.label.toLowerCase() === profile.toLowerCase() && (
+              <button
+                value={p.label.toLowerCase()}
+                onClick={handleClick}
+                type="button"
+                className="w-32 h-8 text-sm"
+              >
+                {p.label}
+              </button>
+              {p.label.toLowerCase() === profile.toLowerCase() && (
                 <button
                   value={p.label}
                   method="delete"
@@ -90,14 +85,14 @@ const Profile = () => {
                   type="button"
                   className="pr-1"
                 >
-                  <ImCross className="scale-50 text-mainText" />
+                  <ImCross className="scale-50 text-mainText hover:text-activeLoss" />
                 </button>
               )}
-          </div>
-        ))}
-      </div>
-    </div>
+            </div>
+          ))}
+        </div>
+
   );
 };
 
-export default Profile;
+export default ProfilesList;

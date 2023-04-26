@@ -36,13 +36,13 @@ const LogInForm = () => {
 
   return (
     <form action="submit">
-      <div className="login_container flex justify-center my-12">
-        <div className=" inputandbutton_container flex flex-col items-center justify-evenly bg-inactiveColor text-mainText w-60 h-60 shadow-lg rounded-sm">
-          <div className="input_container flex flex-col gap-4 text-black">
+      <div className="login_container flex justify-center my-24">
+        <div className=" inputandbutton_container flex flex-col justify-center items-center gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
+          <div className="input_container flex flex-col gap-4">
             <label type="email">
-              <p className="text-xs">Email</p>
+              <p className="text-sm">Email</p>
               <input
-                className="inner-shadow shadow-md"
+                className="inner-shadow shadow-md rounded-sm"
                 value={email}
                 onChange={handleEmailChange}
                 required
@@ -50,17 +50,17 @@ const LogInForm = () => {
               />
             </label>
             <label type="password">
-              <p className="text-xs">Password</p>
+              <p className="text-sm">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
                 type="password"
                 required
-                className="inner-shadow shadow-md"
+                className="inner-shadow shadow-md rounded-sm"
               />
             </label>
           </div>
-          <div className="button_container flex flex-row gap-4">
+          <div className="button_container flex gap-4">
             <button
               onClick={handleCancel}
               type="reset"

@@ -9,7 +9,7 @@ import RegisterForm from "./Homepage/RegisterForm";
 import HomePage from "./Homepage/HomePage";
 import History from "./History/History";
 import Account from "./Account";
-import Profile from "./Profiles/Profiles";
+import ProfilesPage from "../components/Profiles/ProfilesPages";
 import Stats from "./Stats/Stats";
 import Maps from "./GameReport/Maps/MapsCarousel";
 
@@ -29,7 +29,7 @@ function App() {
         <Route path="/game" element={<Gamereport />} />
         <Route path="/history" element={<History />} />
         <Route path="/stats" element={<Stats />} />
-        <Route path="/profiles" element={<Profile />} />
+        <Route path="/profiles" element={<ProfilesPage />} />
         <Route path="/account" element={<Account />} />
         <Route path="/slick" element={<Maps />} />
       </Routes>
