@@ -21,10 +21,11 @@ module.exports = {
       activeWin: "#6BBF59",
       activeDraw: " #F5B041",
       activeLoss: "#D9534F",
-    },
-
-    extend: {
-      
-    plugins: [],
+    }
   },
-}};
+
+  extend: {
+    
+  },
+
+};

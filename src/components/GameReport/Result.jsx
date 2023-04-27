@@ -45,7 +45,7 @@ const Result = () => {
               ? `hover:bg-activeColor hover:text-mainText opacity-50`
               : null
               
-          } w-1/2  h-8 rounded-sm hover:opacity-100`}
+          } w-1/2  h-8 tracking-widest rounded-sm hover:opacity-100`}
           > {outcome.label}
           </button>
         ))}

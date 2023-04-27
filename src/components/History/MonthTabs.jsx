@@ -41,7 +41,7 @@ const MonthTabs = () => {
               : `text-mainColor
             `
           }
-        text-sm
+      
         
         
         `}

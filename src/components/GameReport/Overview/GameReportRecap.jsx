@@ -16,7 +16,7 @@ const GameReportRecap = () => {
             )?.imageUrl}`}            alt=""
           />
           <div className="absolute inset-0">
-            <p className="absolute top-1/2 left-0 transform -translate-y-1/2 text-secondaryText  text-sm px-1 bg-mainText bg-opacity-40">
+            <p className="absolute top-1/2 left-0 transform -translate-y-1/2 text-secondaryText px-1 bg-mainText bg-opacity-40">
               {map}
             </p>
           </div>

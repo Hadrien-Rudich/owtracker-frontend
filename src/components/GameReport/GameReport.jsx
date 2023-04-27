@@ -23,7 +23,8 @@ const Gamereport = () => {
   });
 
   return (
-    <div className="gamereport_container my-24">
+    // <div className="gamereport_container flex justify-center">
+    <div className=" my-24 ">
       <Result />
       <Heroes />
       <Maps />
@@ -35,6 +36,8 @@ const Gamereport = () => {
         <SubmitForm />
       </div>
     </div>
+    // </div>
+
   );
 };
 

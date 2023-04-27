@@ -1,23 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: 'Big Noodle Titling';
   src: url('/styles/big_noodle_titling.ttf') format('truetype');
   font-weight: normal;
-  font-style: normal;
-  
+  font-style: normal;  
 }
 
 
 
 body {
   font-family: 'Big Noodle Titling', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
   background-color: #347FD3 ;
-  /* background-color: #C4D9F2 ; */
-  /* letter-spacing: 0.025em !important; */
+  /* font-weight: bolder;  */
+  font-size: 1rem;
+  /* letter-spacing: 0.1rem; */
+
+
+/*   
+  background-image: url('/images/Desktop_Outro_Characters.png');
+  background-repeat: no-repeat;
+  background-size: cover; */
 
 }
+
+.button {
+  @apply w-24 h-8 hover:scale-110 tracking-widest shadow-md rounded-sm;
+}
+
+.button.validate {
+  @apply bg-thirdColor;
+}
+
+.button.cancel {
+  @apply bg-secondaryColor;
+}
+  
+

@@ -59,8 +59,9 @@ const ProfilesList = () => {
   };
 
   return (
-        <div className="flex flex-col gap-2 rounded-sm shadow-sm">
+        <div className="flex flex-col gap-4 rounded-sm shadow-sm">
               {profilesData.map((p) => (
+                <div className="profilelist_container flex ml-6 gap-4">
             <div
               key={p.id}
               className={`${
@@ -73,19 +74,20 @@ const ProfilesList = () => {
                 value={p.label.toLowerCase()}
                 onClick={handleClick}
                 type="button"
-                className="w-32 h-8 text-sm"
+                className="w-40 h-10 tracking-widest truncate"
               >
                 {p.label}
               </button>
+              </div>
               {p.label.toLowerCase() === profile.toLowerCase() && (
                 <button
                   value={p.label}
                   method="delete"
                   onClick={() => handleDeleteClick(p.label)}
                   type="button"
-                  className="pr-1"
+                  className=""
                 >
-                  <ImCross className="scale-50 text-mainText hover:text-activeLoss" />
+                  <ImCross className="scale-75 text-mainText hover:text-activeLoss" />
                 </button>
               )}
             </div>

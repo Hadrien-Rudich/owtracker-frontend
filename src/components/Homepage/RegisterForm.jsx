@@ -44,7 +44,7 @@ const RegisterForm = () => {
       <div className=" inputandbutton_container flex flex-col justify-center items-center gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
       <div className="input_container flex flex-col gap-4">
             <label type="email">
-              <p className="text-sm">Email</p>
+              <p className="">Email</p>
               <input
                 value={email}
                 onChange={handleEmailChange}
@@ -54,7 +54,7 @@ const RegisterForm = () => {
               />
             </label>
             <label type="password">
-              <p className="text-sm">Password</p>
+              <p className="">Password</p>
               <input
                 onChange={handlePasswordChange}
                 value={password}
@@ -64,7 +64,7 @@ const RegisterForm = () => {
               />
             </label>
             <label type="password">
-              <p className="text-sm">Confirm Password</p>
+              <p className="">Confirm Password</p>
               <input
                 onChange={handleConfirmPasswordChange}
                 value={confirmPassword}
@@ -78,14 +78,14 @@ const RegisterForm = () => {
             <button
               onClick={handleCancel}
               type="reset"
-              className="text-sm text-mainText bg-secondaryColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
+              className="button cancel"
             >
               Cancel
             </button>
             <button
               onClick={handleRegister}
               type="submit"
-              className="text-sm text-secondaryText bg-thirdColor w-16 h-6 hover:scale-110 shadow-md rounded-sm"
+              className="button validate"
             >
               Register
             </button>
