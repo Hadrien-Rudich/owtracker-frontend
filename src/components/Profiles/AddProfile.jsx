@@ -57,16 +57,16 @@ const AddProfile = () => {
       </button>
       {inputField && (
         <form onSubmit={handleSubmit}>
-          <div className="form_container h-6 flex gap-2">
+          <div className="form_container h-6 flex gap-4">
             <button
               className="scale-75 hover:scale-90"
               onClick={handleCrossClick}
             >
-              <ImCross />
+              <ImCross className=""/>
             </button>
             <label>
               <input
-                className="w-24"
+                className="w-24 text-center text-sm inner-shadow shadow-md rounded-sm"
                 name="profile"
                 autoFocus
                 required

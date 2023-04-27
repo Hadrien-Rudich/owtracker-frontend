@@ -28,7 +28,7 @@ const MapTypes = () => {
         <div className="">
           <button
             type="button"
-            key={type.label}
+            key={type.id}
             onClick={handleMapTypeClick}
             value={type.label.toLowerCase()}
             className={`${
