@@ -5,7 +5,7 @@ import MapsCarousel from "./MapsCarousel";
 import { gameReportStore } from "../../../store/gameReportStore";
 
 const Maps = () => {
-  const { clearMapType, toggleMapModal, addMapsData, addTypesData } =
+  const { clearMapType, toggleMapModal, addMapsData, addTypesData, map } =
     gameReportStore();
 
   useEffect(() => {
@@ -52,12 +52,18 @@ const Maps = () => {
   }, [mapModalRef]);
 
   return (
-    <div className="maps_container flex justify-center h-48">
-      <div ref={mapModalRef} className="w-1/2">
-        <div className="maptype_container h-16">
+    <div
+      className={`${
+        map !==  null
+          ? ``
+          : `testshadow2`
+      } maps_container h-80`}
+    >
+      <div ref={mapModalRef} className="">
+        <div className="maptype_container py-10">
           <MapTypes />
         </div>
-        <div className="maps_container h-32">
+        <div className="maps_container h-60 flex justify-center">
           <MapsCarousel />
         </div>
       </div>

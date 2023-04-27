@@ -21,13 +21,13 @@ const MapsCarousel = () => {
   };
 
   return (
-    <div className="carousel_container">
+    <div className="carousel_container w-3/4">
       <Slider {...carouselSettings}>
         {mapType !== null &&
           mapsData
             .filter((map) => map.type === mapType)
             .map((m) => (
-              <div className="mapimage_container w-1/3" key={m.slug}>
+              <div className="mapimage_container" key={m.slug}>
                 <button
                   className="bg-inactiveColor hover:bg-activeColor relative"
                   value={m.slug}

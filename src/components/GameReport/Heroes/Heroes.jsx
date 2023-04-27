@@ -4,7 +4,7 @@ import { gameReportStore } from "../../../store/gameReportStore";
 import HeroesRoles from "./HeroesRoles";
 
 const Heroes = () => {
-  const { addHeroesData, addRolesData } = gameReportStore();
+  const { addHeroesData, addRolesData, heroes } = gameReportStore();
 
   useEffect(() => {
     async function getHeroesData() {
@@ -33,7 +33,7 @@ const Heroes = () => {
   }, []);
 
   return (
-    <div className="heroes_container">
+    <div className={`${heroes.length !== 0 ? `` : `testshadow2`} heroes_container`}>
       <HeroesRoles />
     </div>
   );

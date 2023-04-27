@@ -25,8 +25,8 @@ const Result = () => {
     };
 
   return (
-    <div className="result_container flex justify-center">
-      <div className="resultoutcome_container flex justify-center w-1/2 bg-inactiveColor text-inactiveText rounded-sm shadow-lg">
+    <div  className={`${gameResult !== null ? `` : `testshadow2`} result_container flex justify-center`}>
+      <div className="resultoutcome_container flex justify-center w-full  text-activeColor rounded-sm">
         {outcomes.map((outcome) => (
           
           <button

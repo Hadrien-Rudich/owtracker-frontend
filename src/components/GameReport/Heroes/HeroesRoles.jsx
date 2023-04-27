@@ -38,15 +38,15 @@ const HeroesRoles = () => {
   }, [heroModalRef]);
 
   return (
-    <div className="heroescomponent_container flex justify-center ">
-      <div className="grid grid-cols-3 items-center h-48 w-1/2">
+    <div className="heroescomponent_container justify-evenly ">
+      <div className="grid grid-cols-3 items-center h-48 ">
         {rolesData.map((r) => (
           <div key={r.label} className="role_container">
             {role !== r.label && (
               <div className="roleicon_container flex justify-center">
                 <button
                 value={r.label}
-                  className="roleicon_image hover:scale-125 drop-shadow-lg"
+                  className="roleicon_image hover:scale-125 "
                   type="button"
                   onClick={handleRoleClick}
                 >
