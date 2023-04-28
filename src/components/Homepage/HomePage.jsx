@@ -17,8 +17,8 @@ const HomePage = () => {
   });
 
   return (
-    <div className="homepage_container flex justify-center text-secondaryText my-24">
-      <div className="button_container flex flex-col justify-center items-center gap-4 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
+    <div className="homepage_container flexdiv my-24">
+      <div className="button_container flexdiv col gap-4 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
         <Link to="/login">
           <button
             className="button bg-fourthColor"

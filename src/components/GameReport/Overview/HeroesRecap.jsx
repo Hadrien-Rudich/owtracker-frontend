@@ -8,9 +8,9 @@ const HeroesOverview = () => {
 
 
   return (
-         <div className="selectedHero_container flex justify-center">
+         <div className="selectedHero_container flexdiv">
         {heroes.map((hero) => (
-          <div key={hero} className="flex justify-center">
+          <div key={hero} className="flexdiv">
             <img
               className="h-10"
               src={`images/heroes/${heroesData.find(

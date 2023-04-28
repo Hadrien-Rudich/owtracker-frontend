@@ -23,7 +23,7 @@ const MapTypes = () => {
   };
 
   return (
-    <div className="flex justify-around items-center content-center text-inactiveText rounded-sm">
+    <div className="flex justify-around items-center content-center rounded-sm">
       {typesData.map((type) => (
         <div className="">
           <button
@@ -35,7 +35,7 @@ const MapTypes = () => {
               mapType === type.label.toLowerCase()
                 ? "scale-125 filter brightness-200"
                 : "filter hover:scale-125 hover:brightness-200"
-            } hover:text-mainText rounded-sm flex justify-center items-center drop-shadow-lg`}
+            } flexdiv rounded-sm drop-shadow-lg`}
           >
             <img
               className="h-10"

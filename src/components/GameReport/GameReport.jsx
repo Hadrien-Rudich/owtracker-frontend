@@ -15,7 +15,7 @@ const Gamereport = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
-  const { map, heroes, gameResult} = gameReportStore();
+  const { map, heroes, gameResult } = gameReportStore();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -25,34 +25,39 @@ const Gamereport = () => {
   });
 
   return (
-    <div className="gamereport_container flex justify-center">
-    <div className=" my-24 w-1/2">
-      <div className={`${gameResult !== null ? `` : `testshadow2`} resultcomponent_container`}>
-      <Result />
-      </div>
-     <div className={`${heroes.length !== 0 ? `` : `testshadow2`} heroes_componentcontainer`}>
-     <Heroes />
-     </div>
-  <div    className={`${
-        map !==  null
-          ? ``
-          : `testshadow2`
-      } mapscomponent_container`}>
-  
-  
-  <Maps />
-  </div>
-  
-      <GameReportRecap />
+    <div className="gamereport_container flexdiv">
+      <div className=" my-24 w-1/2">
+        <div
+          className={`${
+            gameResult !== null ? `` : `testshadow2`
+          } resultcomponent_container`}
+        >
+          <Result />
+        </div>
+        <div
+          className={`${
+            heroes.length !== 0 ? `` : `testshadow2`
+          } heroes_componentcontainer`}
+        >
+          <Heroes />
+        </div>
+        <div
+          className={`${
+            map !== null ? `` : `testshadow2`
+          } mapscomponent_container`}
+        >
+          <Maps />
+        </div>
 
-      <div className="flex flex-row justify-center gap-10">
-        <Reset />
+        <GameReportRecap />
 
-        <SubmitForm />
+        <div className="flexdiv gap-10">
+          <Reset />
+
+          <SubmitForm />
+        </div>
       </div>
     </div>
-    </div>
-
   );
 };
 

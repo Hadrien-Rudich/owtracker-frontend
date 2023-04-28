@@ -8,9 +8,9 @@ const MapsOverview = () => {
 
 
   return (
-         <div className="selectedHero_container flex justify-center">
+         <div className="selectedHero_container flexdiv">
         
-          <div key={map} className="flex justify-center">
+          <div key={map} className="flexdiv">
             <img
               className="h-16"
               src={`images/maps/${mapsData.find(

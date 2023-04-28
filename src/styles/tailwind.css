@@ -33,7 +33,7 @@ body {
 }
 
 .button {
-  @apply w-24 h-8 hover:scale-110 tracking-widest shadow-md rounded-sm;
+  @apply w-24 h-8 hover:scale-110 tracking-widest shadow-md rounded-sm text-secondaryText;
 }
 
 .button.validate {
@@ -41,9 +41,25 @@ body {
 }
 
 .button.cancel {
-  @apply bg-secondaryColor;
+  @apply bg-secondaryColor text-mainText ;
 }
-  
+
+.button.profile {
+  @apply w-36 h-10 tracking-widest truncate rounded-sm shadow-md text-mainText;
+}
+.input {
+  @apply w-36 text-center shadow-inner rounded-sm;
+}
+
+.flexdiv {
+  @apply flex items-center justify-center content-center ;
+}
+.flexdiv.col {
+  @apply flex flex-col items-center justify-center content-center ;
+}
+
+
+
 
 .testshadow {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;

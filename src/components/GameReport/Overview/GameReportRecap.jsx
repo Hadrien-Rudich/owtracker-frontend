@@ -5,9 +5,9 @@ const GameReportRecap = () => {
   const { map, mapsData, heroes, heroesData, gameResult } = gameReportStore();
 
   return (
-    <div className="historyDetails_container flex flex-col items-center gap  text-secondaryText">
+    <div className="historyDetails_container flexdiv col gap  text-secondaryText">
     {map !== null && heroes.length > 0 && gameResult !== null &&
-      <div className="gameHistory_container w-1/2 flex flex-row items-center h-12 bg-inactiveColor text-mainText border border-activeColor">
+      <div className="gameHistory_container w-1/2 flexdiv row h-12 bg-inactiveColor text-mainText border border-activeColor">
         <div className="relative mapImage_container w-5/12">
           <img
             className="h-11 w-full object-cover"
@@ -21,7 +21,7 @@ const GameReportRecap = () => {
             </p>
           </div>
         </div>
-        <div className="heroImage_container w-5/12 flex flex-row justify-center gap-px ">
+        <div className="heroImage_container w-5/12 flexdiv gap-px ">
           {heroes.map((hero) => (
             <img
               key={hero}
@@ -40,7 +40,7 @@ const GameReportRecap = () => {
               ? `bg-activeLoss`
               : `bg-activeDraw`
           }     
-            result_container flex flex-row justify-center w-1/12 `}
+            result_container flexdiv w-1/12 `}
         >
           <p>{gameResult}</p>
         </div>

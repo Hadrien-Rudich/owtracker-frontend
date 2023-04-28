@@ -42,8 +42,8 @@ const ProfilesPages = () => {
   }, [addProfilesData, newProfile]);
 
   return (
-    <div className="profilepage_container flex flex-col items-center my-24">
-      <div className="w-60 py-8 bg-inactiveColor flex justify-center items-center content-center rounded-sm shadow-lg">
+    <div className="profilepage_container flexdiv my-24">
+      <div className="flexdiv w-60 py-8 bg-inactiveColor  rounded-sm shadow-lg">
         <div className="w-52">
           <AddProfile />
           <ProfilesList />

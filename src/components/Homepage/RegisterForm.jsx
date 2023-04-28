@@ -40,9 +40,9 @@ const RegisterForm = () => {
 
   return (
     <form action="submit">
-      <div className="register_container flex justify-center my-24">
-      <div className=" inputandbutton_container flex flex-col justify-center items-center gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
-      <div className="input_container flex flex-col gap-4">
+      <div className="register_container flexdiv row my-24">
+      <div className=" inputandbutton_container flexdiv col gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
+      <div className="input_container flexdiv col gap-4">
             <label type="email">
               <p className="">Email</p>
               <input
@@ -50,7 +50,7 @@ const RegisterForm = () => {
                 onChange={handleEmailChange}
                 type="email"
                 required
-                className="inner-shadow shadow-md rounded-sm"
+                className="input"
               />
             </label>
             <label type="password">
@@ -60,7 +60,7 @@ const RegisterForm = () => {
                 value={password}
                 type="password"
                 required
-                className="inner-shadow shadow-md rounded-sm"
+                className="input"
               />
             </label>
             <label type="password">
@@ -70,11 +70,11 @@ const RegisterForm = () => {
                 value={confirmPassword}
                 type="password"
                 required
-                className="inner-shadow shadow-md rounded-sm"
+                className="input"
               />
             </label>
           </div>
-          <div className="button_container flex gap-4">
+          <div className="button_container flexdiv gap-4">
             <button
               onClick={handleCancel}
               type="reset"

@@ -48,9 +48,9 @@ const HeroesMenu = () => {
   }, [heroModalRef]);
 
   return (
-    <div className="heroescomponent_container flex justify-center ">
-      <div ref={heroModalRef}  className="roleheroes_container flex justify-center">
-        <div className="flex flex-wrap justify-center">
+    <div className="heroescomponent_container">
+      <div ref={heroModalRef}  className="roleheroes_container ">
+        <div className="flexdiv flex-wrap">
           {heroesData
             .filter((hero) => hero.role === role.toLowerCase())
             .map((hero) => (

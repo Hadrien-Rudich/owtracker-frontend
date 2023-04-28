@@ -16,11 +16,11 @@ const HistoryDetails = () => {
   const filteredHistory = filterHistory();
 
   return (
-    <div className="historyDetails_container flex flex-col items-center gap  text-secondaryText">
+    <div className="historyDetails_container flexdiv col gap  text-secondaryText">
       {filteredHistory.map((history) => (
         <div
           key={history.id}
-          className="gameHistory_container w-1/2 flex flex-row items-center h-12 bg-inactiveColor hover:bg-activeColor text-mainText border border-activeColor"
+          className="gameHistory_container w-1/2 flexdiv  h-12 bg-inactiveColor hover:bg-activeColor text-mainText border border-activeColor"
         >
           <div className="relative mapImage_container w-5/12">
             <img
@@ -34,7 +34,7 @@ const HistoryDetails = () => {
               </p>
             </div>
           </div>
-          <div className="heroImage_container w-5/12 flex flex-row justify-center gap-px ">
+          <div className="heroImage_container w-5/12 flexdiv gap-px ">
             {history.heroesImageUrl.map((heroImage, index) => (
               <img
                 key={index}
@@ -51,7 +51,7 @@ const HistoryDetails = () => {
               
               `bg-activeDraw`
             }     
-            result_container flex flex-row justify-center w-1/12 `}
+            result_container flexdiv w-1/12 `}
           >
             <p>{history.result}</p>
           </div>

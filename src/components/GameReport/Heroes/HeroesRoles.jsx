@@ -43,7 +43,7 @@ const HeroesRoles = () => {
         {rolesData.map((r) => (
           <div key={r.label} className="role_container">
             {role !== r.label && (
-              <div className="roleicon_container flex justify-center">
+              <div className="roleicon_container ">
                 <button
                 value={r.label}
                   className="roleicon_image hover:scale-125 "

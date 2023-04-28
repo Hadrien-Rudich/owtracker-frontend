@@ -26,8 +26,8 @@ const MonthTabs = () => {
   };
 
   return (
-  <div className="flex justify-center">
-    <div className="monthTab_container flex justify-center items-center gap-2 w-1/2  py-2 bg-secondaryColor">
+  <div className="flexdiv">
+    <div className="monthTab_container flexdiv gap-2 w-1/2  py-2 bg-secondaryColor">
       {months.map((month) => (
         <button
           key={month.index}

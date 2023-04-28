@@ -47,11 +47,11 @@ const AddProfile = () => {
   }, [inputField]);
 
   return (
-    <div className="addprofile_container h-12 pb-6 flex justify-center">
+    <div className="addprofile_container h-12 pb-6 flexdiv">
       <button onClick={handleClick} type="button">
         {!inputField && (
           <div className="addbutton_container">
-            <ImPlus className="w-8 h-8 text-thirdColor scale-75 hover:scale-90" />
+            <ImPlus className="flex w-8 h-8 text-thirdColor scale-75 hover:scale-90" />
           </div>
         )}
       </button>
@@ -62,20 +62,20 @@ const AddProfile = () => {
               className="scale-75 hover:scale-90"
               onClick={handleCrossClick}
             >
-              <ImCross className=""/>
+              <ImCross className="" />
             </button>
             <label>
-  <input
-    className="w-24 text-center inner-shadow shadow-md rounded-sm"
-    name="profile"
-    autoFocus
-    required
-    value={newProfile}
-    onChange={handleOnChange}
-    onKeyDown={handleKeyDown}
-    type="text"
-  />
-</label>
+              <input
+                className="input"
+                name="profile"
+                autoFocus
+                required
+                value={newProfile}
+                onChange={handleOnChange}
+                onKeyDown={handleKeyDown}
+                type="text"
+              />
+            </label>
 
             <button type="submit" className="scale-75 hover:scale-90">
               <ImPlus />

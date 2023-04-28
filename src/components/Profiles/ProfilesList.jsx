@@ -45,10 +45,10 @@ const ProfilesList = () => {
   }, [addProfilesData, newProfile]);
 
   const handleClick = (e) => {
-    if (profile === e.target.value) {
+    if (profile === e.currentTarget.value) {
       clearProfile();
     } else {
-      const selectedProfile = e.target.value;
+      const selectedProfile = e.currentTarget.value;
       setProfile(selectedProfile);
     }
   };
@@ -59,41 +59,36 @@ const ProfilesList = () => {
   };
 
   return (
-        <div className="flex flex-col gap-4 rounded-sm shadow-sm">
-              {profilesData.map((p) => (
-                <div className="profilelist_container flex ml-6 gap-4">
-            <div
-              key={p.id}
-              className={`${
-                p.label.toLowerCase() === profile.toLowerCase()
-                  ? "scale-110 bg-activeColor"
-                  : "bg-activeGrayColor hover:scale-110"
-              } profile_container rounded-sm hover:bg-activeColor`}
+    <div className="profilelist_container flex flex-col gap-4 rounded-sm shadow-sm">
+      {profilesData.map((p) => (
+        <div className="profile_container flex ml-8 gap-4">
+          
+          <button
+            key={p.id}
+            value={p.label.toLowerCase()}
+            onClick={handleClick}
+            type="button"
+            className={`${
+              p.label.toLowerCase() === profile.toLowerCase()
+                ? "scale-110 bg-activeColor"
+                : "bg-activeGrayColor "
+            } profile_button button profile hover:bg-activeColor hover:scale-110`}>
+            {p.label}
+          </button>
+          {p.label.toLowerCase() === profile.toLowerCase() && (
+            <button
+              value={p.label}
+              method="delete"
+              onClick={() => handleDeleteClick(p.label)}
+              type="button"
+              className=""
             >
-              <button
-                value={p.label.toLowerCase()}
-                onClick={handleClick}
-                type="button"
-                className="w-40 h-10 tracking-widest truncate"
-              >
-                {p.label}
-              </button>
-              </div>
-              {p.label.toLowerCase() === profile.toLowerCase() && (
-                <button
-                  value={p.label}
-                  method="delete"
-                  onClick={() => handleDeleteClick(p.label)}
-                  type="button"
-                  className=""
-                >
-                  <ImCross className="scale-75 text-mainText hover:text-activeLoss" />
-                </button>
-              )}
-            </div>
-          ))}
+              <ImCross className="scale-75 text-mainText hover:text-activeLoss" />
+            </button>
+          )}
         </div>
-
+      ))}
+    </div>
   );
 };
 

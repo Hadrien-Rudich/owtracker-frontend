@@ -37,10 +37,10 @@ const Account = () => {
   return (
     
     /// SHOULD I BE MAPPING ON A SINGLE OBJECT IN AN ARRAY? OR SHOULD I DECLARE AN OBJECT
-    <div>
+    <div className="flexdiv col">
       <p>Account</p>
       {userData.map((user) => 
-      <div className="profile_container flex flex-col justify-center w-60 h-72 bg-gray-300"key={user.id}>
+      <div className="profile_container flexdiv col w-60 h-72 bg-gray-300"key={user.id}>
       <p>{user.email}</p>
       <p>{user.battleTag}</p>
       <p>{user.id}</p>
