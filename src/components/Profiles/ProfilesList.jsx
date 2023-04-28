@@ -72,7 +72,7 @@ const ProfilesList = () => {
               p.label.toLowerCase() === profile.toLowerCase()
                 ? "scale-110 bg-activeColor"
                 : "bg-activeGrayColor "
-            } profile_button button profile hover:bg-activeColor hover:scale-110`}>
+            } profilecard_container card profile hover:bg-activeColor hover:scale-110`}>
             {p.label}
           </button>
           {p.label.toLowerCase() === profile.toLowerCase() && (

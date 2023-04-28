@@ -22,7 +22,7 @@ const RegisterForm = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const handleCancel = () => {
+  const handleCancelClick = () => {
     navigate("/");
   };
 
@@ -39,10 +39,10 @@ const RegisterForm = () => {
   });
 
   return (
-    <form action="submit">
-      <div className="register_container flexdiv row my-24">
-      <div className=" inputandbutton_container flexdiv col gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
-      <div className="input_container flexdiv col gap-4">
+    <div className="register_container flexdiv row my-24">
+      <form action="submit">
+        <div className=" inputandbutton_container flexdiv col gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
+          <div className="input_container flexdiv col gap-4">
             <label type="email">
               <p className="">Email</p>
               <input
@@ -76,7 +76,7 @@ const RegisterForm = () => {
           </div>
           <div className="button_container flexdiv gap-4">
             <button
-              onClick={handleCancel}
+              onClick={handleCancelClick}
               type="reset"
               className="button cancel"
             >
@@ -91,8 +91,8 @@ const RegisterForm = () => {
             </button>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

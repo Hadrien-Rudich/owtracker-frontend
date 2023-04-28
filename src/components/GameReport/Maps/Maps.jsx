@@ -5,8 +5,14 @@ import MapsCarousel from "./MapsCarousel";
 import { gameReportStore } from "../../../store/gameReportStore";
 
 const Maps = () => {
-  const { clearMapType, toggleMapModal, addMapsData, addTypesData, map, heroes } =
-    gameReportStore();
+  const {
+    clearMapType,
+    toggleMapModal,
+    addMapsData,
+    addTypesData,
+    map,
+    heroes,
+  } = gameReportStore();
 
   useEffect(() => {
     async function getMapsData() {
@@ -52,13 +58,7 @@ const Maps = () => {
   }, [mapModalRef]);
 
   return (
-    <div
-      className={`${
-        map !==  null
-          ? ``
-          : `testshadow2`
-      } maps_container `}
-    >
+    <div className={`${map !== null ? `` : `testshadow2`} maps_container `}>
       <div ref={mapModalRef} className="">
         <div className="maptype_container py-10">
           <MapTypes />

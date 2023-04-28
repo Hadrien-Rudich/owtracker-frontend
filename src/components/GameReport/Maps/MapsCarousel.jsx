@@ -27,16 +27,16 @@ const MapsCarousel = () => {
           mapsData
             .filter((map) => map.type === mapType)
             .map((m) => (
-              <div className="mapimage_container" key={m.slug}>
+              <div className="mapimage_container" key={m.id}>
                 <button
                   className="bg-inactiveColor hover:bg-activeColor relative"
-                  value={m.slug}
+                  value={m.id}
                   onClick={handleMapClick}
                   type="button"
                 >
                   <img
                     className={`${
-                      map?.includes(m.slug)
+                      map?.includes(m.id)
                         ? " scale-105 bg-activeColor relative z-10 "
                         : "opacity-40"
                     }   hover:opacity-100`}

@@ -8,10 +8,10 @@ import LogInForm from "./Homepage/LogInForm";
 import RegisterForm from "./Homepage/RegisterForm";
 import HomePage from "./Homepage/HomePage";
 import History from "./History/History";
-import Account from "./Account";
-import ProfilesPage from "../components/Profiles/ProfilesPages";
+import ProfilesPage from "./Profiles/Profiles";
 import Stats from "./Stats/Stats";
 import Maps from "./GameReport/Maps/MapsCarousel";
+import Account from "./Account/Account"
 
 
 export const LogContext = createContext();

@@ -7,18 +7,13 @@ import ProfilesList from "./ProfilesList";
 
 import { fetchProfilesData } from "../../services/ApiService";
 
-const ProfilesPages = () => {
+const Profiles = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
   const {
     addProfilesData,
-    profilesData,
-    profile,
-    setProfile,
     newProfile,
-    deleteProfile,
-    clearProfile,
   } = profileStore();
 
   useEffect(() => {
@@ -42,7 +37,7 @@ const ProfilesPages = () => {
   }, [addProfilesData, newProfile]);
 
   return (
-    <div className="profilepage_container flexdiv my-24">
+    <div className="profiles_container flexdiv my-24">
       <div className="flexdiv w-60 py-8 bg-inactiveColor  rounded-sm shadow-lg">
         <div className="w-52">
           <AddProfile />
@@ -53,4 +48,4 @@ const ProfilesPages = () => {
   );
 };
 
-export default ProfilesPages;
+export default Profiles;

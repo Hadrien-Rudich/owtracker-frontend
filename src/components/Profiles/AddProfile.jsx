@@ -66,7 +66,7 @@ const AddProfile = () => {
             </button>
             <label>
               <input
-                className="input"
+                className=" my-2 text-center shadow-inner rounded-sm"
                 name="profile"
                 autoFocus
                 required

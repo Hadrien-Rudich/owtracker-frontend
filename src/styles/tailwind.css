@@ -33,7 +33,7 @@ body {
 }
 
 .button {
-  @apply w-24 h-8 hover:scale-110 tracking-widest shadow-md rounded-sm text-secondaryText;
+  @apply w-24 h-8 hover:scale-110 tracking-wider shadow-md rounded-sm text-secondaryText;
 }
 
 .button.validate {
@@ -44,11 +44,19 @@ body {
   @apply bg-secondaryColor text-mainText ;
 }
 
-.button.profile {
-  @apply w-36 h-10 tracking-widest truncate rounded-sm shadow-md text-mainText;
+.button.modify {
+  @apply w-24 truncate rounded-sm shadow-md text-secondaryText bg-thirdColor;
 }
 .input {
-  @apply w-36 text-center shadow-inner rounded-sm;
+  @apply w-36 h-10 my-2 text-center shadow-inner rounded-sm;
+}
+
+    .card.profile {
+      @apply  w-36 h-10 text-center tracking-wider shadow-inner rounded-sm;
+    }
+
+.input.disabled {
+  @apply w-36 h-10 my-2 bg-secondaryColor text-center shadow-inner rounded-sm;
 }
 
 .flexdiv {
