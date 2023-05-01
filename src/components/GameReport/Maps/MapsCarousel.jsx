@@ -1,5 +1,6 @@
 import React from "react";
 import { gameReportStore } from "../../../store/gameReportStore";
+import { filterMapTypes } from "../../../utils/filters";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,12 +21,13 @@ const MapsCarousel = () => {
     }
   };
 
+  const filteredMaps = filterMapTypes(mapsData, mapType);
+
   return (
     <div className="carousel_container w-3/4">
       <Slider {...carouselSettings}>
         {mapType !== null &&
-          mapsData
-            .filter((map) => map.type === mapType)
+         filteredMaps
             .map((m) => (
               <div className="mapimage_container" key={m.id}>
                 <button

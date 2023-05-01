@@ -1,19 +1,10 @@
 import { historyStore } from "../../store/historyStore";
+import { filterHistory } from "../../utils/filters";
 
 const HistoryDetails = () => {
   const { historyData, currentMonth } = historyStore();
 
-  const filterHistory = () => {
-    if (Number(currentMonth) === 0) {
-      return historyData;
-    } else {
-      return historyData.filter(
-        (game) => Number(game.date.slice(3)) === Number(currentMonth)
-      );
-    }
-  };
-
-  const filteredHistory = filterHistory();
+  const filteredHistory = filterHistory(currentMonth, historyData);
 
   return (
     <div className="historyDetails_container flexdiv col gap  text-secondaryText">

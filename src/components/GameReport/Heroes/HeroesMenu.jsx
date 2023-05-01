@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
-
+import { filterHeroRoles } from "../../../utils/filters";
 import { gameReportStore } from "../../../store/gameReportStore";
+import { toggleHero } from "../../../utils/heroes";
 
 const HeroesMenu = () => {
   const {
@@ -14,20 +15,24 @@ const HeroesMenu = () => {
   } = gameReportStore();
 
   const handleHeroClick = (e) => {
-    toggleHero(e.currentTarget.value);
+    toggleHero(e.currentTarget.value, heroes, addHero, removeHero);
   };
 
-  const toggleHero = (selectedHero) => {
-    const heroInList = heroes.includes(selectedHero);
+  // const toggleHero = (selectedHero) => {
+  //   const heroInList = heroes.includes(selectedHero);
 
-    if (!heroInList) {
-      addHero(selectedHero);
-    } else {
-      removeHero(selectedHero);
-    }
-  };
+  //   if (!heroInList) {
+  //     addHero(selectedHero);
+  //   } else {
+  //     removeHero(selectedHero);
+  //   }
+  // };
+
+  
 
   const heroModalRef = useRef(null);
+
+  const filteredHeroes = filterHeroRoles(heroesData, role);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -51,9 +56,7 @@ const HeroesMenu = () => {
     <div className="heroescomponent_container">
       <div ref={heroModalRef}  className="roleheroes_container ">
         <div className="flexdiv flex-wrap">
-          {heroesData
-            .filter((hero) => hero.role === role.toLowerCase())
-            .map((hero) => (
+          {filteredHeroes.map((hero) => (
               <button
                 className="bg-inactiveColor hover:bg-activeColor relative shadow-lg"
                 key={hero.slug}

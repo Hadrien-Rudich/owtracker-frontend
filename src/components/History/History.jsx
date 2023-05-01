@@ -8,11 +8,10 @@ import MonthTabs from "./MonthTabs";
 import HistoryDetails from "./HistoryDetails";
 
 const History = () => {
-
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
-  const { addHistoryData, } = historyStore();
+  const { addHistoryData } = historyStore();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -35,10 +34,13 @@ const History = () => {
   }, [addHistoryData]);
 
   return (
-    <div className="history_container flex flex-col py-6">
-      <MonthTabs/>
-      <HistoryDetails/>
-
+    <div className="History_container flex flex-col py-6">
+      <div className="MonthTabs_container">
+        <MonthTabs />
+      </div>
+      <div className="HistoryDetails_container">
+        <HistoryDetails />
+      </div>
     </div>
   );
 };
