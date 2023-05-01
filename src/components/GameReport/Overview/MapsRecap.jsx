@@ -8,7 +8,7 @@ const MapsOverview = () => {
 
 
   return (
-         <div className="selectedHero_container flexdiv">
+         <div className="selectedMap_container flexdiv">
         
           <div key={map} className="flexdiv">
             <img

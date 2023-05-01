@@ -4,8 +4,14 @@ import { gameReportStore } from "../../../store/gameReportStore";
 const GameReportRecap = () => {
   const { map, mapsData, heroes, heroesData, gameResult } = gameReportStore();
 
+//  const handleOnClick = (e) => {
+//     console.log(map)
+//   }
+ 
   return (
     <div className="historyDetails_container flexdiv col gap  text-secondaryText">
+              {/* <button onClick={handleOnClick} className="h-12 w-12 z-60 bg-thirdColor">zob</button> */}
+
     {map !== null && heroes.length > 0 && gameResult !== null &&
       <div className="gameHistory_container w-1/2 flexdiv row h-12 bg-inactiveColor text-mainText border border-activeColor">
         <div className="relative mapImage_container w-5/12">
@@ -15,6 +21,7 @@ const GameReportRecap = () => {
               (mapData) => mapData.slug === map
             )?.imageUrl}`}            alt=""
           />
+       
           <div className="absolute inset-0">
             <p className="absolute top-1/2 left-0 transform -translate-y-1/2 text-secondaryText px-1 bg-mainText bg-opacity-40">
               {map}

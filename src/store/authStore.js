@@ -8,8 +8,8 @@ const authStore = create((set) => ({
   setUserData: (userData) => set(() => ({ userData })),
   editAccount: false,
   toggleEditAccount: () => set((state) => ({ editAccount: !state.editAccount })),
-  editPassword: false,
-  toggleEditPassword: () => set((state) => ({ editPassword: !state.editPassword })),
+  editSecurity: false,
+  toggleEditSecurity: () => set((state) => ({ editSecurity: !state.editSecurity })),
   newEmail: "",
   setNewEmail: (email) => set(() => ({ newEmail: email })),
   clearNewEmail: () => set(() => ({ newEmail: "" })),
@@ -22,7 +22,9 @@ const authStore = create((set) => ({
   newBattleTag: "",
   setNewBattleTag: (battleTag) => set(() => ({ newBattleTag: battleTag })),
   clearNewBattleTag: () => set(() => ({ newBattleTag: "" })),
-
+ activeTab: "details",
+ setActiveTab: (tab) => set(() => ({ activeTab: tab, editAccount: false, editSecurity: false })),
+  clearActiveTab: () => set(() => ({ activeTab: "details" })),
 }));
 
 export { authStore };

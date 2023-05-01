@@ -32,7 +32,7 @@ const MapsCarousel = () => {
               <div className="mapimage_container" key={m.id}>
                 <button
                   className="bg-inactiveColor hover:bg-activeColor relative"
-                  value={m.id}
+                  value={m.slug}
                   onClick={handleMapClick}
                   type="button"
                 >

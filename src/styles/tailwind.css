@@ -48,7 +48,7 @@ body {
   @apply w-24 truncate rounded-sm shadow-md text-secondaryText bg-thirdColor;
 }
 .input {
-  @apply w-36 h-10 my-2 text-center shadow-inner rounded-sm;
+  @apply w-36 h-10 my-2 text-center shadow-inner rounded-sm tracking-wider;
 }
 
     .card.profile {

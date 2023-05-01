@@ -1,30 +1,30 @@
 import React from "react";
 import { authStore } from "../../store/authStore";
 
-const EditAccount = () => {
+const EditDetails = () => {
   const {
-    toggleEditPassword,
+    toggleEditAccount,
     userData,
-    newPassword,
-    setNewPassword,
-    clearNewPassword,
-    confirmNewPassword,
-    setConfirmNewPassword,
-    clearConfirmNewPassword,
+    newEmail,
+    setNewEmail,
+    clearNewEmail,
+    newBattleTag,
+    setNewBattleTag,
+    clearNewBattleTag,
   } = authStore();
 
-  const handlePasswordChange = (e) => {
-    setNewPassword(e.target.value);
+  const handleEmailChange = (e) => {
+    setNewEmail(e.target.value);
   };
 
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmNewPassword(e.target.value);
+  const handleBattleTagChange = (e) => {
+    setNewBattleTag(e.target.value);
   };
 
   const handleCancelClick = () => {
-    toggleEditPassword();
-    clearNewPassword();
-    clearConfirmNewPassword();
+    toggleEditAccount();
+    clearNewEmail();
+    clearNewBattleTag();
   };
 
   const handleKeyDown = (e) => {
@@ -42,28 +42,28 @@ const EditAccount = () => {
         <div className="inputandbutton_container flexdiv col gap-8">
           <div className="input_container flexdiv col gap-4">
             <label type="email">
-              <p className="">New Password</p>
+              <p className="">Email</p>
               <input
-                value={newPassword}
-                type="password"
-                placeholder="New Password"
+                value={newEmail}
+                type="email"
+                placeholder={userData.email}
                 required
                 autoFocus
-                onChange={handlePasswordChange}
+                onChange={handleEmailChange}
                 onKeyDown={handleKeyDown}
                 className="input"
               />
             </label>
 
             <label type="battleTag">
-              <p className="">Confirm New Password</p>
+              <p className="">BattleTag</p>
               <input
-                value={confirmNewPassword}
-                type="password"
-                placeholder="Confirm New Password"
+                value={newBattleTag}
+                type="text"
+                placeholder={userData.battleTag}
                 required
                 autoFocus
-                onChange={handleConfirmPasswordChange}
+                onChange={handleBattleTagChange}
                 onKeyDown={handleKeyDown}
                 className="input"
               />
@@ -81,4 +81,4 @@ const EditAccount = () => {
   );
 };
 
-export default EditAccount;
+export default EditDetails;

@@ -11,7 +11,6 @@ const Maps = () => {
     addMapsData,
     addTypesData,
     map,
-    heroes,
   } = gameReportStore();
 
   useEffect(() => {

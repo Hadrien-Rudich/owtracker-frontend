@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { authStore } from "../../store/authStore";
 import { fetchUserData } from "../../services/ApiService";
-import AccountInformation from "./AccountInformation";
-import EditAccount from "./EditAccount";
-import EditPassword from "./EditPassword";
+import Details from "./Details";
+import Security from "./Security";
+import Tabs from "./Tabs";
 
 const Account = () => {
-  const { setUserData, editAccount, editPassword } = authStore();
+  const { setUserData, activeTab} = authStore();
 
   useEffect(() => {
     async function getUserData() {
@@ -29,26 +29,25 @@ const Account = () => {
     if (!isLoggedIn) {
       navigate("/");
     }
-  }, [isLoggedIn, navigate])
+  }, [isLoggedIn, navigate]);
 
   return (
-    <div className="Account_container flexdiv col  my-24 ">
-    <div className="main_container flexdiv col w-60 py-8 gap-8 bg-inactiveColor shadow-lg rounded-sm">
-      {editAccount ? (
-        <div className="EditAccount_container ">
-          <EditAccount />
+    <div className="Account_container flexdiv col my-24 ">
+        <div className="Tab_container">
+          <Tabs />
+      <div className="main_container flexdiv col w-60 py-8 gap-8 bg-inactiveColor shadow-lg rounded-sm">
+          {activeTab === "details" ? (
+            <div className="Details_container">
+              <Details />
+            </div>
+          ) : 
+            <div className="Security_container">
+              <Security />
+            </div>
+          }
         </div>
-      ) : editPassword ? (
-        <div className="EditPassword_container">
-          <EditPassword/>
-        </div>
-      ) : (
-        <div className="AccountInformation_container flexdiv gap-4">
-          <AccountInformation />
-        </div>
-      )}
+      </div>
     </div>
-  </div>
   );
 };
 
