@@ -29,7 +29,7 @@ const LogInForm = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/game");
+      navigate("/profiles");
     }
     [isLoggedIn, navigate];
   });

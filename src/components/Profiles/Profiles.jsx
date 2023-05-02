@@ -11,10 +11,7 @@ const Profiles = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
-  const {
-    addProfilesData,
-    newProfile,
-  } = profileStore();
+  const { profile, profilesData, addProfilesData, newProfile } = profileStore();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -37,7 +34,13 @@ const Profiles = () => {
   }, [addProfilesData, newProfile]);
 
   return (
-    <div className="profiles_container flexdiv my-24">
+    <div className="Profiles_container flexdiv col my-24">
+      {profile === "" && (
+        <div className="title_container flexdiv absolute top-32 bg-thirdColor w-48 h-12 tracking-widest rounded-sm shadow-lg">
+          <h3 className="text-2xl  text-activeColor"> {profilesData.length === 0 ? "CREATE A PROFILE" : "SELECT A PROFILE"}
+          </h3>
+        </div>
+      )}
       <div className="flexdiv w-60 py-8 bg-inactiveColor  rounded-sm shadow-lg">
         <div className="w-52">
           <AddProfile />

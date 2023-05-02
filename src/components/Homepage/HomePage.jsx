@@ -11,7 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/game");
+      navigate("/profiles");
     }
     [isLoggedIn, navigate];
   });
@@ -30,7 +30,6 @@ const HomePage = () => {
         <Link to="/register">
           <button
             className="button validate"
-            
             type="submit"
           >
             REGISTER

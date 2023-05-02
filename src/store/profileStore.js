@@ -28,6 +28,7 @@ const profileStore = create((set) => ({
   deleteProfile: (profile) => {
     set((state) => ({
       profilesData: state.profilesData.filter((p) => p.label !== profile),
+      profile: "",
     }));
   },
 }));
