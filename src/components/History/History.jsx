@@ -34,11 +34,11 @@ const History = () => {
   }, [addHistoryData]);
 
   return (
-    <div className="History_container flex flex-col py-6">
+    <div className="History_container flex flex-col my-12">
       <div className="MonthTabs_container">
         <MonthTabs />
       </div>
-      <div className="HistoryDetails_container">
+      <div className="HistoryDetails_container mt-12">
         <HistoryDetails />
       </div>
     </div>
