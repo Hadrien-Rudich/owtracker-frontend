@@ -38,8 +38,8 @@ const HeroesRoles = () => {
   }, [heroModalRef]);
 
   return (
-    <div className="heroescomponent_container justify-evenly ">
-      <div className="grid grid-cols-3 items-center h-48 ">
+    <div className="heroescomponent_container justify-evenly">
+      <div className="grid grid-cols-3 items-center sm:h-48 lg:h-60 h-72">
         {rolesData.map((r) => (
           <div key={r.label} className="role_container">
             {role !== r.label && (

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Heroes from "./Heroes/Heroes";
-import Result from "./Result";
+import Result from "./Result/Result";
 import Reset from "./Reset";
 import SubmitForm from "./SubmitForm";
 import GameReportRecap from "../GameReport/Overview/GameReportRecap";
@@ -25,37 +25,42 @@ const Gamereport = () => {
   });
 
   return (
-    <div className="gamereport_container flexdiv">
-      <div className=" my-24 w-1/2">
+    <div className="GameReport_container container mx-auto flexdiv">
+      <div className=" my-48 w-full rounded-sm">
         <div
           className={`${
             gameResult !== null ? `` : `testshadow2`
-          } resultcomponent_container`}
+          } Result_container`}
         >
           <Result />
         </div>
-        <div
-          className={`${
-            heroes.length !== 0 ? `` : `testshadow2`
-          } heroes_componentcontainer`}
-        >
-          <Heroes />
-        </div>
-        <div
-          className={`${
-            map !== null ? `` : `testshadow2`
-          } mapscomponent_container`}
-        >
-          <Maps />
-        </div>
-
+        {gameResult !== null && (
+          <div
+            className={`${
+              heroes.length !== 0 ? `` : `testshadow2`
+            } Heroes_componentcontainer`}
+          >
+            <Heroes />
+          </div>
+        )}
+        {heroes.length > 0 && (
+          <div
+            className={`${
+              map !== null ? `` : `testshadow2`
+            } Maps_container`}
+          >
+            <Maps />
+          </div>
+        )}
         <GameReportRecap />
-
-        <div className="flexdiv gap-10">
+        
+        {gameResult !== null && map !== null && heroes.length > 0 &&
+        <div className="flexdiv gap-10 my-24">
           <Reset />
 
           <SubmitForm />
         </div>
+}
       </div>
     </div>
   );

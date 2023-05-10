@@ -34,7 +34,7 @@ const History = () => {
   }, [addHistoryData]);
 
   return (
-    <div className="History_container flex flex-col my-12">
+    <div className="History_container my-12 container mx-auto">
       <div className="MonthTabs_container">
         <MonthTabs />
       </div>

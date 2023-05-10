@@ -69,7 +69,7 @@ const HeroesMenu = () => {
                     heroes.includes(hero.slug)
                       ? "scale-105 bg-activeColor z-10 relative border border-thirdColor"
                       : "opacity-30"
-                  } h-12 border border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
+                  } h-10 md:h-10 lg:h-12 border border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
                   src={`images/heroes/${hero.imageUrl}`}
                   alt=""
                 />

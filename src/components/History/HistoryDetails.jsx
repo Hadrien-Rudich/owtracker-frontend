@@ -7,15 +7,15 @@ const HistoryDetails = () => {
   const filteredHistory = filterHistory(currentMonth, historyData);
 
   return (
-    <div className="historyDetails_container flexdiv col gap  text-secondaryText">
+    <div className="flexdiv col gap-0.5 tracking-wider">
       {filteredHistory.map((history) => (
         <div
           key={history.id}
-          className="gameHistory_container w-1/2 flexdiv  h-12 bg-inactiveColor hover:bg-activeColor text-mainText border border-activeColor"
+          className="gameHistory_container w-full flexdiv h-12 bg-inactiveColor hover:bg-activeColor rounded-sm shadow-sm"
         >
           <div className="relative mapImage_container w-5/12">
             <img
-              className="h-11 w-full object-cover"
+              className="h-12 w-full object-cover rounded-sm rounded-r-none"
               src={`images/maps/${history.mapImageUrl}`}
               alt=""
             />
@@ -25,12 +25,12 @@ const HistoryDetails = () => {
               </p>
             </div>
           </div>
-          <div className="heroImage_container w-5/12 flexdiv gap-px ">
+          <div className="heroImage_container w-5/12 flexdiv gap-0.5 ">
             {history.heroesImageUrl.map((heroImage, index) => (
               <img
                 key={index}
                 src={`images/heroes/${heroImage}`}
-                className="h-8"
+                className="h-10"
                 alt=""
               />
             ))}
@@ -46,7 +46,7 @@ const HistoryDetails = () => {
           >
             <p>{history.result}</p>
           </div>
-          <div className="w-1/12 text-black ">
+          <div className="w-1/12">
             <p>{history.date}</p>
           </div>
         </div>

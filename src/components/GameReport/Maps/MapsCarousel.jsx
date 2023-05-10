@@ -31,15 +31,15 @@ const MapsCarousel = () => {
             .map((m) => (
               <div className="mapimage_container" key={m.id}>
                 <button
-                  className="bg-inactiveColor hover:bg-activeColor relative"
+                  className="bg-inactiveColor hover:bg-activeColor relative rounded-sm"
                   value={m.slug}
                   onClick={handleMapClick}
                   type="button"
                 >
                   <img
                     className={`${
-                      map?.includes(m.id)
-                        ? " scale-105 bg-activeColor relative z-10 "
+                      map?.includes(m.slug.toLowerCase())
+                        ? " scale-105 bg-activeColor opacity-100 relative z-10 rounded-sm"
                         : "opacity-40"
                     }   hover:opacity-100`}
                     src={`images/maps/${m.imageUrl}`}

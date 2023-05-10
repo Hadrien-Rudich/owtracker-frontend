@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { historyStore } from "../../store/historyStore";
 
 const MonthTabs = () => {
@@ -25,25 +24,26 @@ const MonthTabs = () => {
   };
 
   return (
-    <div className="flexdiv">
-      <div className="monthTab_container flexdiv w-2/3 rounded-sm shadow-lg">
-        {months.map((month, index) => (
-          <button
-            key={month.index}
-            value={month.index}
-            onClick={handleClick}
-            type="button"
-            className={`${
-              Number(currentMonth) === Number(month.index)
-                ? `bg-thirdColor text-secondaryText scale-110`
-                : `bg-secondaryColor hover:bg-activeColor`
-            } w-20 h-8 ${index === 0 ? "rounded-sm rounded-r-none" : ""} ${
-              index === months.length - 1 ? "rounded-sm rounded-l-none" : ""
-            }`}
-          >
-            {month.label.substring(0, 3)}
-          </button>
-        ))}
+    <div className="monthTab_container flexdiv ">
+      <div className="rounded-sm shadow-lg">
+      {months.map((month, index) => (
+        <button
+          key={month.index}
+          value={month.index}
+          onClick={handleClick}
+          type="button"
+          className={`${
+            Number(currentMonth) === Number(month.index)
+              ? `bg-thirdColor text-secondaryText scale-110 rounded-sm`
+              : `bg-inactiveColor hover:bg-activeColor`
+          } w-20 h-8 tracking-widest
+            ${index === 0 ? "rounded-sm rounded-r-none" : ""} ${
+            index === months.length - 1 ? "rounded-sm rounded-l-none" : ""
+          }`}
+        >
+          {month.label.substring(0, 3)}
+        </button>
+      ))}
       </div>
     </div>
   );

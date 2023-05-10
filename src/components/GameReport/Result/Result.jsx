@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { gameReportStore } from "../../store/gameReportStore";
+import { gameReportStore } from "../../../store/gameReportStore";
 
 const Result = () => {
   const { gameResult, addGameResult, clearGameResult } = gameReportStore();

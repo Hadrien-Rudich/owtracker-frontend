@@ -22,7 +22,7 @@ const Header = () => {
   const renderLoggedInHeader = () => {
     if (profile) {
       return (
-        <div className="button_container flex items-start justify-end w-1/2 text-xl">
+        <div className="button_container flex items-start justify-end w-1/2 text-2xl">
           {locations.map((location) => (
             <NavLink
               key={location.label}
@@ -70,7 +70,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header_container flex h-20 text-mainText bg-secondaryColor  pb-6 relative">
+    <div className="header_container flex h-20 text-mainText bg-inactiveColor  pb-6 relative">
       <div className="titleandimage_container  relative flex text-4xl italic text-purple-500 w-1/2">
         <img
           className=" absolute left-4 top-2 w-1/3"
