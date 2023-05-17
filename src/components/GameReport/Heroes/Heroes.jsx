@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { fetchHeroesData, fetchRolesData } from "../../../services/ApiService";
 import { gameReportStore } from "../../../store/gameReportStore";
-import HeroesRoles from "./HeroesRoles";
+import Hero from "./Hero";
 
 const Heroes = () => {
-  const { addHeroesData, addRolesData, heroes } = gameReportStore();
+  const { addHeroesData, addRolesData } = gameReportStore();
 
   useEffect(() => {
     async function getHeroesData() {
@@ -33,8 +33,8 @@ const Heroes = () => {
   }, []);
 
   return (
-    <div className={`${heroes.length !== 0 ? `` : `testshadow2`} heroes_container`}>
-      <HeroesRoles />
+    <div className="heroes_container bg-inactiveColor rounded-sm my-6 intenseShadow">
+      <Hero />
     </div>
   );
 };

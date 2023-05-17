@@ -1,16 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { fetchMapsData, fetchTypesData } from "../../../services/ApiService";
 import MapTypes from "./MapTypes";
-import MapsCarousel from "./MapsCarousel";
+import Map from "./Map";
 import { gameReportStore } from "../../../store/gameReportStore";
 
 const Maps = () => {
   const {
-    clearMapType,
-    toggleMapModal,
     addMapsData,
     addTypesData,
-    map,
   } = gameReportStore();
 
   useEffect(() => {
@@ -39,34 +36,17 @@ const Maps = () => {
     getTypesData();
   }, []);
 
-  const mapModalRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (mapModalRef.current && !mapModalRef.current.contains(event.target)) {
-        clearMapType();
-        toggleMapModal();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [mapModalRef]);
-
   return (
-    <div className={`${map !== null ? `` : `testshadow2`} maps_container `}>
-      <div ref={mapModalRef} className="">
-        <div className="maptype_container py-10">
+    <div className="maps_container bg-inactiveColor rounded-sm intenseShadow ">
+     
+        <div className="maptype_container py-6">
           <MapTypes />
         </div>
         <div className="maps_container flexdiv">
-          <MapsCarousel />
+          <Map />
         </div>
       </div>
-    </div>
+ 
   );
 };
 

@@ -6,11 +6,6 @@ const filterHistory = (month, data) => {
   }
 };
 
-const filterHeroRoles = (heroesData, role) => {
-  const result = heroesData.filter((hero) => hero.role === role.toLowerCase());
-  return result;
-};
-
 const filterMapTypes = (mapsData, mapType) => {
   const result = mapsData.filter((map) => map.type === mapType);
   return result;
@@ -18,4 +13,4 @@ const filterMapTypes = (mapsData, mapType) => {
 
 
 
-export { filterHistory, filterHeroRoles, filterMapTypes};
+export { filterHistory, filterMapTypes};

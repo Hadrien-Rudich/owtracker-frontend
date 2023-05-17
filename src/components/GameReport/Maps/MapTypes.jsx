@@ -1,7 +1,6 @@
 import React from "react";
 import { gameReportStore } from "../../../store/gameReportStore";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 const MapTypes = () => {
   const {
@@ -23,7 +22,8 @@ const MapTypes = () => {
   };
 
   return (
-    <div className="flex justify-around items-center content-center rounded-sm">
+   <div className="flexdiv ">
+    <div className=" mapType_container w-3/4 justify-around flex  items-center content-center rounded-sm">
       {typesData.map((type) => (
         <div className="">
           <button
@@ -38,13 +38,14 @@ const MapTypes = () => {
             } flexdiv rounded-sm drop-shadow-lg`}
           >
             <img
-              className="h-10"
+              className="md:h-10 lg:h-12 h-9"
               src={`images/mapTypes/${type.imageUrl}`}
               alt="map type icon"
             />
           </button>
         </div>
       ))}
+    </div>
     </div>
   );
 };

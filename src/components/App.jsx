@@ -10,7 +10,6 @@ import HomePage from "./Homepage/HomePage";
 import History from "./History/History";
 import ProfilesPage from "./Profiles/Profiles";
 import Stats from "./Stats/Stats";
-import Maps from "./GameReport/Maps/MapsCarousel";
 import Account from "./Account/Account";
 
 export const LogContext = createContext();
@@ -29,7 +28,6 @@ function App() {
         <Route path="/stats" element={<Stats />} />
         <Route path="/profiles" element={<ProfilesPage />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/slick" element={<Maps />} />
       </Routes>
     </div>
   );

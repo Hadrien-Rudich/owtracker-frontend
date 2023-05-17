@@ -5,9 +5,9 @@ const Result = () => {
   const { gameResult, addGameResult, clearGameResult } = gameReportStore();
 
   const [outcomes, setOutcomes] = useState([
-    { label: "win", color: "green" },
-    { label: "draw", color: "yellow" },
-    { label: "loss", color: "red" },
+    { label: "win", },
+    { label: "draw", },
+    { label: "loss"},
   ]);
 
   const handleClick = (e) => {
@@ -25,8 +25,8 @@ const Result = () => {
     };
 
   return (
-    <div  className={`${gameResult !== null ? `` : `testshadow2`} result_container flexdiv`}>
-      <div className="resultoutcome_container flexdiv w-full  text-activeColor rounded-sm">
+    <div  className="result_container flexdiv bg-inactiveColor rounded-sm intenseShadow">
+      <div className="resultoutcome_container flexdiv w-full md:text-xl text-lg rounded-sm">
         {outcomes.map((outcome) => (
           
           <button
@@ -36,16 +36,16 @@ const Result = () => {
             value={outcome.label}            
                         className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `text-mainText scale-110 bg-activeWin opacity-100 z-50 shadow-lg`
+              ? `text-mainText md:scale-110 scale-105 bg-activeWin opacity-100 z-50 shadow-lg`
               : gameResult === outcome.label && gameResult === "loss"              
-              ?`text-mainText scale-110 bg-activeLoss opacity-100 z-50 shadow-lg`
+              ?`text-mainText md:scale-110 scale-105 bg-activeLoss opacity-100 z-50 shadow-lg`
               : gameResult === outcome.label && gameResult === "draw"
-              ? `text-mainText scale-110 bg-activeDraw opacity-100 z-50 shadow-lg`
+              ? `text-mainText md:scale-110 scale-105 bg-activeDraw opacity-100 z-50 shadow-lg`
               : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
-              ? `hover:bg-activeColor hover:text-mainText opacity-50`
+              ? `hover:bg-activeColor md:hover:scale-110 hover:scale-105 `
               : null
               
-          } w-1/2  h-8 tracking-widest rounded-sm hover:opacity-100`}
+          } w-1/3 h-10 tracking-widest rounded-sm hover:opacity-100`}
           > {outcome.label}
           </button>
         ))}
