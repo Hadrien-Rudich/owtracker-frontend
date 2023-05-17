@@ -20,7 +20,7 @@ const Map = () => {
   const filteredMaps = filterMapTypes(mapsData, mapType);
 
   return (
-    <div className="map_container pb-6 flexdiv flex-wrap px-6">
+    <div className="map_container pb-6 flexdiv flex-wrap w-5/6">
       {mapType !== null &&
         filteredMaps.map((m) => (
           <button

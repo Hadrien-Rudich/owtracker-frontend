@@ -23,7 +23,7 @@ const MapTypes = () => {
 
   return (
    <div className="flexdiv ">
-    <div className=" mapType_container w-3/4 justify-around flex  items-center content-center rounded-sm">
+    <div className=" mapType_container w-5/6 justify-around flex  items-center content-center rounded-sm">
       {typesData.map((type) => (
         <div className="">
           <button

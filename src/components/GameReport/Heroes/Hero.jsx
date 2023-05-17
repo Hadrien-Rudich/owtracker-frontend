@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="heroescomponent_container">
+    <div className="heroescomponent_container px-2">
       <div className="heroesByRole_container grid grid-cols-3 justify-center content-center">
         {rolesData.map((r) => (
           <div key={r.label} className="heroesandrole_container py-6">
