@@ -33,12 +33,12 @@ const MapTypes = () => {
             value={type.label.toLowerCase()}
             className={`${
               mapType === type.label.toLowerCase()
-                ? "scale-125 filter brightness-200"
-                : "filter hover:scale-125 hover:brightness-200"
-            } flexdiv rounded-sm drop-shadow-lg`}
+                ? "scale-125 "
+                : "filter hover:scale-125"
+            } flexdiv rounded-sm `}
           >
             <img
-              className="md:h-10 lg:h-12 h-9"
+              className="md:h-10 lg:h-11 h-9 drop-shadow-lg"
               src={`images/mapTypes/${type.imageUrl}`}
               alt="map type icon"
             />

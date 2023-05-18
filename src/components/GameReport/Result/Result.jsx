@@ -36,11 +36,11 @@ const Result = () => {
             value={outcome.label}            
                         className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `text-mainText md:scale-110 scale-105 bg-activeWin opacity-100 z-50 shadow-lg`
+              ? `text-mainText md:scale-110 scale-105 bg-activeWin opacity-100 z-20 shadow-lg`
               : gameResult === outcome.label && gameResult === "loss"              
-              ?`text-mainText md:scale-110 scale-105 bg-activeLoss opacity-100 z-50 shadow-lg`
+              ?`text-mainText md:scale-110 scale-105 bg-activeLoss opacity-100 z-20 shadow-lg`
               : gameResult === outcome.label && gameResult === "draw"
-              ? `text-mainText md:scale-110 scale-105 bg-activeDraw opacity-100 z-50 shadow-lg`
+              ? `text-mainText md:scale-110 scale-105 bg-activeDraw opacity-100 z-20 shadow-lg`
               : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
               ? `hover:bg-activeColor md:hover:scale-110 hover:scale-105 `
               : null

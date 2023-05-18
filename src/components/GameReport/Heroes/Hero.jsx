@@ -9,16 +9,16 @@ const Hero = () => {
   const handleHeroClick = (e) => {
     toggleHero(e.currentTarget.value, heroes, addHero, removeHero);
   };
-
+  
   return (
     <div className="heroescomponent_container px-2">
       <div className="heroesByRole_container grid grid-cols-3 justify-center content-center">
         {rolesData.map((r) => (
           <div key={r.label} className="heroesandrole_container py-6">
-           <div className="role_container pb-6 flexdiv">
+           <div className="role_container pb-6 flexdiv ">
            <img
                   value={r.label}
-                  className="md:h-10 lg:h-12 h-9"
+                  className="md:h-10 lg:h-11 h-9 drop-shadow-lg"
                   src={`images/roles/${r.imageUrl}`}
                   alt="role icon"
                 />
@@ -46,7 +46,7 @@ const Hero = () => {
                           heroes.includes(h.slug)
                             ? "scale-105 bg-activeColor z-10 relative border border-thirdColor"
                             : "opacity-30"
-                        } md:h-10 lg:h-12 h-9 border border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
+                        } md:h-10 lg:h-11 h-9 border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
                         src={`images/heroes/${h.imageUrl}`}
                         alt=""
                       />
