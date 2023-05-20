@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { authStore } from "../store/authStore";
 import { profileStore } from "../store/profileStore";
-import { RxHamburgerMenu } from "react-icons/rx";
-
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 
 const Header = () => {
   const { isLoggedIn, logOut } = authStore();
@@ -29,18 +28,22 @@ const Header = () => {
   const renderLoggedInHeader = () => {
     if (profile) {
       return (
-        <div className="button_container flex items-start justify-end sm:w-1/2 w-1/4 lg:text-2xl text-lg">
-          <div className="md:hidden relative">
+        <div className="Header_container flex items-start justify-end sm:w-1/2 w-1/4 lg:text-2xl text-lg">
+          <div className="hamburger_container md:hidden relative">
             <button
               className="hover:bg-activeGrayColor"
               onClick={toggleDropdown}
             >
-              <RxHamburgerMenu className="w-20 h-20" />
+              {showDropdown ? (
+                <RxCross2 className="w-20 h-20" />
+              ) : (
+                <RxHamburgerMenu className="w-20 h-20" />
+              )}
             </button>
             {showDropdown && (
-              <div className="top-20 absolute right-0 w-screen rounded-t-none rounded-sm shadow-lg bg-activeColor z-30">
+              <div className="top-20 absolute right-0 w-screen rounded-t-none rounded-sm shadow-lg bg-inactiveColor z-30">
                 <div
-                  className="py-1 flexdiv col" 
+                  className="py-1 flexdiv col"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="options-menu"
@@ -62,16 +65,16 @@ const Header = () => {
                     </NavLink>
                   ))}
                   <button
-            onClick={handleLogOut}
-            className="w-36 rounded-sm text-4xl hover:bg-activeGrayColor"
-          >
-            Log out
-          </button>
+                    onClick={handleLogOut}
+                    className="w-36 rounded-sm text-4xl hover:bg-activeGrayColor"
+                  >
+                    Log out
+                  </button>
                 </div>
               </div>
             )}
           </div>
-          <div className="hidden md:flex">
+          <div className="nonhamburger_container hidden md:flex">
             {locations.map((location, index) => (
               <NavLink
                 key={index}
@@ -86,26 +89,22 @@ const Header = () => {
               </NavLink>
             ))}
             <div className="md:flex hidden">
-          <button
-            onClick={handleLogOut}
-            className="lg:w-20 w-14 hover:bg-activeGrayColor rounded-sm"
-          >
-            Log out
-          </button>
-          </div>
+              <button
+                onClick={handleLogOut}
+                className="lg:w-20 w-14 hover:bg-activeGrayColor rounded-sm"
+              >
+                Log out
+              </button>
+            </div>
           </div>
         </div>
       );
     } else {
       return (
-        <div className="button_container flex items-start justify-end w-1/2 lg:text-2xl text-lg">
+        <div className="button_container flex sm:flex-row flex-col sm:items-start items-end sm:justify-end w-1/2 sm:text-2xl text-lg">
           <NavLink
             key="profiles"
-            className={({ isActive }) =>
-              isActive
-                ? "w-20 bg-thirdColor text-secondaryText rounded-sm"
-                : "w-20 hover:bg-activeGrayColor rounded-sm"
-            }
+            className="w-20 bg-thirdColor text-secondaryText rounded-sm"
             to="/profiles"
           >
             Profiles

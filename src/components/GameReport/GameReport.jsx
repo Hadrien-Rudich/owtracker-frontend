@@ -25,7 +25,7 @@ const Gamereport = () => {
 
   return (
     <div className="GameReport_container container mx-auto flexdiv">
-      <div className=" my-24 w-full rounded-sm">
+      <div className=" lg:my-36 my-24 w-full rounded-sm">
         <div
           className="Result_container"
         >

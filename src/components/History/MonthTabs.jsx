@@ -24,8 +24,8 @@ const MonthTabs = () => {
   };
 
   return (
-    <div className="monthTab_container flexdiv ">
-      <div className="rounded-sm shadow-lg">
+    <div className="monthTab_container">
+      <div className="rounded-sm shadow-lg flex ">
       {months.map((month, index) => (
         <button
           key={month.index}
@@ -36,7 +36,7 @@ const MonthTabs = () => {
             Number(currentMonth) === Number(month.index)
               ? `bg-thirdColor text-secondaryText scale-110 rounded-sm`
               : `bg-inactiveColor hover:bg-activeColor`
-          } w-20 h-8 tracking-widest
+          } w-1/12 h-8 tracking-widest
             ${index === 0 ? "rounded-sm rounded-r-none" : ""} ${
             index === months.length - 1 ? "rounded-sm rounded-l-none" : ""
           }`}

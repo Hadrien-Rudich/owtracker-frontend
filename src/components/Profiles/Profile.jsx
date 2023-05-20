@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { authStore } from "../../store/authStore";
 import { profileStore } from "../../store/profileStore";
-import AddProfile from "./AddProfile";
 import { ImCross } from "react-icons/im";
 
 import {
@@ -10,7 +9,7 @@ import {
   deleteProfileFromDb,
 } from "../../services/ApiService";
 
-const ProfilesList = () => {
+const Profile = () => {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
@@ -59,7 +58,7 @@ const ProfilesList = () => {
   };
 
   return (
-    <div className="profilelist_container flex flex-col gap-4 rounded-sm shadow-sm">
+    <div className="Profile_container flex flex-col gap-4 rounded-sm shadow-sm">
       {profilesData.map((p) => (
         <div className="profile_container flex ml-8 gap-4">
           
@@ -92,4 +91,4 @@ const ProfilesList = () => {
   );
 };
 
-export default ProfilesList;
+export default Profile;

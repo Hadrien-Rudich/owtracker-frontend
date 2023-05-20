@@ -39,7 +39,7 @@ const RegisterForm = () => {
   });
 
   return (
-    <div className="register_container flexdiv row sm:my-96 my-24">
+    <div className="register_container flexdiv row lg:my-96 my-24">
       <form action="submit">
         <div className=" inputandbutton_container flexdiv col gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
           <div className="input_container flexdiv col gap-4">
