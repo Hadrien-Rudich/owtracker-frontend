@@ -3,7 +3,7 @@ import React, { createContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Gamereport from "./GameReport/GameReport";
-import Header from "./Header";
+import Header from "./Header/Header";
 import LogInForm from "./Homepage/LogInForm";
 import RegisterForm from "./Homepage/RegisterForm";
 import HomePage from "./Homepage/HomePage";

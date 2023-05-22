@@ -59,8 +59,8 @@ const Profile = () => {
 
   return (
     <div className="Profile_container flex flex-col gap-4 rounded-sm shadow-sm">
-      {profilesData.map((p) => (
-        <div className="profile_container flex ml-8 gap-4">
+      {profilesData.map((p, index) => (
+        <div className="profile_container flex ml-8 gap-4" key={index}>
           
           <button
             key={p.id}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { authStore } from "../../store/authStore";
+import InputField from "../InputField";
+
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -43,36 +45,32 @@ const RegisterForm = () => {
       <form action="submit">
         <div className=" inputandbutton_container flexdiv col gap-8 w-60 py-8 bg-inactiveColor shadow-lg rounded-sm">
           <div className="input_container flexdiv col gap-4">
-            <label type="email">
-              <p className="">Email</p>
-              <input
-                value={email}
-                onChange={handleEmailChange}
-                type="email"
-                required
-                className="input"
-              />
-            </label>
-            <label type="password">
-              <p className="">Password</p>
-              <input
-                onChange={handlePasswordChange}
-                value={password}
-                type="password"
-                required
-                className="input"
-              />
-            </label>
-            <label type="password">
-              <p className="">Confirm Password</p>
-              <input
-                onChange={handleConfirmPasswordChange}
-                value={confirmPassword}
-                type="password"
-                required
-                className="input"
-              />
-            </label>
+            
+            <InputField
+              label="Email"
+              type="email"
+              value={email}
+              required={true}
+              onChange={handleEmailChange}
+              autoFocus={true}
+            />
+
+            <InputField
+              label="Password"
+              type="password"
+              value={password}
+              required={true}
+              onChange={handlePasswordChange}
+            />
+
+            <InputField
+              label="Confirm"
+              type="password"
+              value={confirmPassword}
+              required={true}
+              onChange={handleConfirmPasswordChange}
+            />
+
           </div>
           <div className="button_container flexdiv gap-4">
             <button

@@ -38,7 +38,7 @@ const Gamereport = () => {
             <Heroes />
           </div>
         )}
-        {heroes.length > 0 && (
+        {heroes.length > 0 && gameResult !== null && (
           <div
             className="Maps_container"
           >

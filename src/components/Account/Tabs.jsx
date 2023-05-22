@@ -11,8 +11,8 @@ const Tabs = () => {
 
   return (
     <div className="Tabs_container flexdiv pb-4">
-      {sections.map((section) => (
-        <div>
+      {sections.map((section, index) => (
+        <div key={index}>
           <h3>
             <button
               value={section.label}

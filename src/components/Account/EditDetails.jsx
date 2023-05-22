@@ -1,5 +1,6 @@
 import React from "react";
 import { authStore } from "../../store/authStore";
+import InputField from "../InputField";
 
 const EditDetails = () => {
   const {
@@ -41,33 +42,29 @@ const EditDetails = () => {
       <form action="submit">
         <div className="inputandbutton_container flexdiv col gap-8">
           <div className="input_container flexdiv col gap-4">
-            <label type="email">
-              <p className="">Email</p>
-              <input
-                value={newEmail}
-                type="email"
-                placeholder={userData.email}
-                required
-                autoFocus
-                onChange={handleEmailChange}
-                onKeyDown={handleKeyDown}
-                className="input"
-              />
-            </label>
+            <InputField
+              label="Email"
+              type="email"
+              value={newEmail}
+              placeholder={userData.email}
+              disabled={false}
+              required={false}
+           
+              onChange={handleEmailChange}
+              onKeyDown={handleKeyDown}
+              S
+            />
 
-            <label type="battleTag">
-              <p className="">BattleTag</p>
-              <input
-                value={newBattleTag}
-                type="text"
-                placeholder={userData.battleTag}
-                required
-                autoFocus
-                onChange={handleBattleTagChange}
-                onKeyDown={handleKeyDown}
-                className="input"
-              />
-            </label>
+            <InputField
+              label="BattleTag"
+              type="text"
+              value={newBattleTag}
+              placeholder={userData.battleTag}
+              disabled={false}
+              required={false}
+              onChange={handleBattleTagChange}
+              onKeyDown={handleKeyDown}
+            />
           </div>
           <div className="button_container flexdiv gap-4">
             <button onClick={handleCancelClick} className="button cancel">

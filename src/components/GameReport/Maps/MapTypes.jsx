@@ -22,8 +22,8 @@ const MapTypes = () => {
   };
 
   return (
-   <div className="flexdiv ">
-    <div className=" mapType_container w-5/6 justify-around flex  items-center content-center rounded-sm">
+   <div className="flexdiv">
+    <div className="mapType_container sm:w-1/3 w-5/6 justify-around flex items-center content-center rounded-sm">
       {typesData.map((type) => (
         <div className="">
           <button
@@ -33,12 +33,12 @@ const MapTypes = () => {
             value={type.label.toLowerCase()}
             className={`${
               mapType === type.label.toLowerCase()
-                ? "scale-125 "
-                : "filter hover:scale-125"
-            } flexdiv rounded-sm `}
+                ? "scale-105"
+                : "filter hover:scale-105"
+            } flexdiv rounded-sm`}
           >
             <img
-              className="md:h-10 lg:h-11 h-9 drop-shadow-lg"
+              className="md:h-10 lg:h-11 h-9 w-20 drop-shadow-lg"
               src={`images/mapTypes/${type.imageUrl}`}
               alt="map type icon"
             />

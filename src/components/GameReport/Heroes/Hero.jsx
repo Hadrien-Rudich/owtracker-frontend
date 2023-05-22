@@ -35,7 +35,7 @@ const Hero = () => {
                   .map((h) => (
                     
                     <button
-                      className="bg-inactiveColor hover:bg-activeColor relative shadow-lg"
+                      className="bg-inactiveColor hover:bg-activeColor shadow-lg"
                       key={h.slug}
                       value={h.slug}
                       onClick={handleHeroClick}
@@ -44,7 +44,7 @@ const Hero = () => {
                       <img
                         className={`${
                           heroes.includes(h.slug)
-                            ? "scale-105 bg-activeColor z-10 relative border border-thirdColor"
+                            ? "scale-105 bg-activeColor z-10  border border-thirdColor"
                             : "opacity-30"
                         } md:h-10 lg:h-11 h-9 border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
                         src={`images/heroes/${h.imageUrl}`}

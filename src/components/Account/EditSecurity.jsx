@@ -1,5 +1,6 @@
 import React from "react";
 import { authStore } from "../../store/authStore";
+import InputField from "../InputField";
 
 const EditSecurity = () => {
   const {
@@ -40,33 +41,28 @@ const EditSecurity = () => {
       <form action="submit">
         <div className="inputandbutton_container flexdiv col gap-8">
           <div className="input_container flexdiv col gap-4">
-            <label type="email">
-              <p className="">New Password</p>
-              <input
-                value={newPassword}
-                type="password"
-                placeholder="New Password"
-                required
-                autoFocus
-                onChange={handlePasswordChange}
-                onKeyDown={handleKeyDown}
-                className="input"
-              />
-            </label>
+   
+            <InputField
+              label="Password"
+              type="password"
+              placeholder={"*************"}
+              value={newPassword}
+              disabled={false}
+                    required={false}
+              onChange={handlePasswordChange}
+              onKeyDown={handleKeyDown}
+            />
 
-            <label type="battleTag">
-              <p className="">Confirm New Password</p>
-              <input
-                value={confirmNewPassword}
-                type="password"
-                placeholder="Confirm New Password"
-                required
-                autoFocus
-                onChange={handleConfirmPasswordChange}
-                onKeyDown={handleKeyDown}
-                className="input"
-              />
-            </label>
+            <InputField
+              label="Confirm Password"
+              type="password"
+              placeholder={"*************"}
+              value={confirmNewPassword}
+              disabled={false}
+              required={false}
+              onChange={handleConfirmPasswordChange}
+              onKeyDown={handleKeyDown}
+            />
           </div>
           <div className="button_container flexdiv gap-4">
             <button onClick={handleCancelClick} className="button cancel">

@@ -1,7 +1,7 @@
 import React from "react";
-
 import { authStore } from "../../store/authStore";
 import EditDetails from "./EditDetails";
+import InputField from "../InputField";
 
 const Details = () => {
   const {
@@ -20,25 +20,22 @@ const Details = () => {
 {!editAccount ? (
       <div className="inputandbutton_container flexdiv col gap-8">
         <div className="input_container flexdiv col gap-4">
-          <label type="email">
-            <p className="">Email</p>
-            <input
-              value={userData.email}
+        <InputField
+              label="Email"
               type="email"
-              disabled
-              className="input disabled"
-            />
-          </label>
+              value={userData.email}
+              disabled={true}
+              required={false}
 
-          <label type="battleTag">
-            <p className="">BattleTag</p>
-            <input
-              value={userData.battleTag}
-              type="text"
-              disabled
-              className="input disabled"
             />
-          </label>
+
+            <InputField
+              label="BattleTag"
+              type="text"
+              value={userData.battleTag}
+              disabled={true}
+              required={false}
+            />
         </div>
         <div className="button_container flexdiv col gap-4">
           <button onClick={handleEditClick} className="button modify">

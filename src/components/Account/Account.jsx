@@ -33,7 +33,7 @@ const Account = () => {
 
   return (
     <div className="Account_container flexdiv col lg:my-96 my-24">
-        <div className="Tab_container">
+        <div className="Tabs_container">
           <Tabs />
       <div className="main_container flexdiv col w-60 py-8 gap-8 bg-inactiveColor shadow-lg rounded-sm">
           {activeTab === "details" ? (
