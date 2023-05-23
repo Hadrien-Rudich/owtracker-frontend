@@ -33,7 +33,7 @@ const Heroes = () => {
   }, []);
 
   return (
-    <div className="heroes_container bg-inactiveColor rounded-sm my-6 intenseShadow">
+    <div className="heroes_container bg-mainColor rounded-sm my-6 intenseShadow">
       <Hero />
     </div>
   );

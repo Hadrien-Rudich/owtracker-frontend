@@ -5,14 +5,13 @@ import { headerStore } from "../../store/headerStore";
 import { authStore } from "../../store/authStore";
 
 const HamburgerMenu = () => {
-
   const { logOut } = authStore();
 
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
   const { locations } = headerStore();
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const toggleHamburgerMenu = () => {
+    setShowHamburgerMenu(!showHamburgerMenu);
   };
 
   const handleLogOut = () => {
@@ -20,12 +19,12 @@ const HamburgerMenu = () => {
   };
 
   return (
-    <div className="">
+    <div className="main_container">
       <button
-        className="relative hover:bg-activeGrayColor "
-        onClick={toggleDropdown}
-      >
-        {showDropdown ? (
+        className="hover:bg-activeGrayColor "
+        onClick={toggleHamburgerMenu}
+      > 
+        {showHamburgerMenu ? (
           <RxCross2 className="w-20 h-20" />
         ) : (
           <RxHamburgerMenu className="w-20 h-20" />
@@ -33,10 +32,8 @@ const HamburgerMenu = () => {
       </button>
       <div
         className={`${
-          showDropdown
-            ? " top-20 duration-300 ease-out absolute right-0 w-screen rounded-t-none rounded-sm shadow-lg bg-inactiveColor z-10"
-            : "top-[-300px] duration-300 ease-in absolute right-0 w-screen rounded-t-none rounded-sm shadow-lg bg-inactiveColor z-10"
-        }  `}
+          showHamburgerMenu ? "  active" : " inactive"
+        }  hamburger w-screen `}
       >
         <div
           className="py-1 flexdiv col "
@@ -55,7 +52,7 @@ const HamburgerMenu = () => {
                 } w-36 rounded-sm text-4xl`
               }
               to={location.url}
-              onClick={toggleDropdown}
+              onClick={toggleHamburgerMenu}
             >
               {location.label}
             </NavLink>

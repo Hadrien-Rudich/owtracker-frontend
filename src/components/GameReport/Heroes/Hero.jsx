@@ -35,7 +35,7 @@ const Hero = () => {
                   .map((h) => (
                     
                     <button
-                      className="bg-inactiveColor hover:bg-activeColor shadow-lg"
+                      className="bg-mainColor hover:bg-activeColor shadow-lg"
                       key={h.slug}
                       value={h.slug}
                       onClick={handleHeroClick}

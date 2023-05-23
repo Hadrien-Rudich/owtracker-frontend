@@ -10,10 +10,8 @@ const GameReportRecap = () => {
  
   return (
     <div className="historyDetails_container flexdiv col gap  text-secondaryText">
-              {/* <button onClick={handleOnClick} className="h-12 w-12 z-60 bg-thirdColor">zob</button> */}
-
     {map !== null && heroes.length > 0 && gameResult !== null &&
-      <div className="gameHistory_container w-1/2 flexdiv row h-12 bg-inactiveColor text-mainText border border-activeColor">
+      <div className="gameHistory_container w-1/2 flexdiv row h-12 bg-mainColor text-mainText border border-activeColor">
         <div className="relative mapImage_container w-5/12">
           <img
             className="h-11 w-full object-cover"

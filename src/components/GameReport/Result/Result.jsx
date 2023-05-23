@@ -25,7 +25,7 @@ const Result = () => {
     };
 
   return (
-    <div  className="result_container flexdiv bg-inactiveColor rounded-sm intenseShadow">
+    <div  className="Result_container flexdiv bg-mainColor rounded-sm intenseShadow">
       <div className="resultoutcome_container flexdiv w-full md:text-xl text-lg rounded-sm">
         {outcomes.map((outcome) => (
           
@@ -36,11 +36,11 @@ const Result = () => {
             value={outcome.label}            
                         className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `text-mainText scale-105 bg-activeWin opacity-100 z-20 shadow-lg`
+              ? `result win`
               : gameResult === outcome.label && gameResult === "loss"              
-              ?`text-mainText scale-105 bg-activeLoss opacity-100 z-20 shadow-lg`
+              ? `result loss`
               : gameResult === outcome.label && gameResult === "draw"
-              ? `text-mainText scale-105 bg-activeDraw opacity-100 z-20 shadow-lg`
+              ? `result draw`
               : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
               ? `hover:bg-activeColor hover:scale-105 `
               : null

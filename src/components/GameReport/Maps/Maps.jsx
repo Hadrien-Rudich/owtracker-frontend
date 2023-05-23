@@ -37,7 +37,7 @@ const Maps = () => {
   }, []);
 
   return (
-    <div className="maps_container bg-inactiveColor rounded-sm intenseShadow">
+    <div className="maps_container bg-mainColor rounded-sm intenseShadow">
      
         <div className="maptype_container py-6">
           <MapTypes />

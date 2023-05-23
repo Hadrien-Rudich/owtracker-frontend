@@ -23,12 +23,12 @@ const MapTypes = () => {
 
   return (
    <div className="flexdiv">
-    <div className="mapType_container sm:w-1/3 w-5/6 justify-around flex items-center content-center rounded-sm">
-      {typesData.map((type) => (
-        <div className="">
+    <div className="mapTypes_container sm:w-1/3 w-5/6 justify-around flex items-center content-center rounded-sm">
+      {typesData.map((type, index) => (
+        <div className="mapType_container">
           <button
             type="button"
-            key={type.id}
+            key={index}
             onClick={handleMapTypeClick}
             value={type.label.toLowerCase()}
             className={`${

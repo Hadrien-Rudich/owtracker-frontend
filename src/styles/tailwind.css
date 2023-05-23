@@ -51,8 +51,58 @@ body {
   
 }
 
+.hamburger {
+  @apply absolute right-0 rounded-t-none rounded-sm z-20 duration-500 py-4 ;
+}
+
+.hamburger.active {
+  @apply top-20 ease-out shadow-lg bg-activeColor;
+}
+
+.hamburger.inactive {
+  @apply top-[-300px] ease-in bg-mainColor;
+}
+
+.dropdown {
+  @apply absolute rounded-t-none rounded-sm bg-mainColor z-20 duration-500 py-4 h-40 ;
+}
+
+.dropdown.active {
+  @apply top-0 ease-out shadow-lg bg-activeColor pt-44 pb-12 ;
+}
+
+.dropdown.inactive {
+  @apply top-[-300px] ease-in bg-mainColor ;
+}
 
 
+.result {
+  @apply text-mainText scale-105 shadow-lg;
+}
+
+.result.win {
+  @apply bg-activeWin;
+}
+
+.result.loss {
+  @apply bg-activeLoss;
+}
+
+.result.draw {
+  @apply bg-activeDraw;
+}
+
+.tab {
+  @apply xl:w-40  w-32 h-10 text-3xl rounded-sm;
+  }
+
+.tab.active {
+  @apply bg-thirdColor text-secondaryText;
+  }
+
+.tab.inactive {
+  @apply hover:bg-activeGrayColor;
+  }
 
 .button {
   @apply w-24 h-8 hover:scale-110 tracking-wider shadow-md rounded-sm text-secondaryText;

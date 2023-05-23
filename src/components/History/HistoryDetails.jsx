@@ -11,7 +11,7 @@ const HistoryDetails = () => {
       {filteredHistory.map((history) => (
         <div
           key={history.id}
-          className="gameHistory_container w-full flexdiv h-12 bg-inactiveColor hover:bg-activeColor rounded-sm shadow-sm"
+          className="gameHistory_container w-full flexdiv h-12 bg-mainColor hover:bg-activeColor rounded-sm shadow-sm"
         >
           <div className="relative mapImage_container w-5/12">
             <img

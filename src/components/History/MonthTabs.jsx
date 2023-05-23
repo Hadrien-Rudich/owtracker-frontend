@@ -35,7 +35,7 @@ const MonthTabs = () => {
           className={`${
             Number(currentMonth) === Number(month.index)
               ? `bg-thirdColor text-secondaryText scale-110 rounded-sm`
-              : `bg-inactiveColor hover:bg-activeColor`
+              : `bg-mainColor hover:bg-activeColor`
           } w-1/12 h-8 tracking-widest
             ${index === 0 ? "rounded-sm rounded-r-none" : ""} ${
             index === months.length - 1 ? "rounded-sm rounded-l-none" : ""

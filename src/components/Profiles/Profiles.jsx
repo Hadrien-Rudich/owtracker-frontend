@@ -43,7 +43,7 @@ const Profiles = () => {
           </h3>
         </div>
       )}
-      <div className="flexdiv w-60 py-8 bg-inactiveColor  rounded-sm shadow-lg">
+      <div className="flexdiv w-60 py-8 bg-mainColor  rounded-sm shadow-lg">
         <div className="w-52">
           <AddProfile />
           <Profile />
