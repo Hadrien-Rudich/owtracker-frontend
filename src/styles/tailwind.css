@@ -52,11 +52,11 @@ body {
 }
 
 .hamburger {
-  @apply absolute right-0 rounded-t-none rounded-sm z-20 duration-500 py-4 ;
+  @apply absolute right-[-1rem] rounded-t-none rounded-sm duration-500 py-4;
 }
 
 .hamburger.active {
-  @apply top-20 ease-out shadow-lg bg-activeColor;
+  @apply  xs:top-[4.75rem] sm:top-[6rem] top-[3.75rem] ease-out shadow-lg bg-activeColor ;
 }
 
 .hamburger.inactive {
@@ -64,11 +64,11 @@ body {
 }
 
 .dropdown {
-  @apply absolute rounded-t-none rounded-sm bg-mainColor z-20 duration-500 py-4 h-40 ;
+  @apply absolute top-2 right-2 rounded-t-none rounded-sm bg-mainColor duration-500 py-4;
 }
 
 .dropdown.active {
-  @apply top-0 ease-out shadow-lg bg-activeColor pt-44 pb-12 ;
+  @apply top-0 right-0 ease-out shadow-lg bg-activeColor pt-44 pb-12 ;
 }
 
 .dropdown.inactive {

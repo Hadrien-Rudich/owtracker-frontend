@@ -21,13 +21,13 @@ const HamburgerMenu = () => {
   return (
     <div className="main_container">
       <button
-        className="hover:bg-activeGrayColor "
+        className="hover:bg-activeGrayColor relative z-40"
         onClick={toggleHamburgerMenu}
       > 
         {showHamburgerMenu ? (
-          <RxCross2 className="w-20 h-20" />
+          <RxCross2 className="sm:w-20 sm:h-20 w-14 h-14" />
         ) : (
-          <RxHamburgerMenu className="w-20 h-20" />
+          <RxHamburgerMenu className="sm:w-20 sm:h-20 w-14 h-14" />
         )}
       </button>
       <div
@@ -36,7 +36,7 @@ const HamburgerMenu = () => {
         }  hamburger w-screen `}
       >
         <div
-          className="py-1 flexdiv col "
+          className="py-1 flexdiv col sm:text-4xl text-3xl "
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
@@ -49,7 +49,7 @@ const HamburgerMenu = () => {
                   isActive
                     ? "bg-thirdColor text-secondaryText"
                     : "hover:bg-activeGrayColor"
-                } w-36 rounded-sm text-4xl`
+                } w-36 rounded-sm `
               }
               to={location.url}
               onClick={toggleHamburgerMenu}
@@ -59,7 +59,7 @@ const HamburgerMenu = () => {
           ))}
           <button
             onClick={handleLogOut}
-            className="w-36 rounded-sm text-4xl hover:bg-activeGrayColor"
+            className="w-36 rounded-sm  hover:bg-activeGrayColor"
           >
             Log out
           </button>

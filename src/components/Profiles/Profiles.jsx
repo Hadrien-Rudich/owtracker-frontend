@@ -36,9 +36,9 @@ const Profiles = () => {
   }, [addProfilesData, newProfile]);
 
   return (
-    <div className="Profiles_container flexdiv  col lg:my-96 my-24">
+    <div className="Profiles_container flexdiv col lg:my-96 my-24">
       {profile === "" && (
-        <div className="title_container flexdiv bg-thirdColor w-48 h-12 tracking-widest rounded-sm shadow-lg absolute top-32 lg:top-[26rem]">
+        <div className="title_container flexdiv bg-thirdColor w-48 h-12 tracking-widest rounded-sm shadow-lg absolute top-[12.5rem] lg:top-[31rem]">
           <h3 className="text-2xl  text-activeColor"> {profilesData.length === 0 ? "CREATE A PROFILE" : "SELECT A PROFILE"}
           </h3>
         </div>

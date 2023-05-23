@@ -14,16 +14,16 @@ const Header = () => {
   const renderLoggedInHeader = () => {
     if (profile) {
       return (
-        <div className="Header_container flex justify-center items-end">
+        <div className="flex justify-center items-end ">
           <div className="Tabs_container hidden md:block">
             <Tabs />
           </div>
 
-          <div className=" menu_container absolute md:top-5 md:right-8 top-2 right-4">
-            <div className="HamburgerMenu_container md:hidden">
+          <div className=" menu_container absolute md:top-1 md:right-6 top-2 right-4">
+            <div className="HamburgerMenu_container md:hidden flex">
               <HamburgerMenu />
             </div>
-            <div className="hidden md:block">
+            <div className="hidden md:flex">
               <AccountDropDown />
             </div>
           </div>
@@ -41,7 +41,7 @@ const Header = () => {
             Profiles
           </NavLink>
 
-          <div className="menu_container hidden md:block md:top-5 md:right-8 top-2 right-4">
+          <div className="menu_container hidden absolute md:block md:top-1 md:right-6 top-2 right-4">
             <AccountDropDown />
           </div>
         </div>
@@ -50,8 +50,8 @@ const Header = () => {
   };
 
   return (
-    <div className="Header_container  w-full text-mainText bg-mainColor sticky top-0">
-      <div className="LogoTitle_container">
+    <div className="Header_container bg-mainColor">
+      <div className="LogoTitle_container relative z-40 w-screen">
         <LogoTitle />
       </div>
       <div>{isLoggedIn && renderLoggedInHeader()}</div>
