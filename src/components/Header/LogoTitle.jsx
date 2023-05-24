@@ -2,7 +2,7 @@ import React from "react";
 
 const LogoTitle = () => {
   return (
-    <div className="titleandimage_container flex flex-col items-start sm:text-4xl text-2xl bg-mainColor z-50 xs:pt-4 xs:pl-4 pt-2 pl-2">
+    <div className="titleandimage_container flex flex-col items-start sm:text-4xl text-2xl bg-mainColor z-50 xs:pt-2 xs:pl-4 pt-1 pl-2">
       <img
         className="xs:h-9 sm:h-12 md:h-14 lg:h-16 h-7"
         src="/images/Overwatch_2_text_logo.svg"

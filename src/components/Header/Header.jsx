@@ -19,7 +19,7 @@ const Header = () => {
             <Tabs />
           </div>
 
-          <div className=" menu_container absolute md:top-1 md:right-6 top-2 right-4">
+          <div className=" menu_container absolute sm:top-0 top-2 md:right-6 right-4">
             <div className="HamburgerMenu_container md:hidden flex">
               <HamburgerMenu />
             </div>
@@ -41,7 +41,7 @@ const Header = () => {
             Profiles
           </NavLink>
 
-          <div className="menu_container hidden absolute md:block md:top-1 md:right-6 top-2 right-4">
+          <div className="menu_container hidden absolute md:block sm:top-0 top-2 md:right-6 right-4">
             <AccountDropDown />
           </div>
         </div>
@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <div className="Header_container bg-mainColor">
-      <div className="LogoTitle_container relative z-40 w-screen">
+      <div className="LogoTitle_container relative z-40">
         <LogoTitle />
       </div>
       <div>{isLoggedIn && renderLoggedInHeader()}</div>

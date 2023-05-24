@@ -15,41 +15,40 @@ const AccountDropDown = () => {
     logOut();
   };
   return (
-    <div
-      className={`${
-        showAccountDropDown ? "bg-activeColor" : "bg-mainColor hover:bg-activeGrayColor"
-      }  AccountDropDown_container relative z-50`}
-    >
-      <div className="relative z-50">
+    <div className="AccountDropDown_container relative z-40">
       <button
         onClick={toggleAccountDropdown}
-        className="relative z-50 w-20 h-20 flexdiv"
-      >
-        <FaRegUser className="h-10 w-10" />
-      </button>
-
-      <ul
         className={`${
-          showAccountDropDown ? "active" : "inactive"
-        }  flexdiv col dropdown w-32 h-40 gap-2 relative z-10`}
+          showAccountDropDown
+            ? "bg-activeColor"
+            : "bg-mainColor hover:bg-activeGrayColor"
+        }  AccountDropDown_container relative z-40 w-32 h-20 flexdiv rounded-sm`}
       >
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? " tab active p-2" : "tab inactive "
-            }
-            to="/account"
-          >
-            Account
-          </NavLink>
-        </li>
-        <li>
-          <button className="tab" onClick={handleLogOut}>
-            Log Out
-          </button>
-        </li>
-      </ul>
-    </div>
+        <FaRegUser className="h-10 w-10 drop-shadow-lg" />
+      </button>
+      <div className="relative">
+        <ul
+          className={`${
+            showAccountDropDown ? "active" : "inactive"
+          }  dropdown  flexdiv col w-32 h-40 gap-2 z-10`}
+        >
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? " tab active p-2" : "tab inactive "
+              }
+              to="/account"
+            >
+              Account
+            </NavLink>
+          </li>
+          <li>
+            <button className="tab" onClick={handleLogOut}>
+              Log Out
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

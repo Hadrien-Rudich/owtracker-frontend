@@ -33,7 +33,7 @@ const HamburgerMenu = () => {
       <div
         className={`${
           showHamburgerMenu ? "  active" : " inactive"
-        }  hamburger w-screen `}
+        }  hamburger`}
       >
         <div
           className="py-1 flexdiv col sm:text-4xl text-3xl "
