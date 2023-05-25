@@ -6,7 +6,7 @@ const InputField = ({ label, type, value, placeholder, onChange, onKeyDown, disa
   
   return (
     <label>
-      <p>{label}</p>
+      <p className='text-xl tracking-wider'>{label}</p>
       <input
         value={inputValue}
         type={type}

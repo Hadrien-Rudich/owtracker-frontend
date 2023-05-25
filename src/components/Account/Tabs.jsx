@@ -10,14 +10,17 @@ const Tabs = () => {
   };
 
   return (
-    <div className="Tabs_container flexdiv pb-4">
+    <div className="Tabs_container flexdiv pb-4 relative top-4">
       {sections.map((section, index) => (
         <div key={index}>
           <h3>
             <button
               value={section.label}
               onClick={handleActiveTab}
-              className={`${activeTab === section.label ? "validate scale-110 " : "cancel" } button `}
+              className={`${activeTab === section.label ? 
+                " active " 
+                : "inactive " }   
+                accounttab flex justify-center items-center`}
             >
               {section.label}
             </button>

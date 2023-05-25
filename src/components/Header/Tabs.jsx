@@ -7,14 +7,14 @@ const Tabs = () => {
 
   return (
 
-    <div className="md:flex hidden ">
+    <div className="md:flex hidden">
     {locations.map((location, index) => (
         <NavLink
           key={index}
           className={({ isActive }) =>
             isActive
-              ? "tab active z-30"
-              : "tab inactive z-30"
+              ? "flex justify-center items-center headertab active z-30"
+              : "flex justify-center items-end headertab inactive z-30"
           } 
           to={location.url}
         >

@@ -51,6 +51,16 @@ body {
   
 }
 
+.containerbox {
+  @apply flex flex-col items-center justify-center content-center gap-10
+  w-80 py-10 bg-mainColor shadow-lg rounded-sm
+}
+
+.containerboxnort {
+  @apply flex flex-col items-center justify-center content-center gap-10
+  w-80 py-10 bg-mainColor shadow-lg rounded-sm rounded-t-none
+}
+
 .hamburger {
   @apply absolute right-[-1rem] rounded-t-none rounded-sm duration-500 py-4 w-screen;
 }
@@ -92,20 +102,32 @@ body {
   @apply bg-activeDraw;
 }
 
-.tab {
-  @apply xl:w-40  w-32 h-10 text-3xl rounded-sm;
+.headertab {
+  @apply xl:w-40  w-32 h-10 text-2xl rounded-sm tracking-widest;
   }
 
-.tab.active {
-  @apply bg-thirdColor text-secondaryText;
+.headertab.active {
+  @apply bg-thirdColor text-secondaryText ;
   }
 
-.tab.inactive {
-  @apply hover:bg-activeGrayColor;
+.headertab.inactive {
+  @apply hover:bg-activeColor;
   }
+
+.accounttab {
+  @apply h-10 w-40 rounded-b-none rounded-sm text-xl tracking-wider;
+  }
+
+  .accounttab.active {
+  @apply scale-105 bg-thirdColor text-secondaryText;
+  }
+
+.accounttab.inactive {
+  @apply bg-secondaryColor text-mainText  hover:bg-activeColor;
+}
 
 .button {
-  @apply w-24 h-8 hover:scale-110 tracking-wider shadow-md rounded-sm text-secondaryText;
+  @apply w-28 h-10 hover:scale-110 tracking-wider shadow-md rounded-sm text-secondaryText text-xl;
 }
 
 .button.validate {
@@ -120,7 +142,7 @@ body {
   @apply w-24 truncate rounded-sm shadow-md text-secondaryText bg-thirdColor;
 }
 .input {
-  @apply w-36 h-10 my-2 text-center shadow-inner rounded-sm tracking-wider;
+  @apply w-36 h-10 my-2 text-center shadow-inner rounded-sm tracking-wider text-xl;
 }
 
     .card.profile {
@@ -137,6 +159,20 @@ body {
 .flexdiv.col {
   @apply flex flex-col items-center justify-center content-center ;
 }
+
+.list {
+  @apply  bg-activeColor hover:opacity-100 shadow-lg rounded-sm ;
+}
+
+.list.selected {
+  @apply  scale-105 z-10 rounded-sm ring-2 ring-thirdColor;
+}
+
+.list.unselected {
+  @apply  opacity-30 ;
+}
+
+
 
 .intenseShadow {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}

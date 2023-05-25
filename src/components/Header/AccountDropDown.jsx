@@ -21,7 +21,7 @@ const AccountDropDown = () => {
         className={`${
           showAccountDropDown
             ? "bg-activeColor"
-            : "bg-mainColor hover:bg-activeGrayColor"
+            : "bg-mainColor hover:bg-activeColor"
         }  AccountDropDown_container relative z-40 w-32 h-20 flexdiv rounded-sm`}
       >
         <FaRegUser className="h-10 w-10 drop-shadow-lg" />
@@ -35,7 +35,7 @@ const AccountDropDown = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? " tab active p-2" : "tab inactive "
+                isActive ? "headertab active p-2" : "headertab inactive"
               }
               to="/account"
             >
@@ -43,7 +43,7 @@ const AccountDropDown = () => {
             </NavLink>
           </li>
           <li>
-            <button className="tab" onClick={handleLogOut}>
+            <button className="headertab" onClick={handleLogOut}>
               Log Out
             </button>
           </li>

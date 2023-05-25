@@ -41,9 +41,9 @@ const RegisterForm = () => {
   });
 
   return (
-    <div className="register_container flexdiv row lg:my-96 my-24">
+    <div className="register_container flexdiv row lg:mt-44 my-24">
       <form action="submit">
-        <div className=" inputandbutton_container flexdiv col gap-8 w-60 py-8 bg-mainColor shadow-lg rounded-sm">
+        <div className=" inputandbutton_container containerbox">
           <div className="input_container flexdiv col gap-4">
             
             <InputField
@@ -72,7 +72,7 @@ const RegisterForm = () => {
             />
 
           </div>
-          <div className="button_container flexdiv gap-4">
+          <div className="button_container flexdiv gap-6">
             <button
               onClick={handleCancelClick}
               type="reset"

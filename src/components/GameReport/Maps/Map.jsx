@@ -26,15 +26,15 @@ const Map = () => {
           <button
             className={`${
               map?.includes(m.slug.toLowerCase())
-                ? " scale-105 bg-activeColor opacity-100 relative z-10 rounded-sm border border-thirdColor"
-                : "opacity-40"
-            }   mapimage_container sm:w-1/4 w-2/4  border border-activeColor hover:opacity-100 shadow-lg rounded-sm`}
+                ? "selected"
+                : "unselected"
+            }   list sm:w-1/4 w-2/4 `}
             key={m.id}
             value={m.slug}
             onClick={handleMapClick}
             type="button"
           >
-            <img src={`images/maps/${m.imageUrl}`} alt="" />
+            <img src={`images/maps/${m.imageUrl}`} alt="map image" />
           </button>
         ))}
     </div>

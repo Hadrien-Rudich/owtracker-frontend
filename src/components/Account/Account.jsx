@@ -32,10 +32,12 @@ const Account = () => {
   }, [isLoggedIn, navigate]);
 
   return (
-    <div className="Account_container flexdiv col lg:my-96 my-24">
-        <div className="Tabs_container">
+    <div className="Account_container flexdiv col lg:mt-[8.5rem] my-24 relative">
+           <div className="Tabs_container absolute top-[-3.5rem]">
           <Tabs />
-      <div className="main_container flexdiv col w-60 py-8 gap-8 bg-mainColor shadow-lg rounded-sm">
+     
+      </div>
+       <div className="main_container containerboxnort">
           {activeTab === "details" ? (
             <div className="Details_container">
               <Details />
@@ -46,7 +48,7 @@ const Account = () => {
             </div>
           }
         </div>
-      </div>
+   
     </div>
   );
 };

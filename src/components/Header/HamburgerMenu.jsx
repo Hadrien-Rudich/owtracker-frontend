@@ -25,9 +25,9 @@ const HamburgerMenu = () => {
         onClick={toggleHamburgerMenu}
       > 
         {showHamburgerMenu ? (
-          <RxCross2 className="sm:w-20 sm:h-20 w-14 h-14" />
+          <RxCross2 className="sm:w-20 sm:h-20 w-14 h-14 drop-shadow-lg" />
         ) : (
-          <RxHamburgerMenu className="sm:w-20 sm:h-20 w-14 h-14" />
+          <RxHamburgerMenu className="sm:w-20 sm:h-20 w-14 h-14 drop-shadow-lg" />
         )}
       </button>
       <div

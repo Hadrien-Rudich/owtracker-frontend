@@ -17,8 +17,8 @@ const HomePage = () => {
   });
 
   return (
-    <div className="homepage_container flexdiv lg:my-96 my-24">
-      <div className="button_container flexdiv col gap-4 w-60 py-8 bg-mainColor shadow-lg rounded-sm">
+    <div className="homepage_container flexdiv lg:mt-44 my-24">
+      <div className="button_container containerbox">
         <Link to="/login">
           <button
             className="button bg-fourthColor"

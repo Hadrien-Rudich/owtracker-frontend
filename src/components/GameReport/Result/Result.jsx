@@ -36,7 +36,7 @@ const Result = () => {
             value={outcome.label}            
                         className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `result win`
+              ? `result win `
               : gameResult === outcome.label && gameResult === "loss"              
               ? `result loss`
               : gameResult === outcome.label && gameResult === "draw"
@@ -45,7 +45,7 @@ const Result = () => {
               ? `hover:bg-activeColor hover:scale-105 `
               : null
               
-          } w-1/3 h-10 tracking-widest rounded-sm hover:opacity-100`}
+          } w-1/3 h-10 tracking-widest rounded-sm hover:opacity-100  `}
           > {outcome.label}
           </button>
         ))}
