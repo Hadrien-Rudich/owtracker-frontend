@@ -33,11 +33,11 @@ const Account = () => {
 
   return (
     <div className="Account_container flexdiv col lg:mt-[8.5rem] my-24 relative">
-           <div className="Tabs_container absolute top-[-3.5rem]">
+           <div className="Tabs_container absolute sm:top-[-3.5rem] top-[-2.98rem]">
           <Tabs />
      
       </div>
-       <div className="main_container containerboxnort">
+       <div className="main_container containerbox">
           {activeTab === "details" ? (
             <div className="Details_container">
               <Details />

@@ -35,8 +35,8 @@ const Header = () => {
           <NavLink
             className={({ isActive }) =>
               isActive 
-              ? "flex justify-center items-center headertab active z-30" 
-              : "flex justify-center items-end headertab inactive z-30"
+              ? "headertab active" 
+              : "headertab inactive"
             }
             to="/profiles"
           >

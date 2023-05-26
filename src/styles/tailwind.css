@@ -52,70 +52,83 @@ body {
 }
 
 .containerbox {
-  @apply flex flex-col items-center justify-center content-center gap-10
-  w-80 py-10 bg-mainColor shadow-lg rounded-sm
-}
-
-.containerboxnort {
-  @apply flex flex-col items-center justify-center content-center gap-10
-  w-80 py-10 bg-mainColor shadow-lg rounded-sm rounded-t-none
+  @apply flex flex-col items-center justify-center content-center sm:gap-10 gap-5
+  sm:w-80 sm:py-10 w-60 py-5
+  bg-mainColor shadow-lg rounded-sm
 }
 
 .hamburger {
-  @apply absolute right-[-1rem] rounded-t-none rounded-sm duration-500 py-4 w-screen;
+  @apply absolute z-30 right-[-1rem] 
+  duration-500 py-4 w-screen
+  rounded-t-none rounded-sm ;
 }
 
 .hamburger.active {
-  @apply  xs:top-[4.25rem] sm:top-[6rem] top-[3.5rem] ease-out shadow-lg bg-activeColor;
+  @apply  
+  xs:top-[4.25rem] sm:top-[6rem] top-[3.5rem] 
+  ease-out shadow-lg bg-activeColor;
 }
 
 .hamburger.inactive {
-  @apply top-[-300px] ease-in bg-mainColor;
+  @apply 
+  top-[-300px] ease-in
+  bg-mainColor ;
 }
 
-.dropdown {
-  @apply absolute rounded-t-none rounded-sm duration-500 py-4;
+.accounticon {
+  @apply 
+  relative z-40 w-32 h-20 
+  rounded-sm 
 }
 
-.dropdown.active {
-  @apply top-0 ease-out shadow-lg bg-activeColor pt-12 pb-12 ;
+.accountdropdown {
+  @apply 
+  absolute w-32 h-32 z-10
+  rounded-t-none rounded-sm duration-500;
 }
 
-.dropdown.inactive {
+.accountdropdown.active {
+  @apply top-0 ease-out shadow-lg bg-activeColor;
+}
+
+.accountdropdown.inactive {
   @apply top-[-300px] ease-in bg-mainColor ;
 }
 
+.accountdropdownoption {
+  @apply  w-24 h-10 sm:text-2xl text-xl
+  rounded-sm tracking-widest;
+}
+
+.accountdropdownoption.active {
+  @apply bg-thirdColor text-secondaryText ;
+}
+.accountdropdownoption.inactive {
+  @apply hover:bg-activeGrayColor
+}
 
 .result {
   @apply text-mainText scale-105 shadow-lg;
 }
 
-.result.win {
-  @apply bg-activeWin;
-}
-
-.result.loss {
-  @apply bg-activeLoss;
-}
-
-.result.draw {
-  @apply bg-activeDraw;
-}
-
 .headertab {
-  @apply xl:w-40  w-32 h-10 text-2xl rounded-sm tracking-widest;
+  @apply flex justify-center
+  sm:w-40 sm:h-10 w-24 h-8
+  sm:text-2xl text-xl 
+  rounded-sm rounded-b-none tracking-widest;
   }
 
 .headertab.active {
-  @apply bg-thirdColor text-secondaryText ;
+  @apply items-center bg-thirdColor text-secondaryText ;
   }
 
 .headertab.inactive {
-  @apply hover:bg-activeColor;
+  @apply  items-end hover:bg-activeColor;
   }
 
+
 .accounttab {
-  @apply h-10 w-40 rounded-b-none rounded-sm text-xl tracking-wider;
+  @apply sm:w-40 sm:h-10 w-[7.5rem] h-8 rounded-b-none rounded-sm sm:text-xl text-lg tracking-wider;
   }
 
   .accounttab.active {
@@ -123,11 +136,13 @@ body {
   }
 
 .accounttab.inactive {
-  @apply bg-secondaryColor text-mainText  hover:bg-activeColor;
+  @apply bg-secondaryColor hover:bg-activeColor;
 }
 
 .button {
-  @apply w-28 h-10 hover:scale-110 tracking-wider shadow-md rounded-sm text-secondaryText text-xl;
+  @apply sm:w-28 sm:h-10 w-20 h-8
+  hover:scale-110 tracking-wider shadow-md rounded-sm 
+  text-secondaryText sm:text-xl text-lg;
 }
 
 .button.validate {
@@ -135,18 +150,24 @@ body {
 }
 
 .button.cancel {
-  @apply bg-secondaryColor text-mainText ;
+  @apply bg-secondaryColor text-mainText;
 }
 
-.button.modify {
-  @apply w-24 truncate rounded-sm shadow-md text-secondaryText bg-thirdColor;
-}
 .input {
-  @apply w-36 h-10 my-2 text-center shadow-inner rounded-sm tracking-wider text-xl;
+  @apply sm:w-36 sm:h-10 w-28 h-8 my-2 text-center shadow-inner rounded-sm tracking-wider sm:text-xl text-lg;
 }
 
-    .card.profile {
+    .profile.card {
       @apply  w-36 h-10 text-center tracking-wider shadow-inner rounded-sm;
+    }
+
+    .profile.header {
+
+      @apply
+      bg-thirdColor sm:w-80 w-60 sm:h-10 h-8
+      tracking-widest rounded-b-none rounded-sm shadow-lg absolute
+      sm:top-[-2.5rem] top-[-2rem]
+sm:text-xl text-lg text-secondaryText;
     }
 
 .input.disabled {
@@ -161,7 +182,7 @@ body {
 }
 
 .list {
-  @apply  bg-activeColor hover:opacity-100 shadow-lg rounded-sm ;
+  @apply  shadow-lg rounded-sm;
 }
 
 .list.selected {
@@ -169,7 +190,23 @@ body {
 }
 
 .list.unselected {
-  @apply  opacity-30 ;
+  @apply  opacity-30 bg-activeColor hover:opacity-100 hover:scale-105;
+}
+
+.sign {
+  @apply hover:scale-110 h-3 w-3 drop-shadow-lg  opacity-30
+}
+
+.sign.main {
+  @apply sm:w-7 sm:h-7 w-5 h-5
+}
+
+.sign.cancel {
+  @apply hover:opacity-100 hover:text-warning
+}
+
+.sign.validate {
+  @apply hover:opacity-100 hover:scale-110
 }
 
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useOutsideClick from "../UseOutsideClick";
 import { NavLink } from "react-router-dom";
 import { authStore } from "../../store/authStore";
 import { FaRegUser } from "react-icons/fa";
@@ -7,22 +8,32 @@ const AccountDropDown = () => {
   const { logOut } = authStore();
   const [showAccountDropDown, setShowAccountDropDown] = useState(false);
 
-  const toggleAccountDropdown = () => {
+  const toggleAccountDropdown = (e) => {
+    e.stopPropagation();
     setShowAccountDropDown(!showAccountDropDown);
   };
+
+  const handleOutsideClick = () => {
+    setShowAccountDropDown(false);
+  };
+
+  const accountDropdownRef = useOutsideClick(handleOutsideClick);
 
   const handleLogOut = () => {
     logOut();
   };
   return (
-    <div className="AccountDropDown_container relative z-40">
+    <div
+      ref={accountDropdownRef}
+      className="AccountDropDown_container relative z-40"
+    >
       <button
         onClick={toggleAccountDropdown}
         className={`${
           showAccountDropDown
             ? "bg-activeColor"
             : "bg-mainColor hover:bg-activeColor"
-        }  AccountDropDown_container relative z-40 w-32 h-20 flexdiv rounded-sm`}
+        }  accounticon flexdiv duration-[800ms]`}
       >
         <FaRegUser className="h-10 w-10 drop-shadow-lg" />
       </button>
@@ -30,12 +41,14 @@ const AccountDropDown = () => {
         <ul
           className={`${
             showAccountDropDown ? "active" : "inactive"
-          }  dropdown  flexdiv col w-32 h-40 gap-2 z-10`}
+          }  accountdropdown flexdiv col gap-2`}
         >
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "headertab active p-2" : "headertab inactive"
+                isActive
+                  ? "accountdropdownoption active p-2"
+                  : "accountdropdownoption inactive p-2"
               }
               to="/account"
             >
@@ -43,7 +56,10 @@ const AccountDropDown = () => {
             </NavLink>
           </li>
           <li>
-            <button className="headertab" onClick={handleLogOut}>
+            <button
+              className="accountdropdownoption inactive"
+              onClick={handleLogOut}
+            >
               Log Out
             </button>
           </li>

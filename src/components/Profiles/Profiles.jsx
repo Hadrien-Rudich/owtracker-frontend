@@ -20,8 +20,6 @@ const Profiles = () => {
     [isLoggedIn, navigate];
   });
 
-  
-
   useEffect(() => {
     async function getProfilesData() {
       try {
@@ -38,16 +36,17 @@ const Profiles = () => {
   return (
     <div className="Profiles_container flexdiv col lg:mt-[8.5rem] my-24 relative">
       {profile === "" && (
-        <div className="title_container flexdiv bg-thirdColor w-80 h-10 tracking-widest rounded-b-none rounded-sm shadow-lg absolute top-[-2.5rem] ">
-          <h3 className="text-xl  text-activeColor"> 
-          {profilesData.length === 0 
-          ? "CREATE A PROFILE" 
-          : "SELECT A PROFILE"}
+        <div className="title_container profile header flexdiv">
+          <h3 className="">
+            {profilesData.length === 0
+              ? "CREATE A PROFILE"
+              : "SELECT A PROFILE"}
           </h3>
         </div>
       )}
-      <div className="containerbox">
-        <div className="w-52">
+      <div
+        className="containerbox">
+        <div className="w-52 flex flex-col gap-4">
           <AddProfile />
           <Profile />
         </div>

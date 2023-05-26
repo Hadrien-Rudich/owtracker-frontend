@@ -3,27 +3,36 @@ import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 import { headerStore } from "../../store/headerStore";
 import { authStore } from "../../store/authStore";
+import useOutsideClick from "../UseOutsideClick";
 
 const HamburgerMenu = () => {
   const { logOut } = authStore();
 
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+
   const { locations } = headerStore();
 
-  const toggleHamburgerMenu = () => {
+  const toggleHamburgerMenu = (e) => {
+    e.stopPropagation();
     setShowHamburgerMenu(!showHamburgerMenu);
   };
+
+  const handleOutsideClick = () => {
+    setShowHamburgerMenu(false);
+  };
+
+  const hamburgerMenuRef = useOutsideClick(handleOutsideClick);
 
   const handleLogOut = () => {
     logOut();
   };
 
   return (
-    <div className="main_container">
+    <div ref={hamburgerMenuRef} className="main_container">
       <button
         className="hover:bg-activeGrayColor relative z-40"
         onClick={toggleHamburgerMenu}
-      > 
+      >
         {showHamburgerMenu ? (
           <RxCross2 className="sm:w-20 sm:h-20 w-14 h-14 drop-shadow-lg" />
         ) : (
@@ -31,9 +40,7 @@ const HamburgerMenu = () => {
         )}
       </button>
       <div
-        className={`${
-          showHamburgerMenu ? "  active" : " inactive"
-        }  hamburger`}
+        className={`${showHamburgerMenu ? "  active" : " inactive"}  hamburger`}
       >
         <div
           className="py-1 flexdiv col sm:text-4xl text-3xl "

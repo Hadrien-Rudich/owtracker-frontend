@@ -58,7 +58,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="Profile_container flex flex-col gap-4 rounded-sm shadow-sm">
+    <div className="Profile_container flex flex-col gap-4">
       {profilesData.map((p, index) => (
         <div className="profile_container flex ml-8 gap-4" key={index}>
           
@@ -80,9 +80,9 @@ const Profile = () => {
               method="delete"
               onClick={() => handleDeleteClick(p.label)}
               type="button"
-              className=""
+              className="hover:scale-110"
             >
-              <ImCross className="scale-75 text-mainText hover:text-activeLoss" />
+              <ImCross className="sign cancel" />
             </button>
           )}
         </div>

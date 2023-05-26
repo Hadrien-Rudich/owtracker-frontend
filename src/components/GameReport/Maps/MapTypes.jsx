@@ -34,7 +34,7 @@ const MapTypes = () => {
             className={`${
               mapType === type.label.toLowerCase()
                 ? "scale-105"
-                : "filter hover:scale-105"
+                : "opacity-30 hover:opacity-100 hover:scale-105"
             } flexdiv rounded-sm`}
           >
             <img

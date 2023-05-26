@@ -13,7 +13,7 @@ const Tabs = () => {
     <div className="Tabs_container flexdiv pb-4 relative top-4">
       {sections.map((section, index) => (
         <div key={index}>
-          <h3>
+          <h2>
             <button
               value={section.label}
               onClick={handleActiveTab}
@@ -24,7 +24,7 @@ const Tabs = () => {
             >
               {section.label}
             </button>
-          </h3>
+          </h2>
         </div>
       ))}
     </div>

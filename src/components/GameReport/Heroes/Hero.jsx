@@ -26,7 +26,7 @@ const Hero = () => {
        
                
               <div className="heroes_container flexdiv">
-              <div className="lg:w-2/3 w-full flexdiv flex-wrap">
+              <div className="lg:w-2/3 w-full flexdiv flex-wrap sm:gap-1 gap-0">
         
                 {heroesData
                   .filter(

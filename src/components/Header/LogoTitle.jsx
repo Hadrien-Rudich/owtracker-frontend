@@ -3,14 +3,16 @@ import React from "react";
 const LogoTitle = () => {
   return (
     <div className="titleandimage_container flex flex-col items-start sm:text-4xl text-2xl bg-mainColor z-50 xs:pt-2 xs:pl-4 pt-1 pl-2">
-      <img
-        className="xs:h-9 sm:h-12 md:h-14 lg:h-16 h-7"
-        src="/images/Overwatch_2_text_logo.svg"
-        alt=""
-      />
-      <div className="title_container sm:h-10 h-8">
-
-        <h1 className="italic">Game Tracker</h1>
+      <h1 className="sr-only">Overwatch 2 Game Tracker</h1>
+      <div className="logo_container">
+        <img
+          className="logo_image xs:h-9 sm:h-12 md:h-14 lg:h-16 h-7"
+          src="/images/Overwatch_2_text_logo.svg"
+          alt="Overwatch 2 Logo"
+          aria-hidden="true"
+        />
+        <span className="logo_text sr-only">Overwatch 2</span>
+        <span className="logo_text">Game Tracker</span>
       </div>
     </div>
   );

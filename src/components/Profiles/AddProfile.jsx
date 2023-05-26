@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { profileStore } from "../../store/profileStore";
 import { addUserProfileToDb } from "../../services/ApiService";
 import { ImPlus, ImCross } from "react-icons/im";
+import useOutsideClick from "../UseOutsideClick";
 
 const AddProfile = () => {
   const { newProfile, setNewProfile, addNewProfile, clearNewProfile } =
@@ -11,14 +12,21 @@ const AddProfile = () => {
   const handleOnChange = (e) => {
     setNewProfile(e.target.value);
   };
-
-  const handleClick = () => {
+  const handlePlusClick = (e) => {
+    e.stopPropagation();
     setInputField(true);
   };
+
   const handleCrossClick = () => {
     clearNewProfile();
     setInputField(false);
   };
+
+  const handleOutsideClick = () => {
+    setInputField(false);
+  }
+
+  const newProfileInputRef = useOutsideClick(handleOutsideClick);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,50 +49,44 @@ const AddProfile = () => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [inputField]);
-
   return (
-    <div className="addprofile_container h-12 pb-6 flexdiv">
-      <button onClick={handleClick} type="button">
+    <div className="addprofile_container h-12 flexdiv" ref={newProfileInputRef}>
+      <button onClick={handlePlusClick} type="button">
         {!inputField && (
           <div className="addbutton_container">
-            <ImPlus className="flex w-8 h-8 text-thirdColor scale-75 hover:scale-90" />
+            <ImPlus className="sign main validate" />
           </div>
         )}
       </button>
       {inputField && (
         <form onSubmit={handleSubmit}>
-          <div className="form_container h-6 flex gap-4">
-            <button
-              className="scale-75 hover:scale-90"
-              onClick={handleCrossClick}
-            >
-              <ImCross className="" />
-            </button>
-            <label>
-              <input
-                className=" my-2 text-center shadow-inner rounded-sm"
-                name="profile"
-                autoFocus
-                required
-                value={newProfile}
-                onChange={handleOnChange}
-                onKeyDown={handleKeyDown}
-                type="text"
-              />
-            </label>
+          <div className="form_container flex gap-4">
+            <button onClick={handleCrossClick
+}
+              >
+                <ImCross className="sign cancel" />
+              </button>
+              <label>
+                <input
+                  className="card profile"
+                  name="profile"
+                  autoFocus
+                  required
+                  value={newProfile}
+                  onChange={handleOnChange}
+                  onKeyDown={handleKeyDown}
+                  type="text"
+                />
+              </label>
 
-            <button type="submit" className="scale-75 hover:scale-90">
-              <ImPlus />
-            </button>
-          </div>
-        </form>
-      )}
-    </div>
-  );
-};
+              <button type="submit">
+                <ImPlus className="sign validate"/>
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
+    );
+  };
 
-export default AddProfile;
+  export default AddProfile;

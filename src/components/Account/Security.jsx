@@ -21,9 +21,9 @@ const Details = () => {
         <div className="button_container">
           <button
             onClick={handleEditSecurityClick}
-            className="button bg-activeLoss"
+            className="button bg-warning truncate"
           >
-            Edit Password
+            Edit
           </button>
         </div>
       )}

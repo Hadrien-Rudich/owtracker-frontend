@@ -36,11 +36,11 @@ const Result = () => {
             value={outcome.label}            
                         className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `result win `
+              ? `result bg-activeWin `
               : gameResult === outcome.label && gameResult === "loss"              
-              ? `result loss`
+              ? `result bg-activeLoss`
               : gameResult === outcome.label && gameResult === "draw"
-              ? `result draw`
+              ? `result bg-activeDraw`
               : gameResult !== "win" || gameResult !== "loss" || gameResult !== "draw"
               ? `hover:bg-activeColor hover:scale-105 `
               : null

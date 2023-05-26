@@ -38,7 +38,7 @@ const Details = () => {
             />
         </div>
         <div className="button_container flexdiv col gap-4">
-          <button onClick={handleEditClick} className="button modify">
+          <button onClick={handleEditClick} className="button bg-warning">
             Edit
           </button>
         </div>
