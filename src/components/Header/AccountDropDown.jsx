@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useOutsideClick from "../UseOutsideClick";
 import { NavLink } from "react-router-dom";
 import { authStore } from "../../store/authStore";
 import { FaRegUser } from "react-icons/fa";
@@ -13,18 +12,11 @@ const AccountDropDown = () => {
     setShowAccountDropDown(!showAccountDropDown);
   };
 
-  const handleOutsideClick = () => {
-    setShowAccountDropDown(false);
-  };
-
-  const accountDropdownRef = useOutsideClick(handleOutsideClick);
-
   const handleLogOut = () => {
     logOut();
   };
   return (
     <div
-      ref={accountDropdownRef}
       onMouseLeave={toggleAccountDropdown}  
       className="AccountDropDown_container relative z-40"
     >

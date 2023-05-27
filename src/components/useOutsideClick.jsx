@@ -1,31 +1,37 @@
 import { useEffect, useRef } from "react";
 
-const useOutsideClick = (callback) => {
+const useOutsideClick = (callback, eventTypes) => {
   const ref = useRef(null);
 
-  const handleOutsideClick = (event) => {
+  // This function checks if a click event occurred outside the ref element
+  const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
+      // If the click occurred outside the ref element, invoke the callback
       callback();
     }
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      handleOutsideClick(event);
+    // This function handles the click event outside the ref element
+    const handleOutsideClick = (event) => {
+      handleClickOutside(event);
     };
 
-    const handleMouseLeave = () => {
-      callback();
-    };
+    // Add event listeners for the specified event types
+    eventTypes.forEach((eventType) => {
+      document.addEventListener(eventType, handleOutsideClick);
+      ref?.current?.addEventListener(eventType, callback);
+    });
 
-    document.addEventListener("click", handleClickOutside);
-    ref.current.addEventListener("mouseleave", handleMouseLeave);
-
+    // Cleanup function that runs when the component unmounts or when the dependency array changes
     return () => {
-      document.removeEventListener("click", handleClickOutside);
-      ref.current.removeEventListener("mouseleave", handleMouseLeave);
+      // Remove event listeners for the specified event types
+      eventTypes.forEach((eventType) => {
+        document.removeEventListener(eventType, handleOutsideClick);
+        ref?.current?.removeEventListener(eventType, callback);
+      });
     };
-  }, [callback]);
+  }, [callback, eventTypes]);
 
   return ref;
 };

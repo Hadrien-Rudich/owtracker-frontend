@@ -26,7 +26,7 @@ const AddProfile = () => {
     setInputField(false);
   }
 
-  const newProfileInputRef = useOutsideClick(handleOutsideClick);
+  const newProfileInputRef = useOutsideClick(handleOutsideClick, ["click"]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +50,9 @@ const AddProfile = () => {
   };
 
   return (
-    <div className="addprofile_container h-12 flexdiv" ref={newProfileInputRef}>
+    <div className="addprofile_container h-12 flexdiv"
+     ref={newProfileInputRef}
+     >
       <button onClick={handlePlusClick} type="button">
         {!inputField && (
           <div className="addbutton_container">
@@ -61,9 +63,7 @@ const AddProfile = () => {
       {inputField && (
         <form onSubmit={handleSubmit}>
           <div className="form_container flex gap-4">
-            <button onClick={handleCrossClick
-}
-              >
+            <button onClick={handleCrossClick} type="button">
                 <ImCross className="sign cancel" />
               </button>
               <label>

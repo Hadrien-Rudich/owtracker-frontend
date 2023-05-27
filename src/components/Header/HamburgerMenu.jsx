@@ -21,7 +21,7 @@ const HamburgerMenu = () => {
     setShowHamburgerMenu(false);
   };
 
-  const hamburgerMenuRef = useOutsideClick(handleOutsideClick);
+  const hamburgerMenuRef = useOutsideClick(handleOutsideClick, ["click"]);
 
   const handleLogOut = () => {
     logOut();
