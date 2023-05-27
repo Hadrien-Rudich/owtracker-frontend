@@ -10,11 +10,22 @@ const useOutsideClick = (callback) => {
   };
 
   useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
+    const handleClickOutside = (event) => {
+      handleOutsideClick(event);
     };
-  }, []);
+
+    const handleMouseLeave = () => {
+      callback();
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    ref.current.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      ref.current.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [callback]);
 
   return ref;
 };

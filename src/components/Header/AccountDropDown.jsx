@@ -25,10 +25,11 @@ const AccountDropDown = () => {
   return (
     <div
       ref={accountDropdownRef}
+      onMouseLeave={toggleAccountDropdown}  
       className="AccountDropDown_container relative z-40"
     >
       <button
-        onClick={toggleAccountDropdown}
+        onMouseEnter={toggleAccountDropdown}    
         className={`${
           showAccountDropDown
             ? "bg-activeColor"
@@ -37,7 +38,8 @@ const AccountDropDown = () => {
       >
         <FaRegUser className="h-10 w-10 drop-shadow-lg" />
       </button>
-      <div className="relative">
+      <div
+      className="relative">
         <ul
           className={`${
             showAccountDropDown ? "active" : "inactive"

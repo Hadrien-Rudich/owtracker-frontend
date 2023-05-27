@@ -24,7 +24,9 @@ module.exports = {
       activeLoss: "#D9534F",
       warning: "#D32F2F",    },
     screens: {
-      'xs': '420px',
+
+      'xs': '520px',
+      'xxs': '430px',
       ...defaultTheme.screens,
     },
   },

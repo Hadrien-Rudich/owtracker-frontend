@@ -19,11 +19,11 @@ const Header = () => {
             <Tabs />
           </div>
 
-          <div className=" menu_container absolute sm:top-0 top-2 md:right-6 right-4">
-            <div className="HamburgerMenu_container md:hidden flex">
+          <div className=" menu_container ">
+            <div className="hamburgermenucontainer">
               <HamburgerMenu />
             </div>
-            <div className="hidden md:flex">
+            <div className="accountdropdowncontainer">
               <AccountDropDown />
             </div>
           </div>

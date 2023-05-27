@@ -57,34 +57,57 @@ body {
   bg-mainColor shadow-lg rounded-sm
 }
 
+.hamburgermenucontainer {
+  @apply md:hidden flex absolute 
+  xxs:top-1 xs:top-[0.4rem] sm:top-2 md:top-0 top-[0.05rem]
+  xxs:right-[0.8rem] sm:right-[1rem] right-[0.65rem]
+}
+
+.hamburgericon {
+  @apply 
+  sm:w-20 xs:w-[4.5rem] w-16
+  sm:h-20  xs:h-[4.5rem] h-16 
+  drop-shadow-lg
+}
+
 .hamburger {
-  @apply absolute z-30 right-[-1rem] 
+  @apply absolute z-30 right-[-0.65rem]
   duration-500 py-4 w-screen
   rounded-t-none rounded-sm ;
 }
 
 .hamburger.active {
   @apply  
-  xs:top-[4.25rem] sm:top-[6rem] top-[3.5rem] 
+  xs:top-[4.25rem] sm:top-[5.5rem] top-[3.9rem] 
+  xxs:right-[-0.8rem] sm:right-[-1rem] right-[-0.65rem]
   ease-out shadow-lg bg-activeColor;
 }
 
 .hamburger.inactive {
   @apply 
-  top-[-300px] ease-in
+  top-[-10rem] ease-in
+  xxs:right-[-0.8rem] sm:right-[-1rem] right-[-0.65rem]
+
   bg-mainColor ;
+}
+
+.accountdropdowncontainer {
+
+@apply hidden md:flex absolute
+xxs:top-1 xs:top-[0.4rem] sm:top-2 md:top-0 top-[0.05rem]
+right-0
+  
 }
 
 .accounticon {
   @apply 
   relative z-40 w-32 h-20 
-  rounded-sm 
 }
 
 .accountdropdown {
   @apply 
   absolute w-32 h-32 z-10
-  rounded-t-none rounded-sm duration-500;
+  rounded-t-none rounded-r-none rounded-sm duration-500;
 }
 
 .accountdropdown.active {

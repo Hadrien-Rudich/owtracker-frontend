@@ -6,13 +6,15 @@ const LogoTitle = () => {
       <h1 className="sr-only">Overwatch 2 Game Tracker</h1>
       <div className="logo_container">
         <img
-          className="logo_image xs:h-9 sm:h-12 md:h-14 lg:h-16 h-7"
+          className="logo_image xxs:h-9 xs:h-11 sm:h-12 md:h-14 lg:h-16 h-7"
           src="/images/Overwatch_2_text_logo.svg"
           alt="Overwatch 2 Logo"
           aria-hidden="true"
         />
-        <span className="logo_text sr-only">Overwatch 2</span>
-        <span className="logo_text">Game Tracker</span>
+        <div className="flex flex-col items-start">
+          <span className="logo_text sr-only">Overwatch 2</span>
+          <span className="logo_text">Game Tracker</span>
+        </div>
       </div>
     </div>
   );
