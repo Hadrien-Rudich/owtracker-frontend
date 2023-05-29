@@ -96,12 +96,12 @@ body {
 @apply hidden md:flex absolute
 xxs:top-1 xs:top-[0.4rem] sm:top-2 md:top-0 top-[0.05rem]
 right-0
-  
 }
 
 .accounticon {
   @apply 
   relative z-40 w-32 h-20 
+  
 }
 
 .accountdropdown {
@@ -120,14 +120,15 @@ right-0
 
 .accountdropdownoption {
   @apply  w-24 h-10 sm:text-2xl text-xl
-  rounded-sm tracking-widest;
+  rounded-sm tracking-widest
+  duration-150 ease-in-out;
 }
 
 .accountdropdownoption.active {
   @apply bg-thirdColor text-secondaryText ;
 }
 .accountdropdownoption.inactive {
-  @apply hover:bg-activeGrayColor
+  @apply hover:bg-activeGrayColor hover:shadow-lg
 }
 
 .result {
@@ -138,34 +139,44 @@ right-0
   @apply flex justify-center
   sm:w-40 sm:h-10 w-24 h-8
   sm:text-2xl text-xl 
-  rounded-sm rounded-b-none tracking-widest;
+  rounded-sm rounded-b-none tracking-widest
+  ease-in-out duration-150;
   }
 
 .headertab.active {
-  @apply items-center bg-thirdColor text-secondaryText ;
+  @apply items-center bg-thirdColor text-secondaryText shadow-lg;
   }
 
 .headertab.inactive {
-  @apply  items-end hover:bg-activeColor;
+  @apply  items-end hover:bg-activeColor hover:shadow-lg;
   }
 
 
 .accounttab {
-  @apply sm:w-40 sm:h-10 w-[7.5rem] h-8 rounded-b-none rounded-sm sm:text-xl text-lg tracking-wider;
+  @apply sm:w-40 sm:h-10 w-[7.5rem] h-8
+   rounded-sm rounded-b-none 
+   sm:text-xl text-lg tracking-wider
+   ease-in-out duration-150
+  ;
   }
 
   .accounttab.active {
-  @apply scale-105 bg-thirdColor text-secondaryText;
+  @apply bg-thirdColor text-secondaryText 
+  shadow-lg z-20;
+  ;
   }
 
 .accounttab.inactive {
-  @apply bg-secondaryColor hover:bg-activeColor;
+  @apply bg-secondaryColor hover:bg-activeColor
+  shadow-inner z-0
+  ;
 }
 
 .button {
   @apply sm:w-28 sm:h-10 w-20 h-8
   hover:scale-110 tracking-wider shadow-md rounded-sm 
-  text-secondaryText sm:text-xl text-lg;
+  text-secondaryText sm:text-xl text-lg
+  ease-in-out duration-150;
 }
 
 .button.validate {
@@ -181,7 +192,9 @@ right-0
 }
 
     .profile.card {
-      @apply  w-36 h-10 text-center tracking-wider shadow-inner rounded-sm;
+      @apply  w-36 h-10 text-center tracking-wider rounded-sm
+      hover:bg-activeColor hover:scale-110 hover:shadow-lg
+      ease-in-out duration-150;
     }
 
     .profile.header {
@@ -217,7 +230,7 @@ sm:text-xl text-lg text-secondaryText;
 }
 
 .sign {
-  @apply hover:scale-110 h-3 w-3 drop-shadow-lg  opacity-30
+  @apply hover:scale-110 h-3 w-3 drop-shadow-lg  opacity-30 duration-150 ease-in-out
 }
 
 .sign.main {

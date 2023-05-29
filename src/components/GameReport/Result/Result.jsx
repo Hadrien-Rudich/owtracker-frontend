@@ -36,7 +36,7 @@ const Result = () => {
             value={outcome.label}            
                         className={`${
               gameResult === outcome.label && gameResult === "win"
-              ? `result bg-activeWin `
+              ? `result bg-activeWin`
               : gameResult === outcome.label && gameResult === "loss"              
               ? `result bg-activeLoss`
               : gameResult === outcome.label && gameResult === "draw"

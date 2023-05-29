@@ -25,7 +25,7 @@ const AccountDropDown = () => {
         className={`${
           showAccountDropDown
             ? "bg-activeColor"
-            : "bg-mainColor hover:bg-activeColor"
+            : "bg-mainColor hover:bg-activeColor hover:shadow-lg"
         }  accounticon flexdiv duration-[800ms]`}
       >
         <FaRegUser className="h-10 w-10 drop-shadow-lg" />

@@ -14,7 +14,7 @@ const Tabs = () => {
           className={({ isActive }) =>
             isActive
               ? "headertab active"
-              : "headertab inactive"
+              : "headertab inactive "
           } 
           to={location.url}
         >

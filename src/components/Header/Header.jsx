@@ -14,8 +14,8 @@ const Header = () => {
   const renderLoggedInHeader = () => {
     if (profile) {
       return (
-        <div className="flex justify-center items-end ">
-          <div className="Tabs_container hidden md:block">
+        <div className="flex justify-center items-end">
+          <div className="Tabs_container hidden md:block  ">
             <Tabs />
           </div>
 
@@ -56,7 +56,7 @@ const Header = () => {
       <div className="LogoTitle_container relative z-40">
         <LogoTitle />
       </div>
-      <div>{isLoggedIn && renderLoggedInHeader()}</div>
+      <div className="">{isLoggedIn && renderLoggedInHeader()}</div>
     </div>
   );
 };

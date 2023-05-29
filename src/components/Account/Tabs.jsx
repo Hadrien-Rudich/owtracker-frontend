@@ -18,9 +18,9 @@ const Tabs = () => {
               value={section.label}
               onClick={handleActiveTab}
               className={`${activeTab === section.label ? 
-                " active " 
-                : "inactive " }   
-                accounttab flex justify-center items-center`}
+                " active" 
+                : "inactive" }   
+                accounttab flexdiv`}
             >
               {section.label}
             </button>

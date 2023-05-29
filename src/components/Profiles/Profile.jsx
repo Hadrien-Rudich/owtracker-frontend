@@ -69,9 +69,9 @@ const Profile = () => {
             type="button"
             className={`${
               p.label.toLowerCase() === profile.toLowerCase()
-                ? "scale-110 bg-activeColor"
-                : "bg-activeGrayColor "
-            } profilecard_container card profile hover:bg-activeColor hover:scale-110`}>
+                ? "scale-110 bg-activeColor shadow-lg"
+                : "bg-activeGrayColor shadow-inner"
+            } profilecard_container profile card hover:bg-activeColor hover:scale-110`}>
             {p.label}
           </button>
           {p.label.toLowerCase() === profile.toLowerCase() && (

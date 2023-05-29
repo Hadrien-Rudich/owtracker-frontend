@@ -1,5 +1,6 @@
 import { historyStore } from "../../store/historyStore";
 import { filterHistory } from "../../utils/filters";
+import { capitalizeFirstLetter } from "../../utils/maps";
 
 const HistoryDetails = () => {
   const { historyData, currentMonth } = historyStore();
@@ -7,11 +8,11 @@ const HistoryDetails = () => {
   const filteredHistory = filterHistory(currentMonth, historyData);
 
   return (
-    <div className="flexdiv col gap-0.5 tracking-wider">
+    <div className="flexdiv col gap-[0.05rem] tracking-wider">
       {filteredHistory.map((history) => (
         <div
           key={history.id}
-          className="gameHistory_container w-full flexdiv h-12 bg-mainColor hover:bg-activeColor rounded-sm shadow-sm"
+          className="gameHistory_container w-full flexdiv h-12 bg-mainColor hover:bg-activeColor hover:shadow-lg rounded-sm"
         >
           <div className="relative mapImage_container w-5/12">
             <img
@@ -20,12 +21,20 @@ const HistoryDetails = () => {
               alt=""
             />
             <div className="absolute inset-0">
-              <p className="absolute top-1/2 left-0 transform -translate-y-1/2 text-secondaryText px-1 bg-mainText bg-opacity-40">
-                {history.map}
-              </p>
+              <div className="flexdiv gap-4 absolute top-1/2 left-0 transform -translate-y-1/2 text-secondaryText px-1 bg-mainText bg-opacity-40">
+                <p className="">{history.map}</p>
+
+                <img
+                  className="h-6 w-6"
+                  src={`images/mapTypes/${capitalizeFirstLetter(
+                    history.mapType
+                  )}_icon.svg`}
+                  alt="map type icon"
+                />
+              </div>
             </div>
           </div>
-          <div className="heroImage_container w-5/12 flexdiv gap-0.5 ">
+          <div className="heroImage_container w-5/12 flexdiv gap-0.5">
             {history.heroesImageUrl.map((heroImage, index) => (
               <img
                 key={index}
@@ -37,10 +46,11 @@ const HistoryDetails = () => {
           </div>
           <div
             className={`${
-              history.result === "win" ? `bg-activeWin` : 
-              history.result === "loss" ? `bg-activeLoss` :
-              
-              `bg-activeDraw`
+              history.result === "win"
+                ? `bg-activeWin`
+                : history.result === "loss"
+                ? `bg-activeLoss`
+                : `bg-activeDraw`
             }     
             result_container flexdiv w-1/12 `}
           >

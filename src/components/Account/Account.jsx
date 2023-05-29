@@ -37,7 +37,10 @@ const Account = () => {
           <Tabs />
      
       </div>
-       <div className="main_container containerbox">
+       <div className="main_container 
+       flexdiv col sm:gap-10 gap-5
+  sm:w-80 sm:py-10 w-60 py-5
+  bg-mainColor shadow-lg rounded-sm rounded-t-none">
           {activeTab === "details" ? (
             <div className="Details_container">
               <Details />
