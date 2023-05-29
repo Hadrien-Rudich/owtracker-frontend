@@ -1,31 +1,29 @@
-import { gameReportStore } from "../../store/gameReportStore";
+import React from 'react';
+import gameReportStore from '../../store/gameReportStore';
 
+function Reset() {
+  const { clearMapType, clearMap, clearHeroes, clearGameResult, clearRole } =
+    gameReportStore();
 
-const Reset = () => {
-
-  const { clearMapType, clearMap, clearHeroes, clearGameResult, clearRole  } = gameReportStore();
-
+  const resetSelection = () => {
+    clearMapType();
+    clearMap();
+    clearHeroes();
+    clearGameResult();
+    clearRole();
+  };
 
   const handleClick = () => {
-    resetSelection()
-  }
- 
-  const resetSelection = () => {
-    clearMapType()
-    clearMap()
-    clearHeroes()
-    clearGameResult()
-    clearRole()
-    
+    resetSelection();
   };
 
   return (
-    <div className=''>
-      <button type="reset" onClick={handleClick} className='button cancel'>
-Reset
+    <div>
+      <button type="button" onClick={handleClick} className="button cancel">
+        Reset
       </button>
     </div>
-  )
+  );
 }
 
-export default Reset
+export default Reset;

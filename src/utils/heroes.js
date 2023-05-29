@@ -8,4 +8,4 @@ const toggleHero = (selectedHero, heroes, addHero, removeHero) => {
   }
 };
 
-export { toggleHero};
+export default toggleHero;

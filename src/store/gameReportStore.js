@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 const gameReportStore = create((set) => ({
   heroesData: [],
@@ -14,20 +14,20 @@ const gameReportStore = create((set) => ({
   mapsData: [],
   addMapsData: (maps) => set(() => ({ mapsData: maps })),
   map: null,
-  addMap: (map) => set(() => ({ map: map })),
+  addMap: (map) => set(() => ({ map })),
   typesData: [],
   addTypesData: (types) => set(() => ({ typesData: types })),
   mapType: null,
-  addMapType: (mapType) => set(() => ({ mapType: mapType })),
+  addMapType: (mapType) => set(() => ({ mapType })),
   clearMapType: () => set(() => ({ mapType: null })),
-  clearMap: () => set(() => ({ map: null})),
+  clearMap: () => set(() => ({ map: null })),
   gameResult: null,
-  addGameResult: (gameResult) => set(() => ({ gameResult: gameResult })),
+  addGameResult: (gameResult) => set(() => ({ gameResult })),
   clearGameResult: () => set(() => ({ gameResult: null })),
   rolesData: [],
   addRolesData: (roles) => set(() => ({ rolesData: roles })),
   role: null,
-  addRole: (role) => set(() => ({ role: role })),
+  addRole: (role) => set(() => ({ role })),
   clearRole: () => set(() => ({ role: null })),
   roleModal: false,
   toggleRoleModal: () => set((state) => ({ roleModal: !state.roleModal })),
@@ -35,4 +35,4 @@ const gameReportStore = create((set) => ({
   toggleMapModal: () => set((state) => ({ mapModal: !state.mapModal })),
 }));
 
-export { gameReportStore };
+export default gameReportStore;

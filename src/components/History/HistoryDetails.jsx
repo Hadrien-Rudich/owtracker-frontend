@@ -1,8 +1,10 @@
-import { historyStore } from "../../store/historyStore";
-import { filterHistory } from "../../utils/filters";
-import { capitalizeFirstLetter } from "../../utils/maps";
+import React from 'react';
+import historyStore from '../../store/historyStore';
+import { filterHistory } from '../../utils/filters';
+import capitalizeFirstLetter from '../../utils/maps';
+import { getResultClassNameFromHistory } from '../../utils/outcomes';
 
-const HistoryDetails = () => {
+function HistoryDetails() {
   const { historyData, currentMonth } = historyStore();
 
   const filteredHistory = filterHistory(currentMonth, historyData);
@@ -35,9 +37,9 @@ const HistoryDetails = () => {
             </div>
           </div>
           <div className="heroImage_container w-5/12 flexdiv gap-0.5">
-            {history.heroesImageUrl.map((heroImage, index) => (
+            {history.heroesImageUrl.map((heroImage) => (
               <img
-                key={index}
+                key={heroImage}
                 src={`images/heroes/${heroImage}`}
                 className="h-10"
                 alt=""
@@ -45,13 +47,7 @@ const HistoryDetails = () => {
             ))}
           </div>
           <div
-            className={`${
-              history.result === "win"
-                ? `bg-activeWin`
-                : history.result === "loss"
-                ? `bg-activeLoss`
-                : `bg-activeDraw`
-            }     
+            className={`${getResultClassNameFromHistory(history)}     
             result_container flexdiv w-1/12 `}
           >
             <p>{history.result}</p>
@@ -63,6 +59,6 @@ const HistoryDetails = () => {
       ))}
     </div>
   );
-};
+}
 
 export default HistoryDetails;

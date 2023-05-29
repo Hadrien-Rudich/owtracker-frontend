@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import InputField from "../InputField";
+import { React, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import InputField from '../InputField';
+import authStore from '../../store/authStore';
 
-import { authStore } from "../../store/authStore";
-
-const LogInForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function LogInForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const { isLoggedIn, logIn } = authStore();
 
@@ -20,7 +19,7 @@ const LogInForm = () => {
   };
 
   const handleCancel = () => {
-    navigate("/");
+    navigate('/');
   };
 
   const handleLogIn = (e) => {
@@ -30,9 +29,8 @@ const LogInForm = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/profiles");
+      navigate('/profiles');
     }
-    [isLoggedIn, navigate];
   });
 
   return (
@@ -40,29 +38,26 @@ const LogInForm = () => {
       <div className="login_container flexdiv lg:mt-44 my-24">
         <div className=" inputandbutton_container containerbox">
           <div className="input_container flexdiv col gap-4">
-
             <InputField
               label="Email"
               type="email"
               value={email}
-              required={true}
+              required
               onChange={handleEmailChange}
-              autoFocus={true}
             />
 
             <InputField
               label="Password"
               type="password"
               value={password}
-              required={true}
+              required
               onChange={handlePasswordChange}
             />
-            
           </div>
           <div className="button_container flexdiv gap-6">
             <button
               onClick={handleCancel}
-              type="reset"
+              type="button"
               className="button cancel "
             >
               <p className="">Cancel</p>
@@ -79,6 +74,6 @@ const LogInForm = () => {
       </div>
     </form>
   );
-};
+}
 
 export default LogInForm;

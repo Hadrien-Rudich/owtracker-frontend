@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { authStore } from "../../store/authStore";
-import { profileStore } from "../../store/profileStore";
-import AddProfile from "./AddProfile";
-import Profile from "./Profile";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authStore from '../../store/authStore';
+import profileStore from '../../store/profileStore';
+import AddProfile from './AddProfile';
+import Profile from './Profile';
 
-import { fetchProfilesData } from "../../services/ApiService";
+import { fetchProfilesData } from '../../services/ApiService';
 
-const Profiles = () => {
+function Profiles() {
   const navigate = useNavigate();
 
   const { isLoggedIn } = authStore();
@@ -15,9 +15,8 @@ const Profiles = () => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/");
+      navigate('/');
     }
-    [isLoggedIn, navigate];
   });
 
   useEffect(() => {
@@ -26,7 +25,7 @@ const Profiles = () => {
         const data = await fetchProfilesData();
         addProfilesData(data);
       } catch (error) {
-        console.error("Failed to fetch history data", error);
+        // console.error('Failed to fetch history data', error);
       }
     }
 
@@ -35,17 +34,16 @@ const Profiles = () => {
 
   return (
     <div className="Profiles_container flexdiv col lg:mt-[8.5rem] my-24 relative">
-      {profile === "" && (
+      {profile === '' && (
         <div className="title_container profile header flexdiv">
           <h3 className="">
             {profilesData.length === 0
-              ? "CREATE A PROFILE"
-              : "SELECT A PROFILE"}
+              ? 'CREATE A PROFILE'
+              : 'SELECT A PROFILE'}
           </h3>
         </div>
       )}
-      <div
-        className="containerbox">
+      <div className="containerbox">
         <div className="w-52 flex flex-col gap-4">
           <AddProfile />
           <Profile />
@@ -53,6 +51,6 @@ const Profiles = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Profiles;

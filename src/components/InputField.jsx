@@ -1,12 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-const InputField = ({ label, type, value, placeholder, onChange, onKeyDown, disabled, required, autoFocus }) => {
-  
-  const inputValue = value || "";
-  
+function InputField({
+  label,
+  type,
+  value,
+  placeholder,
+  onChange,
+  onKeyDown,
+  disabled,
+  required,
+}) {
+  const inputValue = value || '';
+
   return (
     <label>
-      <p className='sm:text-xl text-lg'>{label}</p>
+      <p className="sm:text-xl text-lg">{label}</p>
       <input
         value={inputValue}
         type={type}
@@ -15,12 +23,10 @@ const InputField = ({ label, type, value, placeholder, onChange, onKeyDown, disa
         disabled={disabled}
         onChange={onChange}
         onKeyDown={onKeyDown}
-        autoFocus={autoFocus}
         className="input"
       />
     </label>
   );
-};
+}
 
-
-export default InputField
+export default InputField;

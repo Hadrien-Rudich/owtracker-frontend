@@ -1,8 +1,8 @@
-import React from "react";
-import { authStore } from "../../store/authStore";
+import React from 'react';
+import authStore from '../../store/authStore';
 
-const Tabs = () => {
-  const sections = [{ label: "details" }, { label: "security" }];
+function Tabs() {
+  const sections = [{ label: 'details' }, { label: 'security' }];
   const { setActiveTab, activeTab } = authStore();
 
   const handleActiveTab = (e) => {
@@ -11,16 +11,17 @@ const Tabs = () => {
 
   return (
     <div className="Tabs_container flexdiv pb-4 relative top-4">
-      {sections.map((section, index) => (
-        <div key={index}>
+      {sections.map((section) => (
+        <div key={section}>
           <h2>
             <button
               value={section.label}
               onClick={handleActiveTab}
-              className={`${activeTab === section.label ? 
-                " active" 
-                : "inactive" }   
+              className={`${
+                activeTab === section.label ? ' active' : 'inactive'
+              }   
                 accounttab flexdiv`}
+              type="button"
             >
               {section.label}
             </button>
@@ -29,6 +30,6 @@ const Tabs = () => {
       ))}
     </div>
   );
-};
+}
 
 export default Tabs;

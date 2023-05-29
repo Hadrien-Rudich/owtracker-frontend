@@ -1,17 +1,18 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 const profileStore = create((set) => ({
   profilesData: [],
   addProfilesData: (profiles) => set(() => ({ profilesData: profiles })),
-  profile: "",
+  profile: '',
   setProfile: (profile) =>
     set(() => ({
-      profile: profile,
+      profile,
     })),
-    clearProfile: () =>
+  clearProfile: () =>
     set(() => ({
-      profile: ""  })),
-  newProfile: "",
+      profile: '',
+    })),
+  newProfile: '',
   setNewProfile: (profile) =>
     set(() => ({
       newProfile: profile,
@@ -22,15 +23,15 @@ const profileStore = create((set) => ({
     })),
   clearNewProfile: () =>
     set(() => ({
-      newProfile: "",
+      newProfile: '',
     })),
 
   deleteProfile: (profile) => {
     set((state) => ({
       profilesData: state.profilesData.filter((p) => p.label !== profile),
-      profile: "",
+      profile: '',
     }));
   },
 }));
 
-export { profileStore };
+export default profileStore;

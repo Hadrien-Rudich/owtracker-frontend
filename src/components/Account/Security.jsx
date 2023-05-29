@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react';
+import authStore from '../../store/authStore';
+import EditSecurity from './EditSecurity';
 
-import { authStore } from "../../store/authStore";
-import EditSecurity from "./EditSecurity";
-
-const Details = () => {
+function Details() {
   const { editSecurity, toggleEditSecurity } = authStore();
 
   const handleEditSecurityClick = () => {
     toggleEditSecurity();
-    console.log();
   };
 
   return (
@@ -22,6 +20,7 @@ const Details = () => {
           <button
             onClick={handleEditSecurityClick}
             className="button bg-warning truncate"
+            type="button"
           >
             Edit
           </button>
@@ -29,6 +28,6 @@ const Details = () => {
       )}
     </div>
   );
-};
+}
 
 export default Details;

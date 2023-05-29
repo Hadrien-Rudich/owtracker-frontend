@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const SubmitForm = () => {
+function SubmitForm() {
   return (
     <div>
-<form action="submit">
-
-<button type="submit" className='button bg-thirdColor' >SUBMIT</button>
-
-</form>
-
+      <form action="submit">
+        <button type="submit" className="button bg-thirdColor">
+          SUBMIT
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default SubmitForm
+export default SubmitForm;

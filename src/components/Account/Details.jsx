@@ -1,14 +1,10 @@
-import React from "react";
-import { authStore } from "../../store/authStore";
-import EditDetails from "./EditDetails";
-import InputField from "../InputField";
+import React from 'react';
+import authStore from '../../store/authStore';
+import EditDetails from './EditDetails';
+import InputField from '../InputField';
 
-const Details = () => {
-  const {
-    userData,
-    toggleEditAccount,
-    editAccount,
-  } = authStore();
+function Details() {
+  const { userData, toggleEditAccount, editAccount } = authStore();
 
   const handleEditClick = () => {
     toggleEditAccount();
@@ -16,40 +12,42 @@ const Details = () => {
 
   return (
     <div className="main_container">
-
-{!editAccount ? (
-      <div className="inputandbutton_container flexdiv col gap-8">
-        <div className="input_container flexdiv col gap-4">
-        <InputField
+      {!editAccount ? (
+        <div className="inputandbutton_container flexdiv col gap-8">
+          <div className="input_container flexdiv col gap-4">
+            <InputField
               label="Email"
               type="email"
               value={userData.email}
-              disabled={true}
+              disabled
               required={false}
-
             />
 
             <InputField
               label="BattleTag"
               type="text"
               value={userData.battleTag}
-              disabled={true}
+              disabled
               required={false}
             />
+          </div>
+          <div className="button_container flexdiv col gap-4">
+            <button
+              onClick={handleEditClick}
+              className="button bg-warning"
+              type="button"
+            >
+              Edit
+            </button>
+          </div>
         </div>
-        <div className="button_container flexdiv col gap-4">
-          <button onClick={handleEditClick} className="button bg-warning">
-            Edit
-          </button>
+      ) : (
+        <div className="EditDetails_container">
+          <EditDetails />
         </div>
-      </div>)
-      :
-      <div className="EditDetails_container">
-      <EditDetails />
-</div>
-}
+      )}
     </div>
   );
-};
+}
 
 export default Details;

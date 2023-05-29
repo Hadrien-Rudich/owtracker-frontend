@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { authStore } from "../../store/authStore";
-import InputField from "../InputField";
+import { React, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authStore from '../../store/authStore';
+import InputField from '../InputField';
 
-
-const RegisterForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+function RegisterForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const { isLoggedIn, logIn } = authStore();
 
@@ -25,7 +24,7 @@ const RegisterForm = () => {
   };
 
   const handleCancelClick = () => {
-    navigate("/");
+    navigate('/');
   };
 
   const handleRegister = (e) => {
@@ -35,9 +34,8 @@ const RegisterForm = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/profiles");
+      navigate('/profiles');
     }
-    [isLoggedIn, navigate];
   });
 
   return (
@@ -45,21 +43,19 @@ const RegisterForm = () => {
       <form action="submit">
         <div className=" inputandbutton_container containerbox">
           <div className="input_container flexdiv col gap-4">
-            
             <InputField
               label="Email"
               type="email"
               value={email}
-              required={true}
+              required
               onChange={handleEmailChange}
-              autoFocus={true}
             />
 
             <InputField
               label="Password"
               type="password"
               value={password}
-              required={true}
+              required
               onChange={handlePasswordChange}
             />
 
@@ -67,15 +63,14 @@ const RegisterForm = () => {
               label="Confirm"
               type="password"
               value={confirmPassword}
-              required={true}
+              required
               onChange={handleConfirmPasswordChange}
             />
-
           </div>
           <div className="button_container flexdiv gap-6">
             <button
               onClick={handleCancelClick}
-              type="reset"
+              type="button"
               className="button cancel"
             >
               Cancel
@@ -92,6 +87,6 @@ const RegisterForm = () => {
       </form>
     </div>
   );
-};
+}
 
 export default RegisterForm;

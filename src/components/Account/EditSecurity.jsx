@@ -1,8 +1,8 @@
-import React from "react";
-import { authStore } from "../../store/authStore";
-import InputField from "../InputField";
+import React from 'react';
+import authStore from '../../store/authStore';
+import InputField from '../InputField';
 
-const EditSecurity = () => {
+function EditSecurity() {
   const {
     toggleEditSecurity,
     newPassword,
@@ -28,10 +28,7 @@ const EditSecurity = () => {
   };
 
   const handleKeyDown = (e) => {
-    // if (e.key === "Enter") {
-    //   handleSubmit(e);
-    // } else
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       handleCancelClick();
     }
   };
@@ -41,14 +38,13 @@ const EditSecurity = () => {
       <form action="submit">
         <div className="inputandbutton_container flexdiv col gap-8">
           <div className="input_container flexdiv col gap-4">
-   
             <InputField
               label="Password"
               type="password"
-              placeholder={"*************"}
+              placeholder="*************"
               value={newPassword}
               disabled={false}
-                    required={false}
+              required={false}
               onChange={handlePasswordChange}
               onKeyDown={handleKeyDown}
             />
@@ -56,7 +52,7 @@ const EditSecurity = () => {
             <InputField
               label="Confirm Password"
               type="password"
-              placeholder={"*************"}
+              placeholder="*************"
               value={confirmNewPassword}
               disabled={false}
               required={false}
@@ -65,15 +61,21 @@ const EditSecurity = () => {
             />
           </div>
           <div className="button_container flexdiv gap-4">
-            <button onClick={handleCancelClick} className="button cancel">
+            <button
+              onClick={handleCancelClick}
+              className="button cancel"
+              type="button"
+            >
               Cancel
             </button>
-            <button className="button validate">Confirm</button>
+            <button className="button validate" type="submit">
+              Confirm
+            </button>
           </div>
         </div>
       </form>
     </div>
   );
-};
+}
 
 export default EditSecurity;

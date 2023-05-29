@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 const authStore = create((set) => ({
   userData: {},
@@ -7,24 +7,28 @@ const authStore = create((set) => ({
   logOut: () => set(() => ({ isLoggedIn: false })),
   setUserData: (userData) => set(() => ({ userData })),
   editAccount: false,
-  toggleEditAccount: () => set((state) => ({ editAccount: !state.editAccount })),
+  toggleEditAccount: () =>
+    set((state) => ({ editAccount: !state.editAccount })),
   editSecurity: false,
-  toggleEditSecurity: () => set((state) => ({ editSecurity: !state.editSecurity })),
-  newEmail: "",
+  toggleEditSecurity: () =>
+    set((state) => ({ editSecurity: !state.editSecurity })),
+  newEmail: '',
   setNewEmail: (email) => set(() => ({ newEmail: email })),
-  clearNewEmail: () => set(() => ({ newEmail: "" })),
-  newPassword: "",
+  clearNewEmail: () => set(() => ({ newEmail: '' })),
+  newPassword: '',
   setNewPassword: (password) => set(() => ({ newPassword: password })),
-  clearNewPassword: () => set(() => ({ newPassword: "" })),
-  confirmNewPassword: "",
-  setConfirmNewPassword: (password) => set(() => ({ confirmNewPassword: password })),
-  clearConfirmNewPassword: () => set(() => ({ confirmNewPassword: "" })),
-  newBattleTag: "",
+  clearNewPassword: () => set(() => ({ newPassword: '' })),
+  confirmNewPassword: '',
+  setConfirmNewPassword: (password) =>
+    set(() => ({ confirmNewPassword: password })),
+  clearConfirmNewPassword: () => set(() => ({ confirmNewPassword: '' })),
+  newBattleTag: '',
   setNewBattleTag: (battleTag) => set(() => ({ newBattleTag: battleTag })),
-  clearNewBattleTag: () => set(() => ({ newBattleTag: "" })),
- activeTab: "details",
- setActiveTab: (tab) => set(() => ({ activeTab: tab, editAccount: false, editSecurity: false })),
-  clearActiveTab: () => set(() => ({ activeTab: "details" })),
+  clearNewBattleTag: () => set(() => ({ newBattleTag: '' })),
+  activeTab: 'details',
+  setActiveTab: (tab) =>
+    set(() => ({ activeTab: tab, editAccount: false, editSecurity: false })),
+  clearActiveTab: () => set(() => ({ activeTab: 'details' })),
 }));
 
-export { authStore };
+export default authStore;

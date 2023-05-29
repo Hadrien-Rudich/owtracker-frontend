@@ -1,8 +1,8 @@
-import React from "react";
-import { authStore } from "../../store/authStore";
-import InputField from "../InputField";
+import React from 'react';
+import authStore from '../../store/authStore';
+import InputField from '../InputField';
 
-const EditDetails = () => {
+function EditDetails() {
   const {
     toggleEditAccount,
     userData,
@@ -29,10 +29,7 @@ const EditDetails = () => {
   };
 
   const handleKeyDown = (e) => {
-    // if (e.key === "Enter") {
-    //   handleSubmit(e);
-    // } else
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       handleCancelClick();
     }
   };
@@ -49,7 +46,6 @@ const EditDetails = () => {
               placeholder={userData.email}
               disabled={false}
               required={false}
-           
               onChange={handleEmailChange}
               onKeyDown={handleKeyDown}
               S
@@ -67,15 +63,21 @@ const EditDetails = () => {
             />
           </div>
           <div className="button_container flexdiv gap-4">
-            <button onClick={handleCancelClick} className="button cancel">
+            <button
+              onClick={handleCancelClick}
+              className="button cancel"
+              type="button"
+            >
               Cancel
             </button>
-            <button className="button validate">Confirm</button>
+            <button className="button validate" type="button">
+              Confirm
+            </button>
           </div>
         </div>
       </form>
     </div>
   );
-};
+}
 
 export default EditDetails;

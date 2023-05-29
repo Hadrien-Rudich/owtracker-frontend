@@ -1,29 +1,25 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { headerStore } from "../../store/headerStore";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import headerStore from '../../store/headerStore';
 
-const Tabs = () => {
+function Tabs() {
   const { locations } = headerStore();
 
   return (
-
     <div className="md:flex hidden">
-    {locations.map((location, index) => (
+      {locations.map((location) => (
         <NavLink
-          key={index}
+          key={location}
           className={({ isActive }) =>
-            isActive
-              ? "headertab active"
-              : "headertab inactive "
-          } 
+            isActive ? 'headertab active' : 'headertab inactive '
+          }
           to={location.url}
         >
           {location.label}
         </NavLink>
       ))}
-      </div>
- 
+    </div>
   );
-};
+}
 
 export default Tabs;

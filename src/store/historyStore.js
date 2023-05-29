@@ -1,20 +1,18 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 const historyStore = create((set) => ({
-  historyData: [], 
-  addHistoryData: (history) =>
-    set(() => ({ historyData: history })),
+  historyData: [],
+  addHistoryData: (history) => set(() => ({ historyData: history })),
   removeHistoryData: () => {
     set(() => ({
-      historyData: []
+      historyData: [],
     }));
   },
   currentMonth: 0,
   setCurrentMonth: (month) =>
     set(() => ({
-      currentMonth: month
+      currentMonth: month,
     })),
 }));
-   
 
-export { historyStore };
+export default historyStore;

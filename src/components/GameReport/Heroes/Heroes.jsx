@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { fetchHeroesData, fetchRolesData } from "../../../services/ApiService";
-import { gameReportStore } from "../../../store/gameReportStore";
-import Hero from "./Hero";
+import React, { useEffect } from 'react';
+import { fetchHeroesData, fetchRolesData } from '../../../services/ApiService';
+import gameReportStore from '../../../store/gameReportStore';
+import Hero from './Hero';
 
-const Heroes = () => {
+function Heroes() {
   const { addHeroesData, addRolesData } = gameReportStore();
 
   useEffect(() => {
@@ -12,12 +12,12 @@ const Heroes = () => {
         const data = await fetchHeroesData();
         addHeroesData(data);
       } catch (error) {
-        console.error("Failed to fetch heroes data", error);
+        // console.error('Failed to fetch heroes data', error);
       }
     }
 
     getHeroesData();
-  }, []);
+  }, [addHeroesData]);
 
   useEffect(() => {
     async function getRolesData() {
@@ -25,18 +25,18 @@ const Heroes = () => {
         const data = await fetchRolesData();
         addRolesData(data);
       } catch (error) {
-        console.error("Failed to fetch roles data", error);
+        // console.error('Failed to fetch roles data', error);
       }
     }
 
     getRolesData();
-  }, []);
+  }, [addRolesData]);
 
   return (
     <div className="heroes_container bg-mainColor rounded-sm my-6 intenseShadow">
       <Hero />
     </div>
   );
-};
+}
 
 export default Heroes;
